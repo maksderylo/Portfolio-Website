@@ -1,27 +1,12 @@
 import { useState } from "react";
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
+;
 
 
 const Footer = () => {
 
-    const navigate = useNavigate();
-    const [menuState, setMenu] = useState("closed");
-      
-      
-      function navHome(where){
-        setMenu("fullscreen");
-  
-        setTimeout(function(){
-          window.scrollTo(0, 0);
-          navigate(`${where}`);
-          setTimeout(function(){
-            setMenu("closed");
-        }, 1500);
-      }, 500);
-      
-      
-      };
+    
+
 
 
     return(

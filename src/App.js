@@ -87,7 +87,7 @@ const textappear0 = {
 
 //
 
-function App() {
+const App = () =>{
 
 
   const [showOverflow, setShowOverflow] = useState(false);
@@ -135,6 +135,12 @@ function App() {
     }, [])
 
     document.body.style.overflow = "hidden";
+    const childRef = useRef();
+
+     function doSomething(where){
+      childRef.current.doSomething(where);
+    };
+    
     
 
   return (
@@ -155,9 +161,9 @@ function App() {
     </motion.div>
     <motion.div id='body2'>
     <div className={colormode}>
-      <Navigation colormode={colormode}/>
+      <Navigation ref={childRef} colormode={colormode} />
       <Routes>
-          <Route path="/" element={<Home setColorLight={setColorLight} setColorDark={setColorDark}/>}/>
+          <Route path="/" element={<Home doSomething={doSomething} setColorLight={setColorLight} setColorDark={setColorDark}/>}/>
           <Route path="/about" element={<About/>} />
           <Route path="/contact" element={<Contact/>} />
       </Routes>

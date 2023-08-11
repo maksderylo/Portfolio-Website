@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from "react";
+import { forwardRef, useState, useImperativeHandle } from "react";
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import logo from './svg/logo.png';
@@ -32,10 +32,26 @@ const draw = {
   
 
 
-const Navigation = () =>{
+const Navigation =forwardRef((props, ref) =>{
   const navigate = useNavigate();
   const [menuState, setMenu] = useState("closed");
     
+
+  function doSomething(where){
+    setMenu("fullscreen");
+
+      setTimeout(function(){
+        window.scrollTo(0, 0);
+        navigate(`${where}`);
+        setTimeout(function(){
+          setMenu("closed");
+      }, 1500);
+    }, 500);
+  };
+
+  useImperativeHandle(ref, () => ({
+    doSomething: doSomething
+  }));
     
     function navHome(where){
       setMenu("fullscreen");
@@ -184,6 +200,6 @@ const Navigation = () =>{
         ></motion.div>
         </>
     );
-}
+});
 
 export default Navigation;

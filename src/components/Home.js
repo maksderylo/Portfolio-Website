@@ -6,8 +6,7 @@ import Server from "./svg/server.svg"
 import Headphones from "./svg/headphones.svg"
 import Luggage from "./svg/travel.svg"
 import Me from './svg/me.jpg'
-import Carousell from './Carousell'
-
+import {useNavigate} from 'react-router-dom'
 
 
 const AniFromR = {
@@ -43,8 +42,9 @@ const textappear = {
 
 const Home = (props) => {
 
-   
-
+    function navHome(where){
+        props.doSomething(where);
+    };
     
     //variables
     const {scrollYProgress} = useScroll();
@@ -306,6 +306,14 @@ const Home = (props) => {
                      journeys that leave <span style={{color: "#cab99a", fontWeight: "bolder"}}>a lasting impact.</span> </p></div>
             </div>
                 <div className="smallspace"></div>
+                <div id="relocatebuttons">
+                    <ul>
+                        <li><p onClick={() => navHome('/about')}>About me</p><div className="behind"></div></li>
+                        <li><p onClick={() => navHome('/contact')}>Work!</p><div className="behind"></div></li>
+                    </ul>
+                    
+                </div>
+                    
         </div>
     );
 }
