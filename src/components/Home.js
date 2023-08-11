@@ -35,6 +35,21 @@ const textappear = {
     }
 }
 
+const characterAnimation = {
+    hidden: {
+      opacity: 0,
+      y: `0.25em`,
+    },
+    visible: {
+      opacity: 1,
+      y: `0em`,
+      transition: {
+        duration: 1,
+        ease: [0.2, 0.65, 0.3, 0.9],
+      },
+    },
+  };
+
 
 
 
@@ -43,7 +58,9 @@ const Home = (props) => {
 
 
     function navHome(where){
+        setColorLight();
         props.doSomething(where);
+        setColorLight();
     };
     
     //variables
@@ -130,6 +147,12 @@ const Home = (props) => {
   //in view animations
   const controls =useAnimation();
   const [refgreet,inViewGreet]=useInView();
+
+
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
 
   useEffect(()=>{
         if(inViewGreet){
@@ -297,13 +320,15 @@ const Home = (props) => {
                 <div className="textbox2" id="webbox" ref={web}><motion.h2 id="web">WEB</motion.h2>
                     <motion.h2 id="overweb" style={style5}>WEB</motion.h2>
                 </div>
-                <div className="centertext"><p>Because I think browsing should always
+                <motion.div ref={ref} className="centertext"><motion.p variants={characterAnimation}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}>Because I think browsing should always
                      be an amazing experience, I am fueled by the ability to express myself 
                      through code and create immersive digital wonders that captivate and inspire.
                       With each line I write, I strive to push boundaries, blend functionality with 
                       aesthetics, and elevate the online world to new heights, ensuring that users are
                        met with unforgettable
-                     journeys that leave <span style={{color: "#cab99a", fontWeight: "bolder"}}>a lasting impact.</span> </p></div>
+                     journeys that leave <span style={{color: "#cab99a", fontWeight: "bolder"}}>a lasting impact.</span> </motion.p></motion.div>
             </div>
                 <div className="smallspace"></div>
                 <div id="relocatebuttons">

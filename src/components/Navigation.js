@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { forwardRef, useState, useImperativeHandle } from "react";
-import React from 'react';
+import {React, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import logo from './svg/logo.png';
 import logodark from './svg/logodark.png';
@@ -35,11 +35,15 @@ const draw = {
 const Navigation =forwardRef((props, ref) =>{
   const navigate = useNavigate();
   const [menuState, setMenu] = useState("closed");
-    
+  
+  useEffect(() =>{
+      navigate('/');
+      window.scrollTo(0,0);
+  },[])
 
   function doSomething(where){
     setMenu("fullscreen");
-
+    
       setTimeout(function(){
         window.scrollTo(0, 0);
         navigate(`${where}`);

@@ -9,8 +9,9 @@ import Courses from './components/Courses';*/
 import Contact from './components/Contact'
 import {Routes, Route} from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
-import { motion, useAnimation, useTransform } from "framer-motion";
+import { motion} from "framer-motion";
 import logoi from './logoi.png'
+import { useInView } from "react-intersection-observer";
 
 
 //animations etc
@@ -85,27 +86,29 @@ const textappear0 = {
   }
 }
 
+
+
 //
 
 const App = () =>{
+  useEffect(() =>{
+    window.scrollTo(0,0);
+},[]);
+
 
 
   const [showOverflow, setShowOverflow] = useState(false);
   const [visibility, setVisibility] = useState(true);
 
   //colormode
-  const storedColormode =localStorage.getItem("colormode");
-  const [colormode, setColormode] = useState(storedColormode || "light");
+  const [colormode, setColormode] = useState("light");
 
     const setColorDark = () => {
-      localStorage.setItem("colormode", "dark")
-      setColormode("dark")
+      setColormode("dark");
   }
   const setColorLight = () => {
-    localStorage.setItem("colormode", "light")
-      setColormode("light")
+      setColormode("light");
   }
-
 
 
     useEffect(() =>{
@@ -138,7 +141,9 @@ const App = () =>{
     const childRef = useRef();
 
      function doSomething(where){
+      setColorLight()
       childRef.current.doSomething(where);
+      setColorLight()
     };
     
     

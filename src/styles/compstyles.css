@@ -532,7 +532,7 @@
   border: 1px solid #cb413f;
   cursor: pointer;
   position: relative;
-  z-index: 50;
+  z-index: 10;
 }
 
 #relocatebuttons ul li p{
