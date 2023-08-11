@@ -6,7 +6,6 @@ import Server from "./svg/server.svg"
 import Headphones from "./svg/headphones.svg"
 import Luggage from "./svg/travel.svg"
 import Me from './svg/me.jpg'
-import {useNavigate} from 'react-router-dom'
 
 
 const AniFromR = {
@@ -41,6 +40,7 @@ const textappear = {
 
 
 const Home = (props) => {
+
 
     function navHome(where){
         props.doSomething(where);
