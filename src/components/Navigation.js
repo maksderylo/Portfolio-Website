@@ -39,7 +39,7 @@ const Navigation =forwardRef((props, ref) =>{
   useEffect(() =>{
       navigate('/');
       window.scrollTo(0,0);
-  },[])
+  },[navigate])
 
   function doSomething(where){
     setMenu("fullscreen");

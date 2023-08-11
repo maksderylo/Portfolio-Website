@@ -69,7 +69,6 @@ const Home = (props) => {
     const x1 = useTransform(scrollYProgress, [0,0.5], [-300,200] );
     const x2 = useTransform(scrollYProgress, [0,1], [-300,500] );
     const x3 = useTransform(scrollYProgress, [0,1], [-400,600] );
-    const x4 = useTransform(scrollYProgress, [0,1], [-1400,2600] );
     const x5 = useTransform(scrollYProgress, [0,1], [-400,600] );
     const x6 = useTransform(scrollYProgress, [0,1], [-100,3000] );
     const x7 = useTransform(scrollYProgress, [0,1], [300,400] );
@@ -138,8 +137,8 @@ const Home = (props) => {
       window.removeEventListener('resize', getPositions);
       clearTimeout(timer);
     };
-    
-  }, []);
+    // eslint-disable-next-line
+  }, [scrollY, setColorDark]);
 
   
 
@@ -193,15 +192,6 @@ const Home = (props) => {
     clipPath: `polygon(0px 0px, 100% 0px, 100% ${(scrollY/4-weby/4+100)}%, 0px ${(scrollY/4-weby/4+100)}%)`,
   };
 
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    slickPlay: 1,
-    autoplay: true,
-  };
 
     return (
 

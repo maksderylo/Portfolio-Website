@@ -11,7 +11,7 @@ import {Routes, Route} from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import { motion} from "framer-motion";
 import logoi from './logoi.png'
-import { useInView } from "react-intersection-observer";
+
 
 
 //animations etc
@@ -97,8 +97,8 @@ const App = () =>{
 
 
 
-  const [showOverflow, setShowOverflow] = useState(false);
-  const [visibility, setVisibility] = useState(true);
+  const [, setShowOverflow] = useState(false);
+  const [visibility,] = useState(true);
 
   //colormode
   const [colormode, setColormode] = useState("light");
