@@ -1,0 +1,173 @@
+import './styles/App.css';
+import './styles/compstyles.css';
+import {React, useState, useEffect, useRef } from "react";
+import Home from './components/Home'
+import Navigation from './components/Navigation';
+import About from './components/About';
+import Footer from './components/Footer'/*
+import Courses from './components/Courses';*/
+import Contact from './components/Contact'
+import {Routes, Route} from 'react-router-dom';
+import Lenis from '@studio-freight/lenis';
+import { motion, useAnimation, useTransform } from "framer-motion";
+import logoi from './logoi.png'
+
+
+//animations etc
+const goupenter = {
+  initial: {
+    top: 0
+  },
+  animate: {
+      top: - window.innerHeight - 300
+  },
+  transition: {
+      duration:1.5,
+      ease: [0.455, 0.03, 0.515, 0.955],
+      delay: 5
+  }
+}
+
+
+
+
+const textappear1 = {
+  initial: {
+      y: "200%",
+  },
+  animate: {
+      y: 0
+  },
+  transition: {
+      duration:0.75,
+      ease: [0.455, 0.03, 0.515, 0.955],
+      delay: 1
+  }
+}
+
+const textappear2 = {
+  initial: {
+      y: "200%",
+  },
+  animate: {
+      y: 0
+  },
+  transition: {
+      duration:0.75,
+      ease: [0.455, 0.03, 0.515, 0.955],
+      delay: 1.5
+  }
+}
+const textappear3 = {
+  initial: {
+      y: "200%",
+  },
+  animate: {
+      y: 0
+  },
+  transition: {
+      duration:0.75,
+      ease: [0.455, 0.03, 0.515, 0.955],
+      delay: 2
+  }
+}
+const textappear0 = {
+  initial: {
+      y: "200%",
+  },
+  animate: {
+      y: 0
+  },
+  transition: {
+      duration:0.75,
+      ease: [0.455, 0.03, 0.515, 0.955],
+      delay: 0.5
+  }
+}
+
+//
+
+function App() {
+
+
+  const [showOverflow, setShowOverflow] = useState(false);
+  const [visibility, setVisibility] = useState(true);
+
+  //colormode
+  const storedColormode =localStorage.getItem("colormode");
+  const [colormode, setColormode] = useState(storedColormode || "light");
+
+    const setColorDark = () => {
+      localStorage.setItem("colormode", "dark")
+      setColormode("dark")
+  }
+  const setColorLight = () => {
+    localStorage.setItem("colormode", "light")
+      setColormode("light")
+  }
+
+
+
+    useEffect(() =>{
+      const lenis = new Lenis({
+        duration: 2,
+      })
+      function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
+
+      requestAnimationFrame(raf)
+
+      
+      
+
+      const timer = setTimeout(() => {
+        setShowOverflow(true);
+        //setVisibility(false)
+      }, 5000);
+
+
+    return () => {
+      clearTimeout(timer);
+    };
+
+    }, [])
+
+    document.body.style.overflow = "hidden";
+    
+
+  return (
+    <>
+    <div id='viewport'>
+    <div id='all'>
+      <motion.div id='enter' className={visibility ? 'visibilitytru' : 'visibilityhid'} {...goupenter}>
+      <div id="page">
+        <div id='logontext'>
+            <motion.img src={logoi} alt='logo' {...textappear0}></motion.img>
+            <motion.h1 {...textappear1}>developer, </motion.h1>
+            <motion.h1 {...textappear2}>freelancer,</motion.h1>
+            <motion.h1 {...textappear3}>student</motion.h1>
+        </div>
+        <div id='waves'></div>
+      </div>
+        
+    </motion.div>
+    <motion.div id='body2'>
+    <div className={colormode}>
+      <Navigation colormode={colormode}/>
+      <Routes>
+          <Route path="/" element={<Home setColorLight={setColorLight} setColorDark={setColorDark}/>}/>
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact" element={<Contact/>} />
+      </Routes>
+      <Footer />
+    </div>
+    </motion.div>
+    </div>
+    </div>
+    </>
+  );
+}
+
+export default App;
