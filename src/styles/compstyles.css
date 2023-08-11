@@ -517,4 +517,113 @@
   footer{
     width: 100%;
     height: 80px;
+    border: 1px solid red;
   }
+
+
+  .textbotmen{
+    left: 10px;
+    position: absolute;
+    bottom: 5px;
+  }
+
+  .textbotmen ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .textbotmen li{
+    float: left;
+  }
+  .textbotmen li a {
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-right:20px ;
+    font-family: 'applelight';
+    background: linear-gradient(currentColor, currentColor) 0px 19px / 0 .1em no-repeat;
+    transition: 0.3s background-size;
+  }
+
+  .dark .textbotmen li a {
+    color: white;
+  }
+  .light .textbotmen li a {
+    color: black;
+  }
+
+  .textbotmen li a:hover{
+    background-size: 100% .1em;
+  }
+
+
+#footmenu{
+  position: absolute;
+  right: 10px;
+  padding: 0px;
+  bottom: 5px;
+}
+
+#footmenu p{
+  font-family: 'applemedium';
+  padding: 0px;
+  margin: 0;
+  font-size: 10px;
+}
+
+
+  /*
+  #footmenumenu p {
+    font-family: 'applemedium';
+    position: relative;
+    display: block;
+    font-size: max(60px,5vh);
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .dark #footmenu p{
+    background: linear-gradient(to right, #e0e0e0, #e0e0e0 50%, #a0a0a0 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  .light #footmenu p{
+    background: linear-gradient(to right, #121212, #121212 50%, #a0a0a0 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .dark #footmenu .active{
+    background-position: 0 100%;
+    cursor:default;
+  }
+  .light #footmenu .active{
+    background-position: 0 100%;
+    cursor: default;
+  }
+
+  .dark #footmenu p:hover,.light .menu p:hover{
+    background-position: 0 100%;
+  }
+
+  #footmenu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+*/

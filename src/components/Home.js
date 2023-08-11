@@ -306,8 +306,6 @@ const Home = (props) => {
                      journeys that leave <span style={{color: "#cab99a", fontWeight: "bolder"}}>a lasting impact.</span> </p></div>
             </div>
                 <div className="smallspace"></div>
-                
-            
         </div>
     );
 }

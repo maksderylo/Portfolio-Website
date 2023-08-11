@@ -78,7 +78,7 @@ const Carousell = () => {
     >
       <div className="slide">
         <div className="inslide" id="workslide">
-        <div className="butdiv" onClick={() => navHome('/about')}>About Me!</div>
+        <div><p onClick={() => navHome('/about')}>Hi</p></div>
           </div>
       </div>
       <div className="slide">
