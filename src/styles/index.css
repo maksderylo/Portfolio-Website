@@ -10,6 +10,16 @@ body {
   src: url(font/Handjet-ExtraLight.ttf);
   
 }
+@font-face{
+  font-family: 'handjet';
+  src: url(font/Handjet-ExtraLight.ttf);
+  
+}
+@font-face{
+  font-family: 'amatic';
+  src: url(font/AmaticSC-Bold.ttf);
+  
+}
 
 
 html,body{
@@ -56,6 +66,70 @@ code {
 }
 
 
+video{
+  position: absolute;
+  left: 0px;
+  width: 100vw;
+  top: -20vh;
+  max-height: 100vh;
+}
+
+#open{
+  position: absolute;
+  z-index: 15;
+  top: 60%;
+  font-size: large;
+  font-family: 'amatic';
+  left: 50%;
+  color: #EE9C21;
+  background-color: transparent;
+  border: 2px dashed black;
+  transform:translate(-50%);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+#open:hover{
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+}
+
+
+.container div{
+z-index: 4000;
+  height: 300vh;
+  width: 100vw;
+  top: 100vh;
+  position: absolute;
+  background-color: black;
+}
+
+
+#a{
+  z-index: 11;
+}
+
+
+#b{
+  z-index: 10;
+}
+
+#back{
+  background-color: #E5E4E5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
 #page{
   width: 100vw;
   margin: none;
@@ -65,5 +139,4 @@ code {
   padding: none;
   
 }
-
 

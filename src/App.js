@@ -10,7 +10,9 @@ import Contact from './components/Contact'
 import {Routes, Route} from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import { motion} from "framer-motion";
-import Particlees from './components/Particlees';
+import LogoVid from './logovid.mp4';
+import LogoLoop from './logoloop.mp4';
+
 
 
 //animations etc
@@ -22,8 +24,13 @@ import Particlees from './components/Particlees';
 //
 
 const App = () =>{
+  const [intro, setIntro] = useState(true);
+
   useEffect(() =>{
     window.scrollTo(0,0);
+    setTimeout(()=>{
+      setIntro(false);
+    },4200)
 },[]);
 
 
@@ -91,11 +98,22 @@ const App = () =>{
       
         
       {showParticles && (
-        <>
-        <Particlees/>
-        
-        <button onClick={handleClick}>Ye</button>
-        </>
+        <div id='back'>
+          {intro && (
+        <video id='a' autoPlay muted
+        >
+          
+        <source src={LogoVid} type="video/mp4" />
+      </video>)}
+      <video id='b' autoPlay muted loop>
+        <source src={LogoLoop} type="video/mp4" />
+      </video>
+      <motion.button onClick={handleClick} id='open'
+      initial={{opacity: 0,}}
+      animate={{opacity: 1}}
+      transition={{duration: 1, delay: 3}}
+      >Click to open</motion.button>
+        </div>
         )}
         <motion.div id='fristfromtop'
         animate={isAnimated ? { top: "-300vh"} : {top: "100vh"}}
