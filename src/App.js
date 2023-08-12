@@ -1,6 +1,6 @@
 import './styles/App.css';
 import './styles/compstyles.css';
-import {React, useState, useEffect, useRef } from "react";
+import {React, useState, useEffect, useRef, useCallback } from "react";
 import Home from './components/Home'
 import Navigation from './components/Navigation';
 import About from './components/About';
@@ -10,81 +10,12 @@ import Contact from './components/Contact'
 import {Routes, Route} from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import { motion} from "framer-motion";
-import logoi from './logoi.png'
-
+import Particlees from './components/Particlees';
 
 
 //animations etc
-const goupenter = {
-  initial: {
-    top: 0
-  },
-  animate: {
-      top: - window.innerHeight - 300
-  },
-  transition: {
-      duration:1.5,
-      ease: [0.455, 0.03, 0.515, 0.955],
-      delay: 5
-  }
-}
 
 
-
-
-const textappear1 = {
-  initial: {
-      y: "200%",
-  },
-  animate: {
-      y: 0
-  },
-  transition: {
-      duration:0.75,
-      ease: [0.455, 0.03, 0.515, 0.955],
-      delay: 1
-  }
-}
-
-const textappear2 = {
-  initial: {
-      y: "200%",
-  },
-  animate: {
-      y: 0
-  },
-  transition: {
-      duration:0.75,
-      ease: [0.455, 0.03, 0.515, 0.955],
-      delay: 1.5
-  }
-}
-const textappear3 = {
-  initial: {
-      y: "200%",
-  },
-  animate: {
-      y: 0
-  },
-  transition: {
-      duration:0.75,
-      ease: [0.455, 0.03, 0.515, 0.955],
-      delay: 2
-  }
-}
-const textappear0 = {
-  initial: {
-      y: "200%",
-  },
-  animate: {
-      y: 0
-  },
-  transition: {
-      duration:0.75,
-      ease: [0.455, 0.03, 0.515, 0.955],
-      delay: 0.5
-  }
-}
 
 
 
@@ -97,8 +28,6 @@ const App = () =>{
 
 
 
-  const [, setShowOverflow] = useState(false);
-  const [visibility,] = useState(true);
 
   //colormode
   const [colormode, setColormode] = useState("light");
@@ -118,26 +47,11 @@ const App = () =>{
       function raf(time) {
         lenis.raf(time)
         requestAnimationFrame(raf)
-      }
+      };
 
-      requestAnimationFrame(raf)
-
-      
-      
-
-      const timer = setTimeout(() => {
-        setShowOverflow(true);
-        //setVisibility(false)
-      }, 5000);
-
-
-    return () => {
-      clearTimeout(timer);
-    };
-
+      requestAnimationFrame(raf);
     }, [])
 
-    document.body.style.overflow = "hidden";
     const childRef = useRef();
 
      function doSomething(where){
@@ -146,24 +60,53 @@ const App = () =>{
       setColorLight()
     };
     
+    const [showParticles, setShowParticles] = useState(true);
+    const [showWelcome, setShowWelcome] = useState(true);
+    const [isAnimated, setIsAnimated] = useState(false);
+
+  const handleClick = () => {
+    setIsAnimated(true);
+    setTimeout(()=>{
+      setShowParticles(false);
+    },1000)
+    setTimeout(()=>{
+      setShowWelcome(false);
+    },3000)
+    
+  };
+
+
     
 
   return (
     <>
     <div id='viewport'>
     <div id='all'>
-      <motion.div id='enter' className={visibility ? 'visibilitytru' : 'visibilityhid'} {...goupenter}>
+    {showWelcome && (
+      <motion.div id='enter'>
+      
       <div id="page">
-        <div id='logontext'>
-            <motion.img src={logoi} alt='logo' {...textappear0}></motion.img>
-            <motion.h1 {...textappear1}>developer, </motion.h1>
-            <motion.h1 {...textappear2}>freelancer,</motion.h1>
-            <motion.h1 {...textappear3}>student</motion.h1>
+      
+      <div className="container">
+      
+        
+      {showParticles && (
+        <>
+        <Particlees/>
+        
+        <button onClick={handleClick}>Ye</button>
+        </>
+        )}
+        <motion.div id='fristfromtop'
+        animate={isAnimated ? { top: "-300vh"} : {top: "100vh"}}
+        transition={{ type: "tween", stiffness: 100, damping: 10, duration: 1.5, delay: 0.5, }}>
+        </motion.div>
         </div>
-        <div id='waves'></div>
+        
       </div>
         
-    </motion.div>
+    </motion.div>)}
+    
     <motion.div id='body2'>
     <div className={colormode}>
       <Navigation ref={childRef} colormode={colormode} />

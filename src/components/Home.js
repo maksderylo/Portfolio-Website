@@ -259,7 +259,7 @@ const Home = (props) => {
                         }
                     }
                     }></motion.img>
-                    <motion.h2 className="textr" {...textappear} style={{marginRight:x2}}>HARDWARE</motion.h2>
+                    <motion.h2 className="textr" style={{marginRight:x2}}>HARDWARE</motion.h2>
                     <motion.h2 className="textrover" style={style2}>HARDWARE</motion.h2>
                 </div>
                 <div className="textbox2" ref={travelling}>
@@ -281,7 +281,7 @@ const Home = (props) => {
                     }
                     }
                     ></motion.img>
-                    <motion.h2 className="textl" {...textappear} style={{marginLeft:x3}}>TRAVELLING</motion.h2>
+                    <motion.h2 className="textl" style={{marginLeft:x3}}>TRAVELLING</motion.h2>
                     <motion.h2 className="textlover" style={style3}>TRAVELLING</motion.h2>
                 </div>
                 <div className="textbox2" ref={music}>
@@ -303,10 +303,10 @@ const Home = (props) => {
                     }
                     }
                     ></motion.img>
-                    <motion.h2 className="textr" {...textappear} style={{marginRight:x5}}>MUSIC</motion.h2>
+                    <motion.h2 className="textr" style={{marginRight:x5}}>MUSIC</motion.h2>
                     <motion.h2 className="textrover" style={style4}>MUSIC</motion.h2>
                 </div>
-                <div ref={web} className="textbox"><motion.h3 {...textappear}>BUT MOST IMPORTANTLY!</motion.h3></div>
+                <div ref={web} className="textbox"><motion.h3 >BUT MOST IMPORTANTLY!</motion.h3></div>
                 <div className="textbox2" id="webbox" ref={web}><motion.h2 id="web">WEB</motion.h2>
                     <motion.h2 id="overweb" style={style5}>WEB</motion.h2>
                 </div>
