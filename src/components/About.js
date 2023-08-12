@@ -3,32 +3,48 @@ const About = () => {
 
     return (
         <div className="About">
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
-
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
+<h1>about</h1>
         </div>
     );
 }

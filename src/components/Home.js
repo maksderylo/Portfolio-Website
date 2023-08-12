@@ -6,7 +6,7 @@ import Server from "./svg/server.svg"
 import Headphones from "./svg/headphones.svg"
 import Luggage from "./svg/travel.svg"
 import Me from './svg/me.jpg'
-
+import { useLocation } from 'react-router-dom';
 
 const AniFromR = {
     initial:{
@@ -89,13 +89,9 @@ const Home = (props) => {
     const music = useRef();
     const [musicy, setMusicy] =useState();
 
-    const getPositions = () =>{
-        setProgrammingy(programming.current.offsetTop);
-        setHardwarey(hardware.current.offsetTop);
-        setTravellingy(travelling.current.offsetTop);
-        setWeby(web.current.offsetTop);
-        setMusicy(music.current.offsetTop)
-    }
+    const location = useLocation();
+
+    
 
 
     const setColorLight = () =>{
@@ -108,33 +104,40 @@ const Home = (props) => {
     //use effect
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+        setScrollY(window.scrollY);
+        if(location.pathname === '/'){
       if(window.scrollY-web.current.offsetTop>0){
         setColorDark();
       }
       else{
         setColorLight();
       }
+    }
     };
+    const getPositions = () =>{
+        if(location.pathname === '/'){
+        setProgrammingy(programming.current.offsetTop);
+        setHardwarey(hardware.current.offsetTop);
+        setTravellingy(travelling.current.offsetTop);
+        setWeby(web.current.offsetTop);
+        setMusicy(music.current.offsetTop)};
+    }
 
-    getPositions();
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize',getPositions);
-
-    setTimeout(function(){
-        getPositions();
-    },200)
+    window.addEventListener('scroll', getPositions);
+    window.addEventListener('resize', getPositions);
 
     const timer = setTimeout(() => {
         console.log(scrollY);
         setScrollY(window.scrollY);
-      }, 5500);
+      }, 100);
 
 
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', getPositions);
+      window.removeEventListener('scroll', getPositions);
       clearTimeout(timer);
     };
     // eslint-disable-next-line

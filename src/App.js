@@ -1,6 +1,6 @@
 import './styles/App.css';
 import './styles/compstyles.css';
-import {React, useState, useEffect, useRef, useCallback } from "react";
+import {React, useState, useEffect, useRef} from "react";
 import Home from './components/Home'
 import Navigation from './components/Navigation';
 import About from './components/About';
@@ -46,18 +46,19 @@ const App = () =>{
       setColormode("light");
   }
 
+  const lenis = new Lenis({
+    duration: 2,
+  })
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  };
 
     useEffect(() =>{
-      const lenis = new Lenis({
-        duration: 2,
-      })
-      function raf(time) {
-        lenis.raf(time)
-        requestAnimationFrame(raf)
-      };
+      
 
       requestAnimationFrame(raf);
-    }, [])
+    }, [raf])
 
     const childRef = useRef();
 
@@ -72,6 +73,7 @@ const App = () =>{
     const [isAnimated, setIsAnimated] = useState(false);
 
   const handleClick = () => {
+    requestAnimationFrame(raf);
     setIsAnimated(true);
     setTimeout(()=>{
       setShowParticles(false);
@@ -87,7 +89,9 @@ const App = () =>{
 
   return (
     <>
-    <div id='viewport'>
+    <motion.div  id='viewport'
+
+    >
     <div id='all'>
     {showWelcome && (
       <motion.div id='enter'>
@@ -124,7 +128,6 @@ const App = () =>{
       </div>
         
     </motion.div>)}
-    
     <motion.div id='body2'>
     <div className={colormode}>
       <Navigation ref={childRef} colormode={colormode} />
@@ -137,7 +140,7 @@ const App = () =>{
     </div>
     </motion.div>
     </div>
-    </div>
+    </motion.div>
     </>
   );
 }
