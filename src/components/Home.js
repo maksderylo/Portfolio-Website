@@ -332,12 +332,14 @@ const Home = (props) => {
             </div>
                 <div className="smallspace"></div>
                 <div id="relocatebuttons">
+                    <h1>Further Explore!</h1>
                     <ul>
                         <li><p onClick={() => navHome('/about')}>About me</p><div className="behind"></div></li>
                         <li><p onClick={() => navHome('/contact')}>Work!</p><div className="behind"></div></li>
                     </ul>
                     
                 </div>
+                <div className="smallspace"></div>
                     
         </div>
     );
