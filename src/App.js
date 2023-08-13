@@ -27,7 +27,7 @@ const App = () =>{
   const [intro, setIntro] = useState(true);
 
   useEffect(() =>{
-    window.scrollTo(0,0);
+    
     setTimeout(()=>{
       setIntro(false);
     },4200)
@@ -133,7 +133,7 @@ const App = () =>{
       <Navigation ref={childRef} colormode={colormode} />
       <Routes>
           <Route path="/" element={<Home doSomething={doSomething} setColorLight={setColorLight} setColorDark={setColorDark}/>}/>
-          <Route path="/about" element={<About/>} />
+          <Route  path="/about" element={<About setColorLight={setColorLight}/>} />
           <Route path="/contact" element={<Contact/>} />
       </Routes>
       <Footer />

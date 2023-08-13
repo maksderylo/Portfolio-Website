@@ -43,6 +43,7 @@ const Navigation =forwardRef((props, ref) =>{
       setTimeout(function(){
         window.scrollTo(0, 0);
         navigate(`${where}`);
+        window.scrollTo(0,0);
         setTimeout(function(){
           setMenu("closed");
       }, 1500);

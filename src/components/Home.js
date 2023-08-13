@@ -58,9 +58,7 @@ const Home = (props) => {
 
 
     function navHome(where){
-        setColorLight();
         props.doSomething(where);
-        setColorLight();
     };
     
     //variables
@@ -103,6 +101,12 @@ const Home = (props) => {
     
     //use effect
   useEffect(() => {
+    if(window.scrollY-web.current.offsetTop>0){
+        setColorDark();
+      }
+      else{
+        setColorLight();
+      }
     const handleScroll = () => {
         setScrollY(window.scrollY);
         if(location.pathname === '/'){
@@ -112,6 +116,9 @@ const Home = (props) => {
       else{
         setColorLight();
       }
+    }
+    else{
+        setColorLight();
     }
     };
     const getPositions = () =>{
@@ -141,7 +148,7 @@ const Home = (props) => {
       clearTimeout(timer);
     };
     // eslint-disable-next-line
-  }, [scrollY, setColorDark]);
+  }, [scrollY]);
 
   
 
