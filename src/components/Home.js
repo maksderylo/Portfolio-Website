@@ -135,7 +135,11 @@ const Home = (props) => {
     window.addEventListener('resize', getPositions);
 
     const timer = setTimeout(() => {
-        console.log(scrollY);
+        setProgrammingy(programming.current.offsetTop);
+        setHardwarey(hardware.current.offsetTop);
+        setTravellingy(travelling.current.offsetTop);
+        setWeby(web.current.offsetTop);
+        setMusicy(music.current.offsetTop);
         setScrollY(window.scrollY);
       }, 100);
 
@@ -334,8 +338,8 @@ const Home = (props) => {
                 <div id="relocatebuttons">
                     <h1>Further Explore!</h1>
                     <ul>
-                        <li><p onClick={() => navHome('/about')}>About me</p><div className="behind"></div></li>
-                        <li><p onClick={() => navHome('/contact')}>Work!</p><div className="behind"></div></li>
+                        <li><p onClick={() => navHome('/about')}>Work</p><div className="behind"></div></li>
+                        <li><p onClick={() => navHome('/contact')}>Blog!</p><div className="behind"></div></li>
                     </ul>
                     
                 </div>
