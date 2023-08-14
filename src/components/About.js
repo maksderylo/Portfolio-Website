@@ -34,6 +34,10 @@ const About = (props) => {
         
             
         </div>
+        <div className='grid'>
+
+            
+        </div>
 
 
 
