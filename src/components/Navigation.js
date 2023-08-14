@@ -48,6 +48,7 @@ const Navigation =forwardRef((props, ref) =>{
           setMenu("closed");
       }, 1500);
     }, 500);
+    
   };
 
   useImperativeHandle(ref, () => ({
@@ -64,7 +65,6 @@ const Navigation =forwardRef((props, ref) =>{
           setMenu("closed");
       }, 1500);
     }, 500);
-    
     
     };
 

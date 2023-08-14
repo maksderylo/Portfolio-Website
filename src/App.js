@@ -13,16 +13,6 @@ import { motion} from "framer-motion";
 import LogoVid from './logovid.mp4';
 import LogoLoop from './logoloop.mp4';
 
-
-
-//animations etc
-
-
-
-
-
-//
-
 const App = () =>{
   const [intro, setIntro] = useState(true);
 
@@ -32,9 +22,6 @@ const App = () =>{
       setIntro(false);
     },4200)
 },[]);
-
-
-
 
   //colormode
   const [colormode, setColormode] = useState("light");
