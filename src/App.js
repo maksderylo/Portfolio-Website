@@ -50,9 +50,8 @@ const App = () =>{
     const childRef = useRef();
 
      function doSomething(where){
-      setColorLight()
       childRef.current.doSomething(where);
-      setColorLight()
+      lenis.resize();
     };
     
     const [showParticles, setShowParticles] = useState(true);
@@ -60,7 +59,7 @@ const App = () =>{
     const [isAnimated, setIsAnimated] = useState(false);
 
   const handleClick = () => {
-    requestAnimationFrame(raf);
+    
     setIsAnimated(true);
     setTimeout(()=>{
       setShowParticles(false);
@@ -117,7 +116,7 @@ const App = () =>{
     </motion.div>)}
     <motion.div id='body2'>
     <div className={colormode}>
-      <Navigation ref={childRef} colormode={colormode} />
+      <Navigation ref={childRef} lenis={lenis} />
       <Routes>
           <Route path="/" element={<Home doSomething={doSomething} setColorLight={setColorLight} setColorDark={setColorDark}/>}/>
           <Route  path="/about" element={<About setColorLight={setColorLight}/>} />

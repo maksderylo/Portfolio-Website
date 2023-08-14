@@ -48,7 +48,9 @@ const Navigation =forwardRef((props, ref) =>{
           setMenu("closed");
       }, 1500);
     }, 500);
-    
+    setTimeout(function(){
+      props.lenis.resize();
+  }, 2000);
   };
 
   useImperativeHandle(ref, () => ({
@@ -65,7 +67,9 @@ const Navigation =forwardRef((props, ref) =>{
           setMenu("closed");
       }, 1500);
     }, 500);
-    
+    setTimeout(function(){
+      props.lenis.resize();
+  }, 2000);
     };
 
     const setMenuDiff = () => {
