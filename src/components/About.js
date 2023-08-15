@@ -54,11 +54,7 @@ const About = (props) => {
         <h4>Feb. 2019 – June 2019</h4>
         <p>Course in the field of computer science and physics made by Warsaw Higher School of Computer Science, interdisciplinary classes with a group project - a website describing particular celestial bodies.</p>
       </article>
-      <article>
-        <h3>13:30 AM</h3>
-        <p>Yeah, but your scientists were so preoccupied with whether or not they could, they didn't stop to think if they should. </p>
-        <img src="https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg" alt="Black and white photo of a lake"/>
-    </article>
+      
         <article>
         <h3>14:30 AM</h3>
         <p>Just my luck, no ice. God help us, we're in the hands of engineers. </p>
@@ -72,8 +68,17 @@ const About = (props) => {
         <p>God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs. </p>
       </article>
       <article>
-        <h3>17:30 AM</h3>
-        <p>What do they got in there? King Kong?  </p>
+        <h3>13:30 AM</h3>
+        <p>Yeah, but your scientists were so preoccupied with whether or not they could, they didn't stop to think if they should. </p>
+        <img src="https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg" alt="Black and white photo of a lake"/>
+    </article>
+      <article>
+        <h3>Full Stack Web Application for Student Forum Website</h3>
+        <h4>May 2023</h4>
+        <p>I created a full stack web application using React and Express.js fully developed and tested locally.
+             The application is a forum website for students to share their ideas and thoughts.
+              I used docker to create images of both front and back end and composed them together.
+               I implemented features such as user password hashing for mysql database, post creation, reacting, and commenting.  </p>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg/1200px-Eiffel_tower_at_Exposition_Universelle%2C_Paris%2C_1889.jpg" alt="Black and White Eiffel Tower"/>
         </article>
         </div>
