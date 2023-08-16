@@ -2,7 +2,7 @@
   "name": "3d",
   "homepage": "https://github.com/maksderylo/portf",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@portabletext/react": "^3.0.4",
     "@studio-freight/lenis": "^1.0.19",
