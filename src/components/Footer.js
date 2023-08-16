@@ -9,6 +9,7 @@ const Footer = () => {
 
 
     return(
+        <>
         <footer>
             <div id='footmenu'>
             <p>Made by maksderylo</p>
@@ -20,9 +21,9 @@ const Footer = () => {
           <li><a href='mailto:derylomaksoff@gmail.com'>Mail</a></li>
         </ul>
         </div>
-
-
         </footer>
+        <div id='footerspace'></div>
+        </>
 
     );
 

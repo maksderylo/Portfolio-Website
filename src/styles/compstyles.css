@@ -565,10 +565,15 @@
 
   /*Footer*/
   footer{
+    position: absolute;
+    bottom: 0px;
     width: 100%;
     height: 80px;
   }
-
+  #footerspace{
+    width: 100%;
+    height: 80px;
+  }
 
   .textbotmen{
     left: 10px;

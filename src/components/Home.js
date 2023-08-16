@@ -339,7 +339,7 @@ const Home = (props) => {
                     <h1>Further Explore!</h1>
                     <ul>
                         <li><p onClick={() => navHome('/about')}>Work</p><div className="behind"></div></li>
-                        <li><p onClick={() => navHome('/contact')}>Blog!</p><div className="behind"></div></li>
+                        <li><p onClick={() => navHome('/blog')}>Blog!</p><div className="behind"></div></li>
                     </ul>
                     
                 </div>
