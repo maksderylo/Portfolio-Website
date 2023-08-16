@@ -137,7 +137,7 @@ const Navigation =forwardRef((props, ref) =>{
             <ul>
                 <li><p className={window.location.pathname==="/" ? "active" : ""} onClick={() => navHome('/')}>Home</p></li>
                 <li><p className={window.location.pathname==="/about" ? "active" : ""} onClick={() => navHome('/about')}>About</p></li>
-                <li><p className={window.location.pathname==="/contact" ? "active" : ""} onClick={() => navHome('/contact')}>Contact</p></li>
+                <li><p className={window.location.pathname==="/contact" ? "active" : ""} onClick={() => navHome('/blog')}>Contact</p></li>
             </ul>
         <div className='textbotmenu'><ul>
           <li><a href="https://github.com/maksderylo">GitHub,</a></li>

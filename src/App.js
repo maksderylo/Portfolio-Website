@@ -4,14 +4,15 @@ import {React, useState, useEffect, useRef} from "react";
 import Home from './components/Home'
 import Navigation from './components/Navigation';
 import About from './components/About';
-import Footer from './components/Footer'/*
-import Courses from './components/Courses';*/
-import Contact from './components/Contact'
+import Footer from './components/Footer'
 import {Routes, Route} from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import { motion} from "framer-motion";
 import LogoVid from './logovid.mp4';
 import LogoLoop from './logoloop.mp4';
+import Blog from './components/Blog';
+import Blogpost from './components/Blogpost';
+
 
 const App = () =>{
   const [intro, setIntro] = useState(true);
@@ -120,7 +121,8 @@ const App = () =>{
       <Routes>
           <Route path="/" element={<Home doSomething={doSomething} setColorLight={setColorLight} setColorDark={setColorDark}/>}/>
           <Route  path="/about" element={<About setColorLight={setColorLight}/>} />
-          <Route path="/contact" element={<Contact/>} />
+          <Route path="/blog" element={<Blog/>}/>
+          <Route path="/blog/:slug" element={<Blogpost />}/>
       </Routes>
       <Footer />
     </div>
