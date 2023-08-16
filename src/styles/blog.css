@@ -1,0 +1,78 @@
+@font-face{
+    font-family: 'hsansreg';
+    src: url(font/HumanSans-Regular.otf);
+  }
+  @font-face{
+    font-family: 'hsansligh';
+    src: url(font/HumanSans-Light.otf);
+  }
+  @font-face{
+    font-family: 'hsanselight';
+    src: url(font/HumanSans-ExtraLight.otf);
+  }
+  @font-face{
+    font-family: 'hsansbold';
+    src: url(font/HumanSans-Bold.otf);
+  }
+
+
+
+#introblog{ 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 0px;
+    font-family: sans-serif; 
+    border-bottom: 1px solid #333;
+}
+
+#introblog h1{ 
+    font-family: 'hsansbold';
+    font-size: max(min(5.5vw,70px),40px);
+     color: #333;
+    }
+
+#introblog h2{ 
+    font-family: 'hsansligh';
+    font-size: max(min(1.2vw,25px),20px);
+    color: #333;
+
+}
+
+.posts{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: auto;
+    padding: 20px;
+}
+
+.post{
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #333;
+    font-family: 'hsansbold';
+}
+
+.readtime{
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    font-family: 'hsansreg';
+    border: 1px solid red;
+}
+
+.postdate{
+    font-family: 'hsansreg';
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.views{
+    font-family: 'hsansreg';
+}
