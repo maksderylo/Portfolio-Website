@@ -70,7 +70,7 @@ video{
   position: absolute;
   left: 0px;
   width: 100vw;
-  top: -20vh;
+  top: 0vh;
   max-height: 100vh;
 }
 

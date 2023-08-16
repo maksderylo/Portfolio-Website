@@ -39,12 +39,10 @@ const Blog = (props) => {
         })
         .catch(console.error);
 
-        countapi.visits().then((result) => {
-            console.log(result.value);
-            console.log("sasa");
-          });
+        
 
     }, []);
+
 
     
 
