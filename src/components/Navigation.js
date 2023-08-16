@@ -4,6 +4,7 @@ import {React} from 'react';
 import {useNavigate} from 'react-router-dom';
 import logo from './svg/logo.png';
 import logodark from './svg/logodark.png';
+import { useLocation } from 'react-router-dom';
 
 const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -76,6 +77,9 @@ const Navigation =forwardRef((props, ref) =>{
         setMenu(menuState === "closed" ? "open" : "closed"); 
     }
 
+    const location = useLocation();
+
+
     return (
         <>
         <motion.div className='menu'
@@ -135,9 +139,9 @@ const Navigation =forwardRef((props, ref) =>{
         
     </motion.svg>
             <ul>
-                <li><p className={window.location.pathname==="/" ? "active" : ""} onClick={() => navHome('/')}>Home</p></li>
-                <li><p className={window.location.pathname==="/about" ? "active" : ""} onClick={() => navHome('/about')}>Work</p></li>
-                <li><p className={window.location.pathname==="/blog" ? "active" : ""} onClick={() => navHome('/blog')}>Blog</p></li>
+                <li><p className={location.pathname==="/" ? "active" : ""} onClick={() => navHome('/')}>Home</p></li>
+                <li><p className={location.pathname==="/about" ? "active" : ""} onClick={() => navHome('/about')}>Work</p></li>
+                <li><p className={location.pathname==="/blog" ? "active" : ""} onClick={() => navHome('/blog')}>Blog</p></li>
             </ul>
         <div className='textbotmenu'><ul>
           <li><a href="https://github.com/maksderylo">GitHub,</a></li>
