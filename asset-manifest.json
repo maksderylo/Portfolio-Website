@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/maksderylo/portf/static/css/main.4d03d2cf.css",
+    "main.js": "/maksderylo/portf/static/js/main.4cd104ec.js",
+    "static/js/726.cdfc3907.chunk.js": "/maksderylo/portf/static/js/726.cdfc3907.chunk.js",
+    "static/js/787.0de45551.chunk.js": "/maksderylo/portf/static/js/787.0de45551.chunk.js",
+    "static/media/me.jpg": "/maksderylo/portf/static/media/me.5b5be2198fcca689bf55.jpg",
+    "static/media/aboutintr.jpg": "/maksderylo/portf/static/media/aboutintr.0703b8b3bf7a697f546d.jpg",
+    "static/media/logovid.mp4": "/maksderylo/portf/static/media/logovid.24a4d31ff8444c29c4a4.mp4",
+    "static/media/RobotoSlab.ttf": "/maksderylo/portf/static/media/RobotoSlab.677d14da87bce007211b.ttf",
+    "static/media/studyrum.png": "/maksderylo/portf/static/media/studyrum.6abe0b1dc0272c79fb3f.png",
+    "static/media/Handjet-ExtraLight.ttf": "/maksderylo/portf/static/media/Handjet-ExtraLight.5d4b174acbe7ec46febb.ttf",
+    "static/media/logoloop.mp4": "/maksderylo/portf/static/media/logoloop.5bfc3d3fa05dff0904f1.mp4",
+    "static/media/AmaticSC-Bold.ttf": "/maksderylo/portf/static/media/AmaticSC-Bold.f12c1d887cda2131ac83.ttf",
+    "static/media/HumanSans-Bold.otf": "/maksderylo/portf/static/media/HumanSans-Bold.754f464dbfb2b0eef39e.otf",
+    "static/media/HumanSans-Light.otf": "/maksderylo/portf/static/media/HumanSans-Light.ffe6cd5f23ee77049078.otf",
+    "static/media/HumanSans-ExtraLight.otf": "/maksderylo/portf/static/media/HumanSans-ExtraLight.af2fb03ad2d0b33228dc.otf",
+    "static/media/Manrope-Medium.ttf": "/maksderylo/portf/static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
+    "static/media/HumanSans-Regular.otf": "/maksderylo/portf/static/media/HumanSans-Regular.afcf6686858c7096c96f.otf",
+    "static/media/Manrope-Light.ttf": "/maksderylo/portf/static/media/Manrope-Light.2bf511c25636c7d7a4ce.ttf",
+    "static/media/Objectivity-Black.ttf": "/maksderylo/portf/static/media/Objectivity-Black.d1581aeef2a59214c454.ttf",
+    "static/media/logo.png": "/maksderylo/portf/static/media/logo.479d19e584d6c2d08e47.png",
+    "static/media/logodark.png": "/maksderylo/portf/static/media/logodark.ebe5dfb578da9141dc3f.png",
+    "static/media/laptop.svg": "/maksderylo/portf/static/media/laptop.59cbad1f0d1803af2baae20cfbe70d59.svg",
+    "static/media/headphones.svg": "/maksderylo/portf/static/media/headphones.41de98e02cd6eeb6312561767739aada.svg",
+    "static/media/travel.svg": "/maksderylo/portf/static/media/travel.99519c54c7dec171aa526b184260f8cd.svg",
+    "static/media/server.svg": "/maksderylo/portf/static/media/server.2aa6c5b58cd1f14113e807b90443a544.svg",
+    "index.html": "/maksderylo/portf/index.html",
+    "main.4d03d2cf.css.map": "/maksderylo/portf/static/css/main.4d03d2cf.css.map",
+    "main.4cd104ec.js.map": "/maksderylo/portf/static/js/main.4cd104ec.js.map",
+    "726.cdfc3907.chunk.js.map": "/maksderylo/portf/static/js/726.cdfc3907.chunk.js.map",
+    "787.0de45551.chunk.js.map": "/maksderylo/portf/static/js/787.0de45551.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d03d2cf.css",
+    "static/js/main.4cd104ec.js"
+  ]
+}
