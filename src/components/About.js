@@ -13,11 +13,7 @@ const About = (props) => {
     const setColorLight = () =>{
         props.setColorLight();
     }
-    console.log("about");
     setColorLight();
-    useEffect(() =>{
-        
-    },[])
 
 
     return (

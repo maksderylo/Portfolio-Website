@@ -121,8 +121,8 @@ const App = () =>{
       <Routes>
           <Route path="/" element={<Home doSomething={doSomething} setColorLight={setColorLight} setColorDark={setColorDark}/>}/>
           <Route  path="/about" element={<About setColorLight={setColorLight}/>} />
-          <Route path="/blog" element={<Blog/>}/>
-          <Route path="/blog/:slug" element={<Blogpost />}/>
+          <Route path="/blog" element={<Blog setColorLight={setColorLight}/>}/>
+          <Route path="/blog/:slug" element={<Blogpost setColorLight={setColorLight}/>}/>
       </Routes>
       <Footer />
     </div>

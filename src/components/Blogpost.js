@@ -5,7 +5,12 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
-const Blogpost = () => {
+const Blogpost = (props) => {
+    const setColorLight = () =>{
+        props.setColorLight();
+    }
+    setColorLight();
+
     const [blogpost, setBlogpost] = useState([]);
     const {slug} =useParams();
 

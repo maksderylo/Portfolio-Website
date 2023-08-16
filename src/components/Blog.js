@@ -7,7 +7,12 @@ import '../styles/blog.css'
 import countapi from 'countapi-js';
 
 
-const Blog = () => {
+const Blog = (props) => {
+    const setColorLight = () =>{
+        props.setColorLight();
+    }
+    setColorLight();
+
     const [stories, setStories] = useState([]);
 
     useEffect(()=>{
