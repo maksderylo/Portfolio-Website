@@ -56,7 +56,7 @@ const Blog = () => {
         {stories.map((story) => (
             <Link className='post' to={`/blog/${story.slug.current}`} key={story.slug.current}>
                 <h1 className='blogtitle'>{story.title}</h1>
-                <p className='views'>TODO views</p>
+                <p className='views'>TODO views...</p>
                 <p className='postdate'>{format(new Date(story.publishedAt), "dd MMMM yyyy")}</p>
                 <p className='readtime'>Read time: {story.readtime} minutes</p>
             </Link>
