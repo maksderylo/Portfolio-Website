@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/maksderylo/portf/static/css/main.4d03d2cf.css",
-    "main.js": "/maksderylo/portf/static/js/main.d7ad4f4a.js",
+    "main.js": "/maksderylo/portf/static/js/main.3fbdb2b5.js",
     "static/js/726.cdfc3907.chunk.js": "/maksderylo/portf/static/js/726.cdfc3907.chunk.js",
     "static/js/787.0de45551.chunk.js": "/maksderylo/portf/static/js/787.0de45551.chunk.js",
     "static/media/me.jpg": "/maksderylo/portf/static/media/me.5b5be2198fcca689bf55.jpg",
@@ -27,12 +27,12 @@
     "static/media/server.svg": "/maksderylo/portf/static/media/server.2aa6c5b58cd1f14113e807b90443a544.svg",
     "index.html": "/maksderylo/portf/index.html",
     "main.4d03d2cf.css.map": "/maksderylo/portf/static/css/main.4d03d2cf.css.map",
-    "main.d7ad4f4a.js.map": "/maksderylo/portf/static/js/main.d7ad4f4a.js.map",
+    "main.3fbdb2b5.js.map": "/maksderylo/portf/static/js/main.3fbdb2b5.js.map",
     "726.cdfc3907.chunk.js.map": "/maksderylo/portf/static/js/726.cdfc3907.chunk.js.map",
     "787.0de45551.chunk.js.map": "/maksderylo/portf/static/js/787.0de45551.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4d03d2cf.css",
-    "static/js/main.d7ad4f4a.js"
+    "static/js/main.3fbdb2b5.js"
   ]
 }
