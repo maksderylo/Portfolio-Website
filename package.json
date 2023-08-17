@@ -5,6 +5,7 @@
   "private": false,
   "dependencies": {
     "@portabletext/react": "^3.0.4",
+    "@sanity/block-content-to-react": "^3.0.0",
     "@studio-freight/lenis": "^1.0.19",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

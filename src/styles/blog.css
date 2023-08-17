@@ -59,6 +59,10 @@
     font-family: 'hsansbold';
 }
 
+.blogtitle{
+    margin-right: 150px;
+}
+
 .readtime{
     position: absolute;
     top: 20px;
@@ -70,9 +74,10 @@
 .postdate{
     font-family: 'hsansreg';
     position: absolute;
-    bottom: 0px;
+    bottom: -18px;
     right: 0px;
 }
-.views{
+.postbody{
     font-family: 'hsansreg';
+    margin-right: 130px;
 }

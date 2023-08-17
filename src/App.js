@@ -12,16 +12,30 @@ import LogoVid from './logovid.mp4';
 import LogoLoop from './logoloop.mp4';
 import Blog from './components/Blog';
 import Blogpost from './components/Blogpost';
+import { useLocation } from 'react-router-dom';
 
 
 const App = () =>{
   const [intro, setIntro] = useState(true);
+  const location = useLocation();
+
 
   useEffect(() =>{
+    if(location.pathname.startsWith('/blog/')){
+        console.log('BLOOG');
+        setIntro(false);
+        setIsAnimated(true);
+      setShowParticles(false);
+      setShowWelcome(false);
+    }
+    else{
+
     
+
     setTimeout(()=>{
       setIntro(false);
     },4200)
+  }
 },[]);
 
   //colormode
@@ -111,9 +125,7 @@ const App = () =>{
         transition={{ type: "tween", stiffness: 100, damping: 10, duration: 1.5, delay: 0.5, }}>
         </motion.div>
         </div>
-        
       </div>
-        
     </motion.div>)}
     <motion.div id='body2'>
     <div className={colormode}>

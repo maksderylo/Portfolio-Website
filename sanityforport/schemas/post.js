@@ -1,5 +1,7 @@
 import {defineField, defineType} from 'sanity'
 
+
+
 export default defineType({
   name: 'post',
   title: 'Post',
@@ -55,7 +57,6 @@ export default defineType({
       type: 'blockContent',
     }),
   ],
-
   preview: {
     select: {
       title: 'title',
