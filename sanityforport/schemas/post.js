@@ -13,6 +13,11 @@ const post = {
       type: 'string',
     },
     {
+      name: 'readtime',
+      title: 'Readtime',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',

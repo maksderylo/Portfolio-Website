@@ -114,57 +114,55 @@ article img{
     font-size: small;
   }
 
+  article p{
+    font-family: 'Karla', sans-serif;
+    font-size: 0.95rem;
+    color: #4d4d4d;
+  }
 
   article{
     position: relative;
-    p{
-      font-family: 'Karla', sans-serif;
-      font-size: 0.95rem;
-      color: #c8c8c8;
-    }
     padding-bottom: 1rem;
     border-left: 1px solid #4d4d4d;
     border-bottom: 0;
     padding-left: 1rem;
-   
-   
+  }
+
+  #a7 {
+    margin-bottom: 1rem;
+  }
   
-    &:nth-child(7){
-        margin-bottom: 1rem;
-      @media screen and (min-width: 1025px){
-        grid-area: 1/3/4/4;  
-      }
-      @media screen and (min-width: 600px) and (max-width: 1024px){
-        grid-area: 1/2/4/3;
-      }
-    }
+  #a7 {
+    border-left: 1px solid #4d4d4d;
+    padding-right: 1rem;
+  }
   
-    &:nth-child(8){
-      @media screen and (min-width: 1025px){
-        grid-area: 1/4/4/4;
-      }
-      @media screen and (min-width: 600px) and (max-width: 1024px){
-        grid-area: 4/2/8/3;
-      }
-    }
+  #a7 {
+    padding-bottom: 1rem;
+    border-bottom: 0;
+    padding-left: 1rem;
+  }
   
-    &:nth-child(3n+3){
-      @media screen and (min-width: 1025px){
-        border-bottom: 0;
-      }   
+  #a7 {
+    @media screen and (min-width: 1025px){
+      grid-area: 1/3/4/4;  
     }
-    &:nth-child(7){
-      @media screen and (min-width: 1025px){
-        border-left: 1px solid #4d4d4d;
-        padding-right: 1rem;
-      }
+    @media screen and (min-width: 600px) and (max-width: 1024px){
+      grid-area: 1/2/4/3;
+    }
+  }
   
+  #a8 {
+    @media screen and (min-width: 1025px){
+      grid-area: 1/4/4/4;
     }
-    &:nth-child(7){
-      @media screen and (min-width: 600px){
-        padding-bottom: 1rem;
-        border-bottom: 0;
-        padding-left: 1rem;
-      }
+    @media screen and (min-width: 600px) and (max-width: 1024px){
+      grid-area: 4/2/8/3;
     }
+  }
+  
+  #a3 {
+    @media screen and (min-width: 1025px){
+      border-bottom: 0;
+    }   
   }
