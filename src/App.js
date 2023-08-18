@@ -21,7 +21,7 @@ const App = () =>{
 
 
   useEffect(() =>{
-    if(location.pathname.startsWith('/blog/')){
+    if(location.pathname.startsWith('/blog')){
         console.log('BLOOG');
         setIntro(false);
         setIsAnimated(true);

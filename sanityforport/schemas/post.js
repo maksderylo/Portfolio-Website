@@ -1,5 +1,6 @@
 import { type } from "@testing-library/user-event/dist/type"
 import { validateBasePaths } from "sanity"
+import author from "./author"
 
 const post = {
   title: 'Post',
@@ -20,6 +21,11 @@ const post = {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+    },
+    {
+      name: 'mainImage',
+      title: 'Main Image',
+      type: 'image'
     },
     {
       name: 'body',

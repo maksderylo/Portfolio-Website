@@ -1,12 +1,11 @@
 import React from 'react';
 import {client} from "./lib/client";
-import {format} from "date-fns";
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { PortableText } from '@portabletext/react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import urlBuilder from '@sanity/image-url'
-import {getImageDimensions} from '@sanity/asset-utils'
+import { Link } from 'react-router-dom';
+import {format} from 'date-fns';
 
 const serializers = {
     types: {
@@ -15,28 +14,11 @@ const serializers = {
         {value.code}
       </SyntaxHighlighter>
         ),
-        image: ({value, isInline}) => {
-            const {width, height} = getImageDimensions(value)
+        image: props => {
             return (
-              <img
-                src={urlBuilder()
-                  .image(value)
-                  .width(isInline ? 100 : 800)
-                  .fit('max')
-                  .auto('format')
-                  .url()}
-                alt={value.alt || ' '}
-                style={{
-                  // Display alongside text if image appears inside a block text span
-                  display: isInline ? 'inline-block' : 'block',
-          
-                  // Avoid jumping around with aspect-ratio CSS property
-                  aspectRatio: width / height,
-                }}
-              />
+                <pre>{JSON.stringify(props,null, 2)}</pre>
             )
           }
-    
     },
     
   }
@@ -57,11 +39,11 @@ const Blogpost = (props) => {
         client.fetch(
         `*[slug.current =="${slug}"] {
             title,
+            publishedAt,
             readtime,
             slug,
             body,
             myCodeField,
-            publishedAt,
             mainImage {
                 asset -> {
                     _id,
@@ -74,7 +56,7 @@ const Blogpost = (props) => {
         )
         .then((data) => {
             setBlogpost(data[0]);
-            console.log(blogpost.body);
+            console.log(blogpost.readtime);
         })
         .catch(console.error);
     }, []);
@@ -86,11 +68,15 @@ const Blogpost = (props) => {
 
     return(
         <>
-        {blogpost && <section>
+        
+        {blogpost && <section className='spostbody'>
+        <div className='allpost'><Link to="/blog"><p >See all posts!</p></Link></div>
             <h1>{blogpost.title}</h1>
+            {blogpost.mainImage && <img className='mainimg' src={blogpost.mainImage.asset.url} alt='img'></img>}
             <div className='blogpostbody'>
             <PortableText value={blogpost.body} components={serializers}/>
             </div>
+            
             </section>}
         </>
     );

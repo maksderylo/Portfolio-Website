@@ -67,17 +67,17 @@ code {
 
 
 video{
-  position: absolute;
+  position: relative;
   left: 0px;
   width: 100vw;
   top: 0vh;
-  max-height: 100vh;
+  max-height: 70vh;
 }
 
 #open{
   position: absolute;
   z-index: 15;
-  top: 60%;
+  top: 70%;
   font-size: large;
   font-family: 'amatic';
   left: 50%;

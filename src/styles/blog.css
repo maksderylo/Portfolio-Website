@@ -81,3 +81,43 @@
     font-family: 'hsansreg';
     margin-right: 130px;
 }
+
+.spostbody{
+    font-family: 'hsansreg';
+    position: relative;
+    margin: auto;
+    max-width: 1000px;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+.spostbody h1{
+    font-size: 60px;
+}
+
+.spostbody a{
+    text-decoration: none;
+    color: #CC3A39;
+}
+
+.blogpostbody{
+    font-size: 20px;
+}
+
+.mainimg{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.allpost{
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    
+}
+.allpost p{
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+}
