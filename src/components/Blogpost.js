@@ -7,7 +7,7 @@ import { PortableText } from '@portabletext/react';
 
 const serializers = {
     types: {
-      code: props => <pre>{JSON.stringify(props, null, 2)}</pre>
+      code: props => <pre><code>{props.value.code}</code></pre>
     }
   }
 
@@ -59,7 +59,7 @@ const Blogpost = (props) => {
         {blogpost && <section>
             <h1>{blogpost.title}</h1>
             <div className='blogpostbody'>
-            <PortableText value={blogpost.body} serializers={serializers}/>
+            <PortableText value={blogpost.body} components={serializers}/>
             </div>
             </section>}
         </>
