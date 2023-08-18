@@ -4,27 +4,13 @@ import {format} from "date-fns";
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { PortableText } from '@portabletext/react';
-// RichTextComponents.tsx
-import Refractor from "react-refractor";
-// Load any languages you want to use from `refractor`
-import js from "refractor/lang/javascript";
-import typescript from "refractor/lang/typescript";
-import tsx from "refractor/lang/tsx";
 
-// Barebones lazy-loaded image component
-Refractor.registerLanguage(js);
-Refractor.registerLanguage(typescript);
-Refractor.registerLanguage(tsx);
-
-const RichTextComponents = {
+const serializers = {
     types: {
-      myCodeField: ({ value }) => {
-          return (
-            <Refractor language={value.language} value={value.code} />
-          );
-      },
-    },
+      code: props => <pre>{JSON.stringify(props, null, 2)}</pre>
+    }
   }
+
 
 const Blogpost = (props) => {
     const setColorLight = () =>{
@@ -44,6 +30,7 @@ const Blogpost = (props) => {
             readtime,
             slug,
             body,
+            myCodeField,
             publishedAt,
             mainImage {
                 asset -> {
@@ -72,7 +59,7 @@ const Blogpost = (props) => {
         {blogpost && <section>
             <h1>{blogpost.title}</h1>
             <div className='blogpostbody'>
-            <PortableText value={blogpost.body} components={RichTextComponents}/>
+            <PortableText value={blogpost.body} serializers={serializers}/>
             </div>
             </section>}
         </>

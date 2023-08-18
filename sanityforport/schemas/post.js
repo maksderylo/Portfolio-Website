@@ -1,104 +1,58 @@
-import {defineField, defineType} from 'sanity'
+import { type } from "@testing-library/user-event/dist/type"
+import { validateBasePaths } from "sanity"
 
-
-
-export default defineType({
-  name: 'post',
+const post = {
   title: 'Post',
+  name: 'post',
   type: 'document',
   fields: [
-    defineField({
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
-    }),
-    defineField({
-      name: 'readtime',
-      title: 'Read time',
-      type: 'string',
-    }),
-    defineField({
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-    }),
-    defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
-    }),
-    defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    }),
-    defineField({
+    },
+    {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
-    }),
-    defineField({
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'array',
-      decorators: [
-        {title: 'Strong', value: 'strong'}, 
-        {title: 'Emphasis', value: 'em'},
-        {title: "Underline", value: "underline" },
-        {title: "Strike", value: "strike-through" }
-      ],
       of: [
         {
-          type: 'block'
-        },
-        {
-          type: 'image',
-          fields: [
-            {
-              type: 'text',
-              name: 'alt',
-              title: 'Alternative text',
-              description: `Some of your visitors cannot see images, 
-                be they blind, color-blind, low-sighted; 
-                alternative text is of great help for those 
-                people that can rely on it to have a good idea of 
-                what\'s on your page.`,
-              options: {
-                isHighlighted: true
-              }
-            }
-          ]
-        },
-        {
-          type: 'code'
-        },
-      ]
-    }),
-  ],
+        type: 'block',
+        title: 'Block',
+        styles: [
+          {title: 'Normal', value: 'normal'},
+          {title: 'H1', value: 'h1'},
+          {title: 'H2', value: 'h2'},
+          {title: 'H3', value: 'h3'},
+        ],
+        lists: [{title: 'Bullet', value: 'bullet'}, {title: 'Numbered', value: 'numbered'}],
 
+        marks: {
+
+        }
+        },
+        {
+          type: 'code',
+          title: 'Code'
+        }
+      ]
+    },
+  ],
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
-    },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
     },
   },
-})
+}
+
+export default post
