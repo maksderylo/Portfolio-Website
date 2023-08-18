@@ -5,7 +5,8 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { PortableText } from '@portabletext/react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-
+import urlBuilder from '@sanity/image-url'
+import {getImageDimensions} from '@sanity/asset-utils'
 
 const serializers = {
     types: {
@@ -13,9 +14,31 @@ const serializers = {
         <SyntaxHighlighter language={value.language}>
         {value.code}
       </SyntaxHighlighter>
-      
-        )
-    }
+        ),
+        image: ({value, isInline}) => {
+            const {width, height} = getImageDimensions(value)
+            return (
+              <img
+                src={urlBuilder()
+                  .image(value)
+                  .width(isInline ? 100 : 800)
+                  .fit('max')
+                  .auto('format')
+                  .url()}
+                alt={value.alt || ' '}
+                style={{
+                  // Display alongside text if image appears inside a block text span
+                  display: isInline ? 'inline-block' : 'block',
+          
+                  // Avoid jumping around with aspect-ratio CSS property
+                  aspectRatio: width / height,
+                }}
+              />
+            )
+          }
+    
+    },
+    
   }
 
 

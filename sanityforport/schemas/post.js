@@ -44,6 +44,10 @@ const post = {
         {
           type: 'code',
           title: 'Code'
+        },
+        {
+          type: 'image',
+          title: 'Image'
         }
       ]
     },
