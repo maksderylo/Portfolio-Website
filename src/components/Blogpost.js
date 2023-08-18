@@ -4,55 +4,10 @@ import {format} from "date-fns";
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { PortableText } from '@portabletext/react';
-import urlBuilder from '@sanity/image-url'
-import {getImageDimensions} from '@sanity/asset-utils'
 
 
-const SampleImageComponent = ({value, isInline}) => {
-    const {width, height} = getImageDimensions(value)
-    return (
-      <img
-        src={urlBuilder()
-          .image(value)
-          .width(isInline ? 100 : 800)
-          .fit('max')
-          .auto('format')
-          .url()}
-        alt={value.alt || ' '}
-        loading="lazy"
-        style={{
-          // Display alongside text if image appears inside a block text span
-          display: isInline ? 'inline-block' : 'block',
-  
-          // Avoid jumping around with aspect-ratio CSS property
-          aspectRatio: width / height,
-        }}
-      />
-    )
-  }
+// Barebones lazy-loaded image component
 
-const myPortableTextComponents = {
-    types: {
-      image: SampleImageComponent,
-      callToAction: ({value, isInline}) =>
-        isInline ? (
-          <a href={value.url}>{value.text}</a>
-        ) : (
-          <div className="callToAction">{value.text}</div>
-        ),
-    },
-  
-    marks: {
-      link: ({children, value}) => {
-        const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
-        return (
-          <a href={value.href} rel={rel}>
-            {children}
-          </a>
-        )
-      },
-    },
-  }
 
 const Blogpost = (props) => {
     const setColorLight = () =>{
@@ -100,7 +55,7 @@ const Blogpost = (props) => {
         {blogpost && <section>
             <h1>{blogpost.title}</h1>
             <div className='blogpostbody'>
-                <PortableText value={blogpost.body} components={myPortableTextComponents}/>
+            <PortableText value={blogpost.body}/>
             </div>
             </section>}
         </>
