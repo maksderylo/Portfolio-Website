@@ -91,10 +91,12 @@ const About = (props) => {
       
         </div>
         </section>
-
-
-
 </div>
+<div id='languages'>
+  <h1>Known languages</h1>
+  <p>Polish (Native) | English (C1 IELTS certificate) | German (B1 self proclaimed) | Dutch (A1 Currently studying)</p>
+</div>
+<div className='smallspace'></div>
     </div>
     );
 }

@@ -67,7 +67,7 @@ code {
 
 
 video{
-  position: relative;
+  position: absolute;
   left: 0px;
   width: 100vw;
   top: 0vh;
