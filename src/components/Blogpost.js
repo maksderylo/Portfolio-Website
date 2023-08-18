@@ -4,10 +4,17 @@ import {format} from "date-fns";
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { PortableText } from '@portabletext/react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+
 
 const serializers = {
     types: {
-      code: props => <pre><code>{props.value.code}</code></pre>
+      code: ({value = {}}) => (
+        <SyntaxHighlighter language={value.language}>
+        {value.code}
+      </SyntaxHighlighter>
+      
+        )
     }
   }
 
