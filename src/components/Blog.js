@@ -8,6 +8,12 @@ import '../styles/blog.css'
 
 
 const Blog = (props) => {
+
+    setTimeout(function(){
+        window.dispatchEvent(new Event('resize'));
+        console.log("resized")
+    }, 1000);
+
     const setColorLight = () =>{
         props.setColorLight();
     }

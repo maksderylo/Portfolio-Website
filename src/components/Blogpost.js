@@ -29,6 +29,10 @@ const Blogpost = (props) => {
         props.setColorLight();
     }
     
+    setTimeout(function(){
+        window.dispatchEvent(new Event('resize'));
+        console.log("resized")
+    }, 1000);
 
     const [blogpost, setBlogpost] = useState([]);
     const {slug} =useParams();
