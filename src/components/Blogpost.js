@@ -32,7 +32,7 @@ const Blogpost = (props) => {
     setTimeout(function(){
         window.dispatchEvent(new Event('resize'));
         console.log("resized")
-    }, 1000);
+    }, 1500);
 
     const [blogpost, setBlogpost] = useState([]);
     const {slug} =useParams();

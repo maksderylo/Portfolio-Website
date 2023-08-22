@@ -68,7 +68,6 @@
     top: 20px;
     right: 0px;
     font-family: 'hsansreg';
-    border: 1px solid red;
 }
 
 .postdate{
@@ -87,7 +86,6 @@
     position: relative;
     margin: auto;
     max-width: 1000px;
-    border: 1px solid red;
     padding: 10px;
 }
 
