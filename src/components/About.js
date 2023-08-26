@@ -25,7 +25,9 @@ const About = (props) => {
         </div>
         <div className='forimg'>
                 <img id='aboutintr' src={aboutintr} alt='image of me'></img>
+                
         </div>
+        <h1>image to be made</h1>
         <div className='smallspace'></div>
         
             
@@ -86,7 +88,7 @@ const About = (props) => {
         <h4>June 2023 - current</h4>
         <p>I worked with libraries such as React.js and Three.js to create web applications. I utilized multiple components and optimized the application for better performance. I also focused on UI/UX design and tested different styling.
              Additionally, I started a personal blog where I provide tutorials in software engineering, mathematics, and overall computer science concepts. </p>
-        <img src="https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg" alt="Black and white photo of a lake"/>
+        <img src="" alt="put in image as well"/>
     </article>
       
         </div>

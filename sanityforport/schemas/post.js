@@ -33,6 +33,12 @@ const post = {
       type: 'image'
     },
     {
+      name: 'postauthor',
+      title: 'Author',
+      type: 'reference',
+      to: [{type: 'author'}],
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'array',

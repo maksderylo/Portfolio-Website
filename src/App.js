@@ -29,9 +29,6 @@ const App = () =>{
       setShowWelcome(false);
     }
     else{
-
-    
-
     setTimeout(()=>{
       setIntro(false);
     },4200)
@@ -55,15 +52,11 @@ const App = () =>{
     lenis.raf(time)
     requestAnimationFrame(raf)
   };
-
     useEffect(() =>{
-      
-
       requestAnimationFrame(raf);
     }, [raf])
 
     const childRef = useRef();
-
      function doSomething(where){
       childRef.current.doSomething(where);
       lenis.resize();
@@ -74,7 +67,6 @@ const App = () =>{
     const [isAnimated, setIsAnimated] = useState(false);
 
   const handleClick = () => {
-    
     setIsAnimated(true);
     setTimeout(()=>{
       setShowParticles(false);
@@ -82,7 +74,6 @@ const App = () =>{
     setTimeout(()=>{
       setShowWelcome(false);
     },3000)
-    
   };
 
 
