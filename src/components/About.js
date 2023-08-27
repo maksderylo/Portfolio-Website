@@ -83,7 +83,7 @@ const About = (props) => {
         <p>I created a front and back end full stack web application using React and Express.js fully developed and tested locally.
              The application is a forum website for students to share their ideas and thoughts.
               I used docker to create images of both front and back end and composed them together.
-               I implemented features such as user password hashing for mysql database, post creation, reacting, and commenting.  </p>
+               I implemented features such as user password hashing for mysql database, post creation, reacting, and commenting. <a href='https://github.com/maksderylo/studyrum'>github repo</a> </p>
         <img src={studyrum} alt="studyrum"/>
         </article>
       <article id='a8'>
