@@ -70,9 +70,9 @@ const Blog = (props) => {
             <Link className='post' to={`/blog/${story.slug.current}`} key={story.slug.current}>
                 <h1 className='blogtitle'>{story.title}</h1>
                 <p className='postbody'>{`${story.body[0].children[0].text.substring(0, 200)}...`}</p>
-                <p className='postdate'>{format(new Date(story.publishedAt), "dd MMMM yyyy")}</p>
+                <p className='postdate'>{format(new Date(story.publishedAt), "dd MMMM yyyy")} - {story.name}</p>
                 <p className='readtime'>Read time: {story.readtime} minutes</p>
-                <p>{story.name}</p>
+                <p></p>
             </Link>
         ))}
         </div>

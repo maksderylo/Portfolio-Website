@@ -5,15 +5,18 @@ import studyrum from './svg/studyrum.png'
 
 const About = (props) => {
 
+  useEffect(()=>{
     setTimeout(function(){
-        window.dispatchEvent(new Event('resize'));
-        console.log("resized")
-    }, 1500);
+      window.dispatchEvent(new Event('resize'));
+      console.log("resized")
+  }, 1500);
 
-    const setColorLight = () =>{
-        props.setColorLight();
-    }
-    setColorLight();
+  const setColorLight = () =>{
+      props.setColorLight();
+  }
+  setColorLight();
+  },[])
+    
 
 
     return (
