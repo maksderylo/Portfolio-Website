@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import '../styles/about.css'
 import aboutintr from './svg/aboutintr.jpg'
 import studyrum from './svg/studyrum.png'
+import vscode from './svg/vscode.png'
 
 const About = (props) => {
 
@@ -91,7 +92,7 @@ const About = (props) => {
         <h4>June 2023 - current</h4>
         <p>I worked with libraries such as React.js and Three.js to create web applications. I utilized multiple components and optimized the application for better performance. I also focused on UI/UX design and tested different styling.
              Additionally, I started a personal blog where I provide tutorials in software engineering, mathematics, and overall computer science concepts. </p>
-        <img src="" alt="put in image as well"/>
+        <img src={vscode} alt="vs"/>
     </article>
       
         </div>
