@@ -26,29 +26,30 @@ const Blog = (props) => {
 
     useEffect(()=>{
         client.fetch(
-        `*[_type =="post"] {
-            title,
-            readtime,
-            slug,
-            body,
-            publishedAt,
-            mainImage {
-                asset -> {
-                    _id,
-                    url
+            `*[_type =="post"] {
+                title,
+                readtime,
+                slug,
+                body,
+                publishedAt,
+                mainImage {
+                    asset -> {
+                        _id,
+                        url
+                    },
+                    alt,
                 },
-                alt,
-            },
-            "name": author -> name,
-        } | order(publishedAt desc)`
-        )
-        .then((data) => {
-            setStories(data);
-            console.log(data);
-        })
-        .catch(console.error);
-
-        
+                "name": postauthor -> name,
+            } | order(publishedAt desc)`
+            )
+            .then((data) => {
+                setStories(data);
+                console.log(data);
+            })
+            .catch(console.error);
+    
+            
+    
 
     }, []);
 
@@ -71,6 +72,7 @@ const Blog = (props) => {
                 <p className='postbody'>{`${story.body[0].children[0].text.substring(0, 200)}...`}</p>
                 <p className='postdate'>{format(new Date(story.publishedAt), "dd MMMM yyyy")}</p>
                 <p className='readtime'>Read time: {story.readtime} minutes</p>
+                <p>{story.name}</p>
             </Link>
         ))}
         </div>
