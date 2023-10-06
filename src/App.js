@@ -18,9 +18,17 @@ import { useLocation } from 'react-router-dom';
 const App = () =>{
   const [intro, setIntro] = useState(true);
   const location = useLocation();
-
+  const lenis = new Lenis({
+    duration: 2,
+  })
+  //
+  useEffect(() => {
+    
+    console.log('Location changed to:', location.pathname);
+  }, [location.pathname]);
 
   useEffect(() =>{
+    lenis.setScroll(0);
     if(location.pathname.startsWith('/blog')){
         console.log('BLOOG');
         setIntro(false);
@@ -45,16 +53,16 @@ const App = () =>{
       setColormode("light");
   }
 
-  const lenis = new Lenis({
-    duration: 2,
-  })
+
   const lenis2 = new Lenis({
     duration: 0.3,
   })
-  function raf(time) {
 
+
+
+  function raf(time) {
+    lenis.dimensions.resize();
     lenis.raf(time);
-    
     requestAnimationFrame(raf)
   };
     useEffect(() =>{
@@ -64,7 +72,6 @@ const App = () =>{
     const childRef = useRef();
      function doSomething(where){
       childRef.current.doSomething(where);
-      lenis.reset();
     };
     
     const [showParticles, setShowParticles] = useState(true);
@@ -125,7 +132,7 @@ const App = () =>{
     </motion.div>)}
     <motion.div id='body2'>
     <div className={colormode}>
-      <Navigation ref={childRef} lenis={lenis} />
+      <Navigation ref={childRef} lenis={lenis} lenis2={lenis2}/>
       <Routes>
           <Route path="/" element={<Home doSomething={doSomething} setColorLight={setColorLight} setColorDark={setColorDark}/>}/>
           <Route  path="/about" element={<About setColorLight={setColorLight}/>} />

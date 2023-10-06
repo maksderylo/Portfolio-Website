@@ -33,6 +33,7 @@ const Blogpost = (props) => {
     const [blogpost, setBlogpost] = useState([]);
     const {slug} =useParams();
 
+    
 
     useEffect(()=>{
         setColorLight();

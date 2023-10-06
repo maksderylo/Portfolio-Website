@@ -49,8 +49,6 @@ const Blog = (props) => {
     }, []);
 
 
-    
-
 
     return(
         <>

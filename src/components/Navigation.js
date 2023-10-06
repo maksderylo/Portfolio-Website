@@ -42,16 +42,16 @@ const Navigation =forwardRef((props, ref) =>{
     setMenu("fullscreen");
     
       setTimeout(function(){
-        window.scrollTo(0, 0);
+        props.lenis.scrollTo(0, 0);
         navigate(`${where}`);
-        window.scrollTo(0,0);
+        props.lenis.scrollTo(0,0);
+        props.lenis.destroy();
+        console.log("destroyed");
         setTimeout(function(){
           setMenu("closed");
       }, 1500);
     }, 500);
-    setTimeout(function(){
-      props.lenis.resize();
-  }, 2000);
+    
   };
 
   useImperativeHandle(ref, () => ({
@@ -62,13 +62,12 @@ const Navigation =forwardRef((props, ref) =>{
       setMenu("fullscreen");
 
       setTimeout(function(){
-        window.scrollTo(0, 0);
+        props.lenis.scrollTo(0, 0);
         navigate(`${where}`);
         setTimeout(function(){
           setMenu("closed");
       }, 1500);
     }, 500);
-    props.lenis.reset();
     };
 
     const setMenuDiff = () => {
