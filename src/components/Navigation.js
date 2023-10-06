@@ -68,9 +68,7 @@ const Navigation =forwardRef((props, ref) =>{
           setMenu("closed");
       }, 1500);
     }, 500);
-    setTimeout(function(){
-      props.lenis.resize();
-  }, 2000);
+    props.lenis.reset();
     };
 
     const setMenuDiff = () => {

@@ -48,8 +48,13 @@ const App = () =>{
   const lenis = new Lenis({
     duration: 2,
   })
+  const lenis2 = new Lenis({
+    duration: 0.3,
+  })
   function raf(time) {
-    lenis.raf(time)
+
+    lenis.raf(time);
+    
     requestAnimationFrame(raf)
   };
     useEffect(() =>{
@@ -59,7 +64,7 @@ const App = () =>{
     const childRef = useRef();
      function doSomething(where){
       childRef.current.doSomething(where);
-      lenis.resize();
+      lenis.reset();
     };
     
     const [showParticles, setShowParticles] = useState(true);
