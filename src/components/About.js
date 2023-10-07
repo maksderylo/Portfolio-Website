@@ -89,7 +89,7 @@ const About = (props) => {
         </article>
       <article id='a8'>
         <h3>Software Development</h3>
-        <h4>June 2023 - current</h4>
+        <h4>June 2023 - Sep. 2023</h4>
         <p>I worked with libraries such as React.js and Three.js to create web applications. I utilized multiple components and optimized the application for better performance. I also focused on UI/UX design and tested different styling.
              Additionally, I started a personal blog where I provide tutorials in software engineering, mathematics, and overall computer science concepts. </p>
         <img  alt="vs"/>

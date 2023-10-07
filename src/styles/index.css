@@ -65,35 +65,6 @@ code {
   top: 0px;
 }
 
-
-video{
-  position: absolute;
-  left: 0px;
-  width: 100vw;
-  top: 0vh;
-  max-height: 70vh;
-}
-
-#open{
-  position: absolute;
-  z-index: 15;
-  top: 70%;
-  font-size: large;
-  font-family: 'amatic';
-  left: 50%;
-  color: #EE9C21;
-  background-color: transparent;
-  border: 2px dashed black;
-  transform:translate(-50%);
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-}
-
-#open:hover{
-  margin-top: -10px;
-  margin-bottom: 10px;
-}
-
 .container {
   position: relative;
   height: 100vh;
@@ -101,6 +72,101 @@ video{
   padding: 0;
 }
 
+@keyframes bg {
+  0% {
+      background-size:    0 3px,
+                          3px 0,
+                          0 3px,
+                          3px 0;
+  }
+  25% {
+      background-size:    100% 3px,
+                          3px 0,
+                          0 3px,
+                          3px 0;
+  }
+  50% {
+      background-size:    100% 3px,
+                          3px 100%,
+                          0 3px,
+                          3px 0;
+  }
+  75% {
+      background-size:    100% 3px,
+                          3px 100%,
+                          100% 3px,
+                          3px 0;
+  }
+  100% {
+      background-size:    100% 3px,
+                          3px 100%,
+                          100% 3px,
+                          3px 100%;
+  }
+}
+
+#buttoncont {
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 15;
+  top: 45%;
+  width: 344px;
+  margin-left: calc(50% - 172px);
+
+  background-color: transparent;
+  height: auto;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-image:   linear-gradient(to right, #C9C9C9 100%, #C9C9C9 100%),
+                      linear-gradient(to bottom, #C9C9C9 100%, #C9C9C9 100%),
+                      linear-gradient(to right, #C9C9C9 100%, #C9C9C9 100%),
+                      linear-gradient(to bottom, #C9C9C9 100%, #C9C9C9 100%);
+  background-size:    0 3px,
+                      3px 0,
+                      0 3px,
+                      3px 0;
+  background-position:    0 0,
+                          100% 0,
+                          100% 100%,
+                          0 100%;
+  animation: bg cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-duration: 1.25s;
+  animation-delay: 1s;
+  overflow: hidden;
+  transition: box-shadow 600ms cubic-bezier(.33,.11,.02,.99),
+              transform  600ms cubic-bezier(.33,.11,.02,.99);
+}
+
+#buttoncont:hover{
+  box-shadow: 0 4px  4px  rgba(0, 0, 0, .1),
+               0 1px  6px  rgba(0, 0, 0, .05),
+               0 8px  8px  rgba(0, 0, 0, .1), 
+               0 16px 16px rgba(0, 0, 0, .1), 
+               8px 32px 32px rgba(0, 0, 0, .15), 
+               8px 64px 64px rgba(0, 0, 0, .15); 
+
+    transform: scale(1.05)
+                translateY(-0.5rem);
+}
+
+
+
+#buttoncont h1{
+  z-index: 200;
+  height: auto;
+  width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+
+#buttoncont div h1{
+  color: red;
+}
 
 .container div{
 z-index: 4000;

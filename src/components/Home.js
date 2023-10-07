@@ -252,8 +252,8 @@ const Home = (props) => {
                     }
                     ></motion.img>
                     <motion.h2 className="textl" 
-                     style={{marginLeft:x1}}>PROGRAMMING</motion.h2>
-                    <motion.h2 className="textlover" style={style1}>PROGRAMMING</motion.h2>
+                     style={{marginLeft:x1}}>ENGINEERING</motion.h2>
+                    <motion.h2 className="textlover" style={style1}>ENGINEERING</motion.h2>
                 </div>
                 <div className="textbox2" ref={hardware}>
                     <motion.img style={{right:x7}} src={Server} alt="server"
@@ -295,8 +295,8 @@ const Home = (props) => {
                     }
                     }
                     ></motion.img>
-                    <motion.h2 className="textl" style={{marginLeft:x3}}>TRAVELLING</motion.h2>
-                    <motion.h2 className="textlover" style={style3}>TRAVELLING</motion.h2>
+                    <motion.h2 className="textl" style={{marginLeft:x3}}>SPORTS</motion.h2>
+                    <motion.h2 className="textlover" style={style3}>SPORTS</motion.h2>
                 </div>
                 <div className="textbox2" ref={music}>
                     <motion.img style={{right:x9}} src={Headphones} alt="headphones"
@@ -321,8 +321,8 @@ const Home = (props) => {
                     <motion.h2 className="textrover" style={style4}>MUSIC</motion.h2>
                 </div>
                 <div ref={web} className="textbox"><motion.h3 >BUT MOST IMPORTANTLY!</motion.h3></div>
-                <div className="textbox2" id="webbox" ref={web}><motion.h2 id="web">WEB</motion.h2>
-                    <motion.h2 id="overweb" style={style5}>WEB</motion.h2>
+                <div className="textbox2" id="webbox" ref={web}><motion.h2 id="web">CODE</motion.h2>
+                    <motion.h2 id="overweb" style={style5}>CODE</motion.h2>
                 </div>
                 <motion.div ref={ref} className="centertext"><motion.p variants={characterAnimation}
         initial="hidden"

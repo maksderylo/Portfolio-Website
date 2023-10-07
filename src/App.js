@@ -8,8 +8,6 @@ import Footer from './components/Footer'
 import {Routes, Route} from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import { motion} from "framer-motion";
-import LogoVid from './logovid.mp4';
-import LogoLoop from './logoloop.mp4';
 import Blog from './components/Blog';
 import Blogpost from './components/Blogpost';
 import { useLocation } from 'react-router-dom';
@@ -88,7 +86,6 @@ const App = () =>{
     },3000)
   };
 
-
     
 
   return (
@@ -107,20 +104,13 @@ const App = () =>{
         
       {showParticles && (
         <div id='back'>
-          {intro && (
-        <video id='a' autoPlay muted
-        >
-          
-        <source src={LogoVid} type="video/mp4" />
-      </video>)}
-      <video id='b' autoPlay muted loop>
-        <source src={LogoLoop} type="video/mp4" />
-      </video>
-      <motion.button onClick={handleClick} id='open'
-      initial={{opacity: 0,}}
-      animate={{opacity: 1}}
-      transition={{duration: 1, delay: 3}}
-      >Click to open</motion.button>
+        <div id='buttoncont' onClick={handleClick}><motion.h1
+        initial={{translateY: 100}}
+        animate={{ translateY: 0 }}
+        transition={{type: "spring", duration: 1,delay: 1 }}
+        >Enter portfolio</motion.h1>
+        </div>
+      
         </div>
         )}
         <motion.div id='fristfromtop'
