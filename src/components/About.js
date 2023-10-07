@@ -91,8 +91,13 @@ const About = (props) => {
         <h3>Software Development</h3>
         <h4>June 2023 - Sep. 2023</h4>
         <p>I worked with libraries such as React.js and Three.js to create web applications. I utilized multiple components and optimized the application for better performance. I also focused on UI/UX design and tested different styling.
+             Additionally, I started a personal blog where I provide tutorials in software engineering, mathematics, and overall computer science concepts. The best example of my development is this website! </p>
+    </article>
+      <article id='a9'>
+        <h3>Quantum poker</h3>
+        <h4>Oct. 2023 - Current</h4>
+        <p>I worked with libraries such as React.js and Three.js to create web applications. I utilized multiple components and optimized the application for better performance. I also focused on UI/UX design and tested different styling.
              Additionally, I started a personal blog where I provide tutorials in software engineering, mathematics, and overall computer science concepts. </p>
-        <img  alt="vs"/>
     </article>
       
         </div>
