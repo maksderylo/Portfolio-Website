@@ -5,3 +5,17 @@ body{
 #root{
     position: relative;
 }
+
+#preload{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #E5E4E5;
+}
+
+#preload h1{
+    font-size:  20px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
