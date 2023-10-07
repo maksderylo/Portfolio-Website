@@ -30,12 +30,8 @@ const About = (props) => {
         </div>
         <div className='forimg'>
           <img src={me} alt="studyrum"/>   
+        </div>  
         </div>
-        
-        
-            
-        </div>
-        <div><span style={{textAlign: 'center'}}><h1>Scroll down!</h1></span></div>
         <div className='smallspace'></div>
         <div id='sections'>
         <h1>Professional Timeline</h1>
