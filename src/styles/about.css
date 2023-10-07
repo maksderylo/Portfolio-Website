@@ -44,6 +44,11 @@
     height: min(calc(90vw * 0.75),80vh);
 }
 
+.forimg img{
+  width: 50%;
+  height: auto;
+}
+
 .textb{
     min-height: 400px;
     min-width: 200px;

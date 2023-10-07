@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import '../styles/about.css'
 import aboutintr from './svg/aboutintr.jpg'
 import studyrum from './svg/studyrum.png'
+import me from './svg/me2.png'
 //import vscode from './svg/vscode.png'
 
 const About = (props) => {
@@ -28,10 +29,8 @@ const About = (props) => {
             <h2>I'm Maks Deryło.<br/>Software Developer &<br/> Computer Science Student at TU/E</h2>      
         </div>
         <div className='forimg'>
-                <img id='aboutintr' src={aboutintr} alt='image of me'></img>
-                
+          <img src={me} alt="studyrum"/>   
         </div>
-        <h1>image to be made</h1>
         <div className='smallspace'></div>
         
             
@@ -98,6 +97,7 @@ const About = (props) => {
         <h4>Oct. 2023 - Current</h4>
         <p>I worked with libraries such as React.js and Three.js to create web applications. I utilized multiple components and optimized the application for better performance. I also focused on UI/UX design and tested different styling.
              Additionally, I started a personal blog where I provide tutorials in software engineering, mathematics, and overall computer science concepts. </p>
+             
     </article>
       
         </div>
