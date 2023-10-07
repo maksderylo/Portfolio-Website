@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import '../styles/about.css'
 import aboutintr from './svg/aboutintr.jpg'
 import studyrum from './svg/studyrum.png'
-import me from './svg/me2.png'
+import me from './svg/me2.jpg'
 //import vscode from './svg/vscode.png'
 
 const About = (props) => {
@@ -25,17 +25,18 @@ const About = (props) => {
         <div className="About">
         <div className="cont">
         <div className='textb'>  
-            <h1>Hello</h1>
-            <h2>I'm Maks Deryło.<br/>Software Developer &<br/> Computer Science Student at TU/E</h2>      
+            <h1>Hello,<br/>I'm <span style={{color: '#c83921'}}>Maks Deryło</span>.</h1>
+            <h2><br/>Software Developer, programmer<br/> & Computer Science student at <span style={{color: '#c83921'}}>TU/e</span></h2>      
         </div>
         <div className='forimg'>
           <img src={me} alt="studyrum"/>   
         </div>
-        <div className='smallspace'></div>
+        
         
             
         </div>
-
+        <div><span style={{textAlign: 'center'}}><h1>Scroll down!</h1></span></div>
+        <div className='smallspace'></div>
         <div id='sections'>
         <h1>Professional Timeline</h1>
         <section>
