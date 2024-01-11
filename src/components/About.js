@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import '../styles/about.css'
 import aboutintr from './svg/aboutintr.jpg'
 import studyrum from './svg/studyrum.png'
+import quantum from './svg/quentumPoker.png'
 import me from './svg/me2.jpg'
 //import vscode from './svg/vscode.png'
 
@@ -91,11 +92,12 @@ const About = (props) => {
     </article>
       <article id='a9'>
         <h3>Quantum poker</h3>
-        <h4>Oct. 2023 - Current</h4>
-        <p>I worked with libraries such as React.js and Three.js to create web applications. I utilized multiple components and optimized the application for better performance. I also focused on UI/UX design and tested different styling.
-             Additionally, I started a personal blog where I provide tutorials in software engineering, mathematics, and overall computer science concepts. </p>
-             
+        <h4>Oct. 2023 - Nov. 2023</h4>
+        <p>Together with a coding partner Lan de Jong we created an educational game called "Quantum Poker". The game uses simple and fun concepts of a well known game to spread interest and knowledge about quantum computing.
+           Technologies we used are: Java, maven, java swing and RedFX Strange quantum simulator.</p>
+           <img src={quantum} alt="quantum"/>
     </article>
+    
       
         </div>
         </section>
