@@ -1,6 +1,7 @@
 import { type } from "@testing-library/user-event/dist/type"
 import { validateBasePaths } from "sanity"
 import author from "./author"
+import category from "./category"
 
 const post = {
   title: 'Post',
@@ -37,6 +38,12 @@ const post = {
       title: 'Author',
       type: 'reference',
       to: [{type: 'author'}],
+    },
+    {
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: [{type: 'category'}],
     },
     {
       name: 'body',
