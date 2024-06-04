@@ -500,7 +500,7 @@
     size: max(4vw,30px)
   }
 
-  svg, img{
+  .svg, .img{
     position: absolute;
     height: max(12vw,50px);
     z-index: 40;

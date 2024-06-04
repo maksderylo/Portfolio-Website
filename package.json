@@ -26,6 +26,7 @@
     "react-slick": "^0.29.0",
     "react-syntax-highlighter": "^15.5.0",
     "sanity": "^3.15.1",
+    "sanity-image": "^0.1.7",
     "tsparticles-slim": "^2.12.0",
     "web-vitals": "^2.1.4"
   },

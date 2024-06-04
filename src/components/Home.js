@@ -233,7 +233,7 @@ const Home = (props) => {
                 </div>
                 <div className="hugespace"></div>
                 <div className="textbox2" ref={programming}>
-                    <motion.img style={{left:x6}} src={Laptop}  alt="laptop"
+                    <motion.img className="img" style={{left:x6}} src={Laptop}  alt="laptop"
                     animate={"visible"}
                     variants={{
                         visible: {
@@ -256,7 +256,7 @@ const Home = (props) => {
                     <motion.h2 className="textlover" style={style1}>ENGINEERING</motion.h2>
                 </div>
                 <div className="textbox2" ref={hardware}>
-                    <motion.img style={{right:x7}} src={Server} alt="server"
+                    <motion.img className="img" style={{right:x7}} src={Server} alt="server"
                     animate={"visible"}
                     variants={{
                         visible: {
@@ -277,7 +277,7 @@ const Home = (props) => {
                     <motion.h2 className="textrover" style={style2}>HARDWARE</motion.h2>
                 </div>
                 <div className="textbox2" ref={travelling}>
-                    <motion.img style={{left:x8}} src={Luggage} alt="luggage"
+                    <motion.img className="img" style={{left:x8}} src={Luggage} alt="luggage"
                     animate={"visible"}
                     variants={{
                         visible: {
@@ -299,7 +299,7 @@ const Home = (props) => {
                     <motion.h2 className="textlover" style={style3}>SPORTS</motion.h2>
                 </div>
                 <div className="textbox2" ref={music}>
-                    <motion.img style={{right:x9}} src={Headphones} alt="headphones"
+                    <motion.img className="img" style={{right:x9}} src={Headphones} alt="headphones"
                     animate={"visible"}
                     variants={{
                         visible: {
