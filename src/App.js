@@ -11,6 +11,7 @@ import { motion} from "framer-motion";
 import Blog from './components/Blog';
 import Blogpost from './components/Blogpost';
 import { useLocation } from 'react-router-dom';
+import Roadmap from './components/Roadmap';
 
 
 const App = () =>{
@@ -27,7 +28,7 @@ const App = () =>{
 
   useEffect(() =>{
     lenis.setScroll(0);
-    if(location.pathname.startsWith('/blog')){
+    if(location.pathname.startsWith('/blog') || location.pathname.startsWith('/roadmap') ){
         console.log('BLOOG');
         setIntro(false);
         setIsAnimated(true);
@@ -128,6 +129,7 @@ const App = () =>{
           <Route  path="/about" element={<About setColorLight={setColorLight}/>} />
           <Route path="/blog" element={<Blog setColorLight={setColorLight}/>}/>
           <Route path="/blog/:slug" element={<Blogpost setColorLight={setColorLight}/>}/>
+          <Route path="/roadmap" element={<Roadmap setColorLight={setColorLight} />}/>
       </Routes>
       <Footer />
     </div>

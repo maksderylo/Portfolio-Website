@@ -21,6 +21,7 @@ const Blog = (props) => {
     const [stories, setStories] = useState([]);
     const [categories, setCategories] = useState([]);
     const [dataByCategory, setDataByCategory] = useState({});
+    const [selected, setSelected] = useState('Roadmap');
 
     
 
@@ -74,24 +75,24 @@ const Blog = (props) => {
 
     return(
         <>
-        <div className='blogRoadmapContainer'>
-            <div id='introblog'>
-                <h1>📄Blog by Maks Deryło</h1>
-                <h2>Looking for a post to read? I continiously update tutorials and explenations related to Software Developlent!</h2>
-            </div>
-            <div className='smallspace'></div>
+            <div className='blogPosts'>
+                <div id='introblog'>
+                    <h1>📄Blog by Maks Deryło</h1>
+                    <h2>Looking for a post to read? I continiously update tutorials and explenations related to Software Developlent!</h2>
+                </div>
+                <div className='smallspace'></div>
 
-            <div className='posts'>
-            {stories.map((story) => (
-                <Link className='post' to={`/blog/${story.slug.current}`} key={story.slug.current}>
-                    <h1 className='blogtitle'>{story.title}</h1>
-                    <p className='postbody'>{`${story.body[0].children[0].text.substring(0, 200)}...`}</p>
-                    <p className='postdate'>{format(new Date(story.publishedAt), "dd MMMM yyyy")} - {story.name}</p>
-                    <p className='readtime'>Read time: {story.readtime} minutes</p>
-                    <p></p>
-                </Link>
-            ))}
-            </div>
+                <div className='posts'>
+                {stories.map((story) => (
+                    <Link className='post' to={`/blog/${story.slug.current}`} key={story.slug.current}>
+                        <h1 className='blogtitle'>{story.title}</h1>
+                        <p className='postbody'>{`${story.body[0].children[0].text.substring(0, 200)}...`}</p>
+                        <p className='postdate'>{format(new Date(story.publishedAt), "dd MMMM yyyy")} - {story.name}</p>
+                        <p className='readtime'>Read time: {story.readtime} minutes</p>
+                        <p></p>
+                    </Link>
+                ))}
+                </div> 
         </div>
         </>
     );
