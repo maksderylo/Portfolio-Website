@@ -4,6 +4,7 @@ import {client} from "./lib/client";
 import {format} from "date-fns";
 import { Link } from 'react-router-dom';
 import '../styles/blog.css'
+import { set } from 'countapi-js';
 
 
 
@@ -18,6 +19,10 @@ const Blog = (props) => {
     
 
     const [stories, setStories] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [dataByCategory, setDataByCategory] = useState({});
+
+    
 
     useEffect(()=>{
         client.fetch(
@@ -27,6 +32,7 @@ const Blog = (props) => {
                 slug,
                 body,
                 publishedAt,
+                category,
                 mainImage {
                     asset -> {
                         _id,
@@ -36,13 +42,29 @@ const Blog = (props) => {
                 },
                 "name": postauthor -> name,
             } | order(publishedAt desc)`
+        ).then((data) => {
+            setStories(data);
+            let newDataByCategory = {};
+            data.forEach((item) => {
+                if (!newDataByCategory[item.category]) {
+                    newDataByCategory[item.category] = [];
+                }
+                newDataByCategory[item.category].push(item);
+            });
+            setDataByCategory(newDataByCategory);
+        })
+        .catch(console.error);
+    
+            client.fetch(
+                `*[_type =="category"] {
+                    Name,
+                }`
             )
             .then((data) => {
-                setStories(data);
+                setCategories(data);
                 console.log(data);
             })
             .catch(console.error);
-    
             
     
 
@@ -52,22 +74,24 @@ const Blog = (props) => {
 
     return(
         <>
-        <div id='introblog'>
-            <h1>📄Blog by Maks Deryło</h1>
-            <h2>Looking for a post to read? I continiously update tutorials and explenations related to Software Developlent!</h2>
-        </div>
-        <div className='smallspace'></div>
+        <div className='blogRoadmapContainer'>
+            <div id='introblog'>
+                <h1>📄Blog by Maks Deryło</h1>
+                <h2>Looking for a post to read? I continiously update tutorials and explenations related to Software Developlent!</h2>
+            </div>
+            <div className='smallspace'></div>
 
-        <div className='posts'>
-        {stories.map((story) => (
-            <Link className='post' to={`/blog/${story.slug.current}`} key={story.slug.current}>
-                <h1 className='blogtitle'>{story.title}</h1>
-                <p className='postbody'>{`${story.body[0].children[0].text.substring(0, 200)}...`}</p>
-                <p className='postdate'>{format(new Date(story.publishedAt), "dd MMMM yyyy")} - {story.name}</p>
-                <p className='readtime'>Read time: {story.readtime} minutes</p>
-                <p></p>
-            </Link>
-        ))}
+            <div className='posts'>
+            {stories.map((story) => (
+                <Link className='post' to={`/blog/${story.slug.current}`} key={story.slug.current}>
+                    <h1 className='blogtitle'>{story.title}</h1>
+                    <p className='postbody'>{`${story.body[0].children[0].text.substring(0, 200)}...`}</p>
+                    <p className='postdate'>{format(new Date(story.publishedAt), "dd MMMM yyyy")} - {story.name}</p>
+                    <p className='readtime'>Read time: {story.readtime} minutes</p>
+                    <p></p>
+                </Link>
+            ))}
+            </div>
         </div>
         </>
     );
