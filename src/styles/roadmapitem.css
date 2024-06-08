@@ -1,0 +1,25 @@
+
+.level-item{
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto; /* adjust this as needed */
+    height: auto; /* adjust this as needed */
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    text-align: center;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+
+.level-item:hover{
+    background-color: #ffe54c;
+}
+
+
+
+

@@ -16,19 +16,19 @@
     margin: 100px 0;
 }
 
-.level-item {
-    position: relative;
-    z-index: 0;
-    display: flex;
-    justify-content: center;
+.roadmap-navigation{
+    font-family: 'applelight';
+    display: inline;
+    width: max(400px, 40%);
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    top: 0px;
+    justify-content: space-between;
     align-items: center;
-    width: auto; /* adjust this as needed */
-    height: auto; /* adjust this as needed */
-    border: 1px solid black;
-    box-sizing: border-box;
-    padding: 0px 10px;
-    text-align: center;
-    border-radius: 30px;
+    margin: 0px 0;
+    z-index: 300;
+    color: white;
 }
 
 .insideArrow{
@@ -36,3 +36,60 @@
     height: 100%;
     background-color: red;
 }
+
+.categoryButton{
+    width: 100%;
+    background: none;
+    border-top: 2px solid gray;
+    cursor: pointer;
+    outline: none;
+    margin: 0px 0px 0px 0px;
+    color: inherit;
+
+}
+
+.categoryName{
+    margin: 5px 15px ;
+}
+
+.categoryName-false{
+    font-weight: normal;
+}
+
+.categoryName-true{
+    font-weight: bold;
+}
+
+.categoryList{
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    color: white;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.categoryList li{
+    margin: 5px;
+}
+
+
+.categoryPost{
+    margin-left: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.categoryName:hover, .categoryPost:hover{
+    font-weight: bold;
+}
+
+.roadmap-navigation-title{
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    margin: 60px 0px;
+}
+

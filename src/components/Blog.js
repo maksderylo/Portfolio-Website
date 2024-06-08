@@ -4,19 +4,10 @@ import {client} from "./lib/client";
 import {format} from "date-fns";
 import { Link } from 'react-router-dom';
 import '../styles/blog.css'
-import { set } from 'countapi-js';
 
 
 
-const Blog = (props) => {
-
-    const setColorLight = () =>{
-        props.setColorLight();
-    }
-    useEffect(()=>{
-        setColorLight();
-    })
-    
+const Blog = () => {
 
     const [stories, setStories] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -45,29 +36,8 @@ const Blog = (props) => {
             } | order(publishedAt desc)`
         ).then((data) => {
             setStories(data);
-            let newDataByCategory = {};
-            data.forEach((item) => {
-                if (!newDataByCategory[item.category]) {
-                    newDataByCategory[item.category] = [];
-                }
-                newDataByCategory[item.category].push(item);
-            });
-            setDataByCategory(newDataByCategory);
         })
         .catch(console.error);
-    
-            client.fetch(
-                `*[_type =="category"] {
-                    Name,
-                }`
-            )
-            .then((data) => {
-                setCategories(data);
-                console.log(data);
-            })
-            .catch(console.error);
-            
-    
 
     }, []);
 
@@ -77,7 +47,7 @@ const Blog = (props) => {
         <>
             <div className='blogPosts'>
                 <div id='introblog'>
-                    <h1>📄Blog by Maks Deryło</h1>
+                    <h1>📄Recent Posts by Maks Deryło</h1>
                     <h2>Looking for a post to read? I continiously update tutorials and explenations related to Software Developlent!</h2>
                 </div>
                 <div className='smallspace'></div>
@@ -93,7 +63,7 @@ const Blog = (props) => {
                     </Link>
                 ))}
                 </div> 
-        </div>
+            </div>
         </>
     );
 

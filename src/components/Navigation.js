@@ -79,7 +79,7 @@ const Navigation =forwardRef((props, ref) =>{
 
     return (
         <>
-        <motion.div className='menu'
+        <motion.div className='menu' 
         animate={menuState}
         variants={{
             open: { top: -90,
@@ -138,7 +138,7 @@ const Navigation =forwardRef((props, ref) =>{
             <ul>
                 <li><p className={location.pathname==="/" ? "active" : ""} onClick={() => navHome('/')}>Home</p></li>
                 <li><p className={location.pathname==="/about" ? "active" : ""} onClick={() => navHome('/about')}>Work</p></li>
-                <li><p className={location.pathname==="/blog" ? "active" : ""} onClick={() => navHome('/blog')}>Blog</p></li>
+                <li><p className={location.pathname==="/roadmapblog" ? "active" : ""} onClick={() => navHome('/roadmapblog')}>Roadmap/Blog</p></li>
             </ul>
         <div className='textbotmenu'><ul>
           <li><a href="https://github.com/maksderylo">GitHub,</a></li>

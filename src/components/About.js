@@ -23,7 +23,7 @@ const About = (props) => {
 
 
     return (
-        <div className="About">
+        <div className="About" >
         <div className="cont">
         <div className='textb'>  
             <h1>Hello,<br/>I'm <span style={{color: '#c83921'}}>Maks Deryło</span>.</h1>
