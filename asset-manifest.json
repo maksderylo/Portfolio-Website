@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.83f4c2a7.css",
-    "main.js": "./static/js/main.fe0087b4.js",
+    "main.js": "./static/js/main.9b5f5e2f.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/RobotoSlab.ttf": "./static/media/RobotoSlab.677d14da87bce007211b.ttf",
@@ -70,7 +70,7 @@
     "static/media/KaTeX_Size1-Regular.woff": "./static/media/KaTeX_Size1-Regular.0108e89c9003e8c14ea3.woff",
     "static/media/KaTeX_Size2-Regular.woff": "./static/media/KaTeX_Size2-Regular.3a99e70aee4076660d38.woff",
     "static/media/KaTeX_Size4-Regular.woff": "./static/media/KaTeX_Size4-Regular.aeffd8025cba3647f1a6.woff",
-    "static/media/2024-12-15-test-automatic-loading.md": "./static/media/2024-12-15-test-automatic-loading.ad88341b7464646edeeb.md",
+    "static/media/2025-09-27-test-automatic-loading.md": "./static/media/2025-09-27-test-automatic-loading.ad88341b7464646edeeb.md",
     "static/media/KaTeX_Size1-Regular.woff2": "./static/media/KaTeX_Size1-Regular.6eec866c69313624be60.woff2",
     "static/media/KaTeX_Size2-Regular.woff2": "./static/media/KaTeX_Size2-Regular.2960900c4f271311eb36.woff2",
     "static/media/KaTeX_Size4-Regular.woff2": "./static/media/KaTeX_Size4-Regular.e418bf257af1052628d8.woff2",
@@ -78,11 +78,11 @@
     "static/media/KaTeX_Size3-Regular.woff2": "./static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "./index.html",
     "main.83f4c2a7.css.map": "./static/css/main.83f4c2a7.css.map",
-    "main.fe0087b4.js.map": "./static/js/main.fe0087b4.js.map",
+    "main.9b5f5e2f.js.map": "./static/js/main.9b5f5e2f.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.83f4c2a7.css",
-    "static/js/main.fe0087b4.js"
+    "static/js/main.9b5f5e2f.js"
   ]
 }
