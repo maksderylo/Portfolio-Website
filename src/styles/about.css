@@ -211,3 +211,10 @@ article img{
     cursor: pointer;
     color: black;
   }
+
+/* Minimal styles for simplified About component */
+.simple-about { max-width: 1200px; margin: 0 auto; }
+.simple-about .about-hero { border-bottom: 1px solid #e2e2e2; padding-bottom: 1.5rem; }
+.simple-about .about-section { background: transparent; }
+.simple-about .project-cards { margin-top: 1rem; }
+.simple-about .project-card { font-size: 0.9rem; }

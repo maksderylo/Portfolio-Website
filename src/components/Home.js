@@ -1,352 +1,57 @@
-import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
-import { useInView } from "react-intersection-observer";
-import Laptop from "./svg/laptop.svg"
-import Server from "./svg/server.svg"
-import Headphones from "./svg/headphones.svg"
-import Luggage from "./svg/travel.svg"
-import Me from './svg/me.jpg'
-import { useLocation } from 'react-router-dom';
+import React from 'react';
+import Me from './svg/me.jpg';
 
-const AniFromR = {
-    initial:{
-        marginRight: -1000,
-    },
-    animate:{
-        marginRight: -20,
-        transition:{
-        duration:0.5,
-        type:"spring"
-
-    }
-}
-}
-
-const textappear = {
-    initial: {
-        y: "200%",
-    },
-    animate: {
-        y: 0
-    },
-    transition: {
-        duration:0.75,
-        ease: [0.455, 0.03, 0.515, 0.955],
-    }
-}
-
-const characterAnimation = {
-    hidden: {
-      opacity: 0,
-      y: `0.25em`,
-    },
-    visible: {
-      opacity: 1,
-      y: `0em`,
-      transition: {
-        duration: 1,
-        ease: [0.2, 0.65, 0.3, 0.9],
-      },
-    },
-  };
-
-
-
-
-
-const Home = (props) => {
-
-
-    function navHome(where){
-        props.doSomething(where);
-    };
-    
-    //variables
-    const {scrollYProgress} = useScroll();
-    const x = useTransform(scrollYProgress, [0,1], [-20,400] );
-    const x1 = useTransform(scrollYProgress, [0,0.5], [-300,200] );
-    const x2 = useTransform(scrollYProgress, [0,1], [-300,500] );
-    const x3 = useTransform(scrollYProgress, [0,1], [-400,600] );
-    const x5 = useTransform(scrollYProgress, [0,1], [-400,600] );
-    const x6 = useTransform(scrollYProgress, [0,1], [-100,3000] );
-    const x7 = useTransform(scrollYProgress, [0,1], [300,400] );
-    const x8 = useTransform(scrollYProgress, [0,1], [-200,1700] );
-    const x9 = useTransform(scrollYProgress, [0,1], [-400,1300] );
-
-    const [scrollY, setScrollY] = useState(0);
-
-    //useref to get divs y coordinate
-    const programming = useRef();
-    const [programmingy, setProgrammingy] =useState();
-    const hardware = useRef();
-    const [hardwarey, setHardwarey] =useState();
-    const travelling = useRef();
-    const [travellingy, setTravellingy] =useState();
-    const web = useRef();
-    const [weby, setWeby] =useState();
-    const music = useRef();
-    const [musicy, setMusicy] =useState();
-
-    const location = useLocation();
-
-    
-
-
-    const setColorLight = () =>{
-        props.setColorLight();
-    }
-    const setColorDark = () =>{
-        props.setColorDark();
-    }
-    
-    //use effect
-  useEffect(() => {
-    if(window.scrollY-web.current.offsetTop>0){
-        setColorDark();
-      }
-      else{
-        setColorLight();
-      }
-    const handleScroll = () => {
-        setScrollY(window.scrollY);
-        if(location.pathname === '/'){
-      if(window.scrollY-web.current.offsetTop>0){
-        setColorDark();
-      }
-      else{
-        setColorLight();
-      }
-    }
-    else{
-        setColorLight();
-    }
-    };
-    const getPositions = () =>{
-        if(location.pathname === '/'){
-        setProgrammingy(programming.current.offsetTop);
-        setHardwarey(hardware.current.offsetTop);
-        setTravellingy(travelling.current.offsetTop);
-        setWeby(web.current.offsetTop);
-        setMusicy(music.current.offsetTop)};
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('scroll', getPositions);
-    window.addEventListener('resize', getPositions);
-
-    const timer = setTimeout(() => {
-        setProgrammingy(programming.current.offsetTop);
-        setHardwarey(hardware.current.offsetTop);
-        setTravellingy(travelling.current.offsetTop);
-        setWeby(web.current.offsetTop);
-        setMusicy(music.current.offsetTop);
-        setScrollY(window.scrollY);
-      }, 100);
-
-
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', getPositions);
-      window.removeEventListener('scroll', getPositions);
-      clearTimeout(timer);
-    };
-    // eslint-disable-next-line
-  }, [scrollY]);
-
-  
-
-
-  //in view animations
-  const controls =useAnimation();
-  const [refgreet,inViewGreet]=useInView();
-
-
-  const [ref, inView] = useInView({
-    threshold: 0.5,
-    triggerOnce: true,
-  });
-
-  useEffect(()=>{
-        if(inViewGreet){
-            controls.start("appear");
-            setTimeout(()=>{
-                controls.start("visible");
-            },750)
-        }
-
-        
-
-  },[controls,inViewGreet])
-
-
-
-
-  const stylename = {
-    clipPath: `polygon(0px 0px, 100% 0px, 100% ${(scrollY/3)}%, 0px ${(scrollY/3)}%)`,
-    right: (x),
-  };
-  const style1 = {
-    clipPath: `polygon(0px 0px, 100% 0px, 100% ${(scrollY/3-programmingy/3+100)}%, 0px ${(scrollY/3-programmingy/3+100)}%)`,
-    left: (x1),
-  };
-  const style2 = {
-    clipPath: `polygon(0px 0px, 100% 0px, 100% ${(scrollY/3-hardwarey/3+100)}%, 0px ${(scrollY/3-hardwarey/3+100)}%)`,
-    right: (x2),
-  };
-  const style3 = {
-    clipPath: `polygon(0px 0px, 100% 0px, 100% ${(scrollY/3-travellingy/3+100)}%, 0px ${(scrollY/3-travellingy/3+100)}%)`,
-    left: (x3)
-  };
-  const style4 = {
-    clipPath: `polygon(0px 0px, 100% 0px, 100% ${(scrollY/3-musicy/3+100)}%, 0px ${(scrollY/3-musicy/3+100)}%)`,
-    right: (x5)
-  };
-  const style5 = {
-    clipPath: `polygon(0px 0px, 100% 0px, 100% ${(scrollY/4-weby/4+100)}%, 0px ${(scrollY/4-weby/4+100)}%)`,
-  };
-
-
-    return (
-
-        <div className="Home">
-            <div className="hugespace"></div>
-            {/* <button onClick={() => {}}>clickme</button> */}
-            <div ref={refgreet} className="greetings">
-                <div className="textbox">
-                    <motion.h1  {...textappear}>HI I'M</motion.h1>
-                </div>
-                <div className="textbox2" id="namebox">
-                    <motion.h2 style={{marginRight: x}} id="name"
-                    {...AniFromR}
-                    >MAKS</motion.h2>
-                    <motion.h2  style={stylename}  id="overname">MAKS</motion.h2>
-                    <div className="shape">
-                        <img id="me" src={Me} alt="img of me"></img>
-                    </div>
-                </div>
-                <div className="textbox">
-                    <motion.h1 {...textappear}>A PERSON WITH A</motion.h1>
-                </div>
-                <div className="textbox">
-                    <motion.h1 {...textappear}>PASSION FOR</motion.h1>
-                </div>
-                <div className="hugespace"></div>
-                <div className="textbox2" ref={programming}>
-                    <motion.img className="img" style={{left:x6}} src={Laptop}  alt="laptop"
-                    animate={"visible"}
-                    variants={{
-                        visible: {
-                            opacity:1,
-                                translateY: [0,-5,10,0],
-                                rotate: [6,-10,6],
-                                translateX: [0,-4,4,0],
-                                transition: {
-                                duration: 7,
-                                ease: "easeInOut",
-                                repeat: Infinity,
-                                delay:0     
-                            }
-                        }
-                    }
-                    }
-                    ></motion.img>
-                    <motion.h2 className="textl" 
-                     style={{marginLeft:x1}}>ENGINEERING</motion.h2>
-                    <motion.h2 className="textlover" style={style1}>ENGINEERING</motion.h2>
-                </div>
-                <div className="textbox2" ref={hardware}>
-                    <motion.img className="img" style={{right:x7}} src={Server} alt="server"
-                    animate={"visible"}
-                    variants={{
-                        visible: {
-                            opacity:1,
-                                translateY: [0,5,-3,0],
-                                rotate: [12,-12,12],
-                                translateX: [0,3,-8,0],
-                                transition: {
-                                duration: 5,
-                                ease: "easeInOut",
-                                repeat: Infinity,
-                                delay:0     
-                            }
-                        }
-                    }
-                    }></motion.img>
-                    <motion.h2 className="textr" style={{marginRight:x2}}>HARDWARE</motion.h2>
-                    <motion.h2 className="textrover" style={style2}>HARDWARE</motion.h2>
-                </div>
-                <div className="textbox2" ref={travelling}>
-                    <motion.img className="img" style={{left:x8}} src={Luggage} alt="luggage"
-                    animate={"visible"}
-                    variants={{
-                        visible: {
-                            opacity:1,
-                                translateY: [0,9,-1,0],
-                                rotate: [-4,12,-4],
-                                translateX: [0,-8,2,0],
-                                transition: {
-                                duration: 6,
-                                ease: "easeInOut",
-                                repeat: Infinity,
-                                delay:0     
-                            }
-                        }
-                    }
-                    }
-                    ></motion.img>
-                    <motion.h2 className="textl" style={{marginLeft:x3}}>SPORTS</motion.h2>
-                    <motion.h2 className="textlover" style={style3}>SPORTS</motion.h2>
-                </div>
-                <div className="textbox2" ref={music}>
-                    <motion.img className="img" style={{right:x9}} src={Headphones} alt="headphones"
-                    animate={"visible"}
-                    variants={{
-                        visible: {
-                            opacity:1,
-                                translateY: [0,5,-3,0],
-                                rotate: [12,-12,12],
-                                translateX: [0,3,-8,0],
-                                transition: {
-                                duration: 7,
-                                ease: "easeInOut",
-                                repeat: Infinity,
-                                delay:0     
-                            }
-                        }
-                    }
-                    }
-                    ></motion.img>
-                    <motion.h2 className="textr" style={{marginRight:x5}}>MUSIC</motion.h2>
-                    <motion.h2 className="textrover" style={style4}>MUSIC</motion.h2>
-                </div>
-                <div ref={web} className="textbox"><motion.h3 >BUT MOST IMPORTANTLY!</motion.h3></div>
-                <div className="textbox2" id="webbox" ref={web}><motion.h2 id="web">CODE</motion.h2>
-                    <motion.h2 id="overweb" style={style5}>CODE</motion.h2>
-                </div>
-                <motion.div ref={ref} className="centertext"><motion.p variants={characterAnimation}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}>Because I think browsing should always
-                     be an amazing experience, I am fueled by the ability to express myself 
-                     through code and create immersive digital wonders that captivate and inspire.
-                      With each line I write, I strive to push boundaries, blend functionality with 
-                      aesthetics, and elevate the online world to new heights, ensuring that users are
-                       met with unforgettable
-                     journeys that leave <span style={{color: "#cab99a", fontWeight: "bolder"}}>a lasting impact.</span> </motion.p></motion.div>
-            </div>
-                <div className="smallspace"></div>
-                <div id="relocatebuttons">
-                    <h1>Further Explore!</h1>
-                    <ul>
-                        <li><p onClick={() => navHome('/about')}>Work</p><div className="behind"></div></li>
-                        <li><p onClick={() => navHome('/roadmapblog')}>Blog!</p><div className="behind"></div></li>
-                    </ul>
-                    
-                </div>
-                <div className="smallspace"></div>
-                    
+const Home = () => {
+  return (
+    <div className='Home simple-home'>
+      <section className='hero'>
+        <div className='hero-text'>
+          <h1>Hi, I'm Maks</h1>
+          <p>Software Engineer with experience at Goldman Sachs and TSMC, currently pursuing Computer Science at Eindhoven University of Technology.</p>
+          <p>
+            Specialized in full-stack development, financial technology, and machine learning research. Passionate about building scalable, high-performance applications.
+          </p>
+          <p>
+            Currently I wish to persue masters in AI and ML and work on innovative projects in these fields.
+          </p>
         </div>
-    );
-}
+        <div className='hero-image'>
+          <img src={Me} alt='Maks profile' />
+        </div>
+      </section>
+
+      <section className='quick-highlights'>
+        <h2>Links</h2>
+        <ul>
+          <li><a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">Download CV</a></li>
+          <li><a href="https://github.com/mderylo" target="_blank" rel="noopener noreferrer">GitHub Profile</a></li>
+        </ul>
+      </section>
+
+      <section className='highlights-section'>
+        <h2>Professional Career Highlights</h2>
+        <div className='highlights-grid'>
+          <div className='highlight-card'>
+            <h3>Goldman Sachs</h3>
+            <p>Experience in financial technology and software development in a high-performance environment.</p>
+          </div>
+          <div className='highlight-card'>
+            <h3>TSMC</h3>
+            <p>Contributed to semiconductor technology solutions and manufacturing process optimization.</p>
+          </div>
+          <div className='highlight-card'>
+            <h3>Eindhoven University of Technology</h3>
+            <p>Computer Science studies with focus on algorithms, software engineering, and system design.</p>
+          </div>
+          <div className='highlight-card'>
+            <h3>ML Research</h3>
+            <p>Machine Learning research projects exploring innovative applications and algorithm development.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
 
 export default Home;

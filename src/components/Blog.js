@@ -1,72 +1,146 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import {client} from "./lib/client";
-import {format} from "date-fns";
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/blog.css'
-
-
+import Fuse from 'fuse.js';
+import { loadAllPosts } from '../utils/postLoader';
 
 const Blog = () => {
+  const [posts, setPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTag, setSelectedTag] = useState('');
+  const [allTags, setAllTags] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const [stories, setStories] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [dataByCategory, setDataByCategory] = useState({});
-    const [selected, setSelected] = useState('Roadmap');
+  useEffect(() => {
+    loadPosts();
+  }, []);
 
-    
+  const loadPosts = async () => {
+    try {
+      setLoading(true);
+      const loadedPosts = await loadAllPosts();
+      console.log('[Blog] loadedPosts:', loadedPosts);
 
-    useEffect(()=>{
-        client.fetch(
-            `*[_type =="post"] {
-                title,
-                readtime,
-                slug,
-                body,
-                publishedAt,
-                category,
-                mainImage {
-                    asset -> {
-                        _id,
-                        url
-                    },
-                    alt,
-                },
-                "name": postauthor -> name,
-            } | order(publishedAt desc)`
-        ).then((data) => {
-            setStories(data);
-        })
-        .catch(console.error);
+      setPosts(loadedPosts);
+      setFilteredPosts(loadedPosts);
 
-    }, []);
+      // Extract all unique tags
+      const tags = [...new Set(loadedPosts.flatMap(post => post.tags || []))];
+      console.log('[Blog] tags extracted:', tags);
+      setAllTags(tags);
+    } catch (error) {
+      console.error('Error loading posts:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  // Search functionality
+  useEffect(() => {
+    let filtered = posts;
+    console.log('[Blog] Filtering posts. searchTerm:', searchTerm, 'selectedTag:', selectedTag, 'input posts length:', posts.length);
 
+    // Filter by tag
+    if (selectedTag) {
+      filtered = filtered.filter(post => post.tags && post.tags.includes(selectedTag));
+    }
 
-    return(
-        <>
-            <div className='blogPosts'>
-                <div id='introblog'>
-                    <h1>📄Recent Posts by Maks Deryło</h1>
-                    <h2>Looking for a post to read? I continiously update tutorials and explenations related to Software Developlent!</h2>
-                </div>
-                <div className='smallspace'></div>
+    // Search functionality
+    if (searchTerm) {
+      const fuse = new Fuse(filtered, {
+        keys: ['title', 'excerpt', 'tags'],
+        threshold: 0.3
+      });
+      const searchResults = fuse.search(searchTerm);
+      filtered = searchResults.map(result => result.item);
+    }
 
-                <div className='posts'>
-                {stories.map((story) => (
-                    <Link className='post' to={`/blog/${story.slug.current}`} key={story.slug.current}>
-                        <h1 className='blogtitle'>{story.title}</h1>
-                        <p className='postbody'>{`${story.body[0].children[0].text.substring(0, 200)}...`}</p>
-                        <p className='postdate'>{format(new Date(story.publishedAt), "dd MMMM yyyy")} - {story.name}</p>
-                        <p className='readtime'>Read time: {story.readtime} minutes</p>
-                        <p></p>
-                    </Link>
-                ))}
-                </div> 
-            </div>
-        </>
+    console.log('[Blog] filtered result length:', filtered.length);
+    setFilteredPosts(filtered);
+  }, [searchTerm, selectedTag, posts]);
+
+  const formatDate = (date) => {
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+  if (loading) {
+    return (
+      <div className="blog-container">
+        <div className="loading">Loading posts...</div>
+      </div>
     );
+  }
 
-}
+  return (
+    <div className="blog-container">
+      <div className="blog-header">
+        <h1>Blog @maksderylo</h1>
+      </div>
+
+      <div className="blog-controls">
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search posts..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-input"
+          />
+        </div>
+
+        <div className="tag-filter">
+          <select
+            value={selectedTag}
+            onChange={(e) => setSelectedTag(e.target.value)}
+            className="tag-select"
+          >
+            <option value="">All Tags</option>
+            {allTags.map(tag => (
+              <option key={tag} value={tag}>{tag}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div className="posts-grid">
+        {filteredPosts.length > 0 ? (
+          filteredPosts.map(post => (
+            <article key={post.slug} className="post-card">
+              <div className="post-meta">
+                <time className="post-date">{formatDate(post.date)}</time>
+              </div>
+              <h2 className="post-title">
+                <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+              </h2>
+              <p className="post-excerpt">{post.excerpt}</p>
+              <div className="post-tags">
+                {post.tags && post.tags.map(tag => (
+                  <span
+                    key={tag}
+                    className="tag"
+                    onClick={() => setSelectedTag(tag)}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <Link to={`/blog/${post.slug}`} className="read-more">
+                Read More →
+              </Link>
+            </article>
+          ))
+        ) : (
+          <div className="no-posts">
+            <p>No posts found matching your criteria.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default Blog;

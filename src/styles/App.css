@@ -1,4 +1,439 @@
-.App {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+/* Simplified base styles */
+.App, #app-root, body, html {
+  font-family: -apple-system, BlinkMacSystemFont, "applemedium", "applelight", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  background: #fafafa;
+  height: 100%;
 }
 
+#app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.simple-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.simple-nav .nav-links { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
+.simple-nav .nav-links a { text-decoration: none; color: #222; font-weight: 500; position: relative; }
+.simple-nav .nav-links a.active { font-weight: 600; }
+.simple-nav .nav-links a:hover { color: #c83921; }
+
+main {
+  flex: 1;
+  min-height: 60vh;
+}
+
+/* Home */
+.simple-home { max-width: 1200px; margin: 0 auto; }
+.simple-home .hero { display: flex; flex-wrap: wrap; gap: 2rem; padding: 3rem 2rem 2rem; align-items: flex-start; justify-content: center; }
+.simple-home .hero-text { flex: 1 1 320px; max-width: 640px; }
+.simple-home .hero-text h1 { margin: 0 0 1rem; font-size: clamp(2rem, 6vw, 3rem); }
+.simple-home .hero-text p { line-height: 1.5; margin: 0 0 1rem; }
+.simple-home .hero-image { flex: 0 1 260px; }
+.simple-home .hero-image img { max-width: 260px; width: 100%; border-radius: 10px; display: block; }
+
+.simple-home .section { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+.simple-home .quick-highlights { padding: 1rem 2rem 3rem; max-width: 1200px; margin: 0 auto; }
+.simple-home .quick-highlights h2 { margin-top: 0; text-align: center; }
+.simple-home .quick-highlights ul { list-style: none; padding: 0; margin: .5rem 0 0; max-width: 600px; margin-left: auto; margin-right: auto; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+.simple-home .quick-highlights li { margin: .25rem 0; }
+.simple-home .quick-highlights a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #c83921;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+.simple-home .quick-highlights a:hover {
+  background: #a02f1a;
+}
+
+.simple-home .highlights-section { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+.simple-home .highlights-section h2 { margin-top: 0; text-align: center; margin-bottom: 2rem; }
+.simple-home .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.simple-home .highlight-card { background: #fff; padding: 1.5rem; border-radius: 8px; border: 1px solid #e2e2e2; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+.simple-home .highlight-card h3 { margin: 0 0 1rem; color: #c83921; }
+.simple-home .highlight-card p { margin: 0; line-height: 1.5; }
+
+.simple-home .hobbies-section { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+.simple-home .hobbies-section h2 { margin-top: 0; text-align: center; margin-bottom: 2rem; }
+.simple-home .hobbies-list { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+.simple-home .hobby-tag { background: #c83921; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; }
+
+/* About */
+.simple-about { padding: 2rem; }
+.simple-about .about-hero { display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; }
+.simple-about .about-text { flex: 1 1 340px; max-width: 640px; }
+.simple-about .about-text h1 { margin: 0 0 1rem; font-size: clamp(2rem,5.5vw,3rem); }
+.simple-about .about-text p { line-height: 1.55; margin: 0 0 1rem; }
+.simple-about .about-photo { flex: 0 1 260px; }
+.simple-about .about-photo img { max-width: 260px; width: 100%; border-radius: 10px; }
+.simple-about .about-section { margin-top: 3rem; }
+.simple-about .about-section h2 { margin: 0 0 1rem; font-size: 1.75rem; }
+.simple-about ul.highlights { list-style: disc; padding-left: 1.25rem; margin: 0; }
+.simple-about ul.highlights li { margin: .35rem 0; }
+
+.project-cards { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.project-card { flex: 1 1 260px; max-width: 360px; background: #fff; border: 1px solid #e2e2e2; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+.project-card img { width: 100%; border-radius: 6px; margin-bottom: .75rem; }
+.project-card h3 { margin: 0 0 .5rem; font-size: 1.1rem; }
+.project-card p { margin: 0 0 .75rem; line-height: 1.4; }
+.project-card a { color: #c83921; text-decoration: none; }
+.project-card a:hover { text-decoration: underline; }
+
+/* Footer */
+footer {
+  margin-top: auto;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-top: 1px solid #e2e2e2;
+  font-size: .875rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+footer p { margin: 0; }
+footer ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+footer a { text-decoration: none; color: #444; }
+footer a:hover { color: #c83921; }
+
+/* Blog Styles - Low Profile & Simplistic Design */
+.blog-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.blog-header {
+  margin-bottom: 4rem;
+}
+
+.blog-header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: #111;
+}
+
+.blog-header p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+}
+
+.blog-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 250px;
+  max-width: 100%;
+  background: #fff;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #999;
+}
+
+.tag-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.tag-select:focus {
+  outline: none;
+  border-color: #999;
+}
+
+.posts-grid {
+  display: block;
+}
+
+.post-card {
+  margin-bottom: 3rem;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  transition: none;
+}
+
+.post-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.post-meta {
+  margin-bottom: 0.5rem;
+}
+
+.post-date {
+  color: #999;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.post-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.post-title a {
+  color: #111;
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  color: #666;
+}
+
+.post-excerpt {
+  color: #666;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tag {
+  background: #f5f5f5;
+  color: #666;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border: none;
+}
+
+.tag:hover {
+  background: #e5e5e5;
+  color: #333;
+}
+
+.read-more {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.read-more:hover {
+  color: #111;
+  text-decoration: underline;
+}
+
+.no-posts {
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+  font-size: 0.95rem;
+}
+
+/* Blog Post Styles - Low Profile */
+.blog-post-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.post-header {
+  margin-bottom: 3rem;
+}
+
+.back-to-blog {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.back-to-blog:hover {
+  color: #111;
+  text-decoration: underline;
+}
+
+.post-header .post-date {
+  color: #999;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 400;
+}
+
+.post-header .post-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: #111;
+  line-height: 1.3;
+}
+
+.post-header .post-tags {
+  margin-bottom: 0;
+}
+
+.post-content {
+  line-height: 1.6;
+  color: #333;
+  font-size: 1rem;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  color: #111;
+  margin: 2.5rem 0 1rem;
+  font-weight: 600;
+}
+
+.post-content h1 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.post-content h2 {
+  font-size: 1.25rem;
+}
+
+.post-content h3 {
+  font-size: 1.1rem;
+}
+
+.post-content p {
+  margin: 1.25rem 0;
+}
+
+.post-content ul,
+.post-content ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.post-content li {
+  margin: 0.5rem 0;
+}
+
+.post-content code {
+  background: #f8f8f8;
+  padding: 0.15rem 0.3rem;
+  border-radius: 3px;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 0.85em;
+  color: #666;
+}
+
+.post-content pre {
+  margin: 2rem 0;
+  border-radius: 6px;
+  overflow-x: auto;
+  background: #f8f8f8 !important;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+  color: #333;
+}
+
+.post-content blockquote {
+  border-left: 3px solid #ddd;
+  padding-left: 1rem;
+  margin: 2rem 0;
+  color: #666;
+  font-style: italic;
+}
+
+/* LaTeX Math styling - Simplified */
+.katex {
+  font-size: 1em;
+}
+
+.katex-display {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 3rem 0;
+  color: #999;
+}
+
+.error h1 {
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .blog-container,
+  .blog-post-container {
+    padding: 2rem 1rem;
+  }
+
+  .blog-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input,
+  .tag-select {
+    width: 100%;
+  }
+
+  .post-card {
+    margin-bottom: 2.5rem;
+  }
+
+  .post-header .post-title {
+    font-size: 1.5rem;
+  }
+
+  .blog-header h1 {
+    font-size: 1.5rem;
+  }
+}
