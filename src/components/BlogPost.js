@@ -128,7 +128,7 @@ const BlogPost = () => {
               a({node, ...props}) {
                 const href = props.href || '';
                 // Determine if this is a downloadable asset (python script or other file under downloads/)
-                const isDownloadable = /(^|\/)(downloads\/).+\.(py|zip|tar|gz|txt)$/i.test(href) || /\.py$/i.test(href);
+                const isDownloadable = /(^|\/)(downloads\/).+\.(py|zip|tar|gz|txt|yml|yaml)$/i.test(href) || /\.(py|yml|yaml)$/i.test(href);
                 // Build a safe href respecting PUBLIC_URL (for GH Pages subpaths) and avoiding hash-router interception
                 let resolved = href;
                 if (isDownloadable) {

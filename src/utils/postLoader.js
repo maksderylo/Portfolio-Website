@@ -202,8 +202,41 @@ const loadPostFromKey = async (key) => {
   }
 };
 
+// Helper: load static postsIndex.json (build-time generated) – primary source in production
+let staticIndexPromise = null;
+async function loadStaticIndex() {
+  if (staticIndexPromise) return staticIndexPromise;
+  const base = (process.env.PUBLIC_URL && process.env.PUBLIC_URL !== '/') ? process.env.PUBLIC_URL.replace(/\/$/, '') : '';
+  const url = base ? `${base}/postsIndex.json` : 'postsIndex.json';
+  staticIndexPromise = fetch(url, { cache: 'no-cache' })
+    .then(res => {
+      if (!res.ok) throw new Error(`postsIndex.json status ${res.status}`);
+      return res.json();
+    })
+    .then(list => {
+      if (!Array.isArray(list)) throw new Error('postsIndex.json malformed (not array)');
+      list.forEach(p => { postCache[p.slug] = { ...p, date: p.date ? new Date(p.date) : new Date() }; });
+      return list.map(p => ({ ...p, date: p.date ? new Date(p.date) : new Date() }));
+    })
+    .catch(err => {
+      console.warn('[postLoader] loadStaticIndex failed:', err);
+      staticIndexPromise = null; // allow retry
+      return null;
+    });
+  return staticIndexPromise;
+}
+
 export const loadAllPosts = async () => {
   try {
+    // In production prefer static index to avoid CORS/relative path issues with emitted .md assets
+    if (process.env.NODE_ENV === 'production') {
+      const staticList = await loadStaticIndex();
+      if (staticList && staticList.length) {
+        return staticList.sort((a, b) => b.date - a.date);
+      }
+      // fall through to dynamic if static failed
+    }
+
     const keys = markdownContext.keys();
     console.log('[postLoader] Discovered markdown keys:', keys);
     let posts = await Promise.all(keys.map(loadPostFromKey));
@@ -211,53 +244,38 @@ export const loadAllPosts = async () => {
     console.log('[postLoader] Parsed posts from require.context:', posts.map(p => ({ slug: p.slug, title: p.title, date: p.date })));
 
     if (!posts.length) {
-      // Fallback: try static JSON index generated at build time
-      try {
-        const res = await fetch('postsIndex.json', { cache: 'no-cache' });
-        if (res.ok) {
-          const json = await res.json();
-          console.log('[postLoader] Loaded fallback postsIndex.json with', json.length, 'entries');
-          json.forEach(p => {
-            postCache[p.slug] = {
-              ...p,
-              date: p.date ? new Date(p.date) : new Date(),
-            };
-          });
-          return json
-            .map(p => ({ ...p, date: p.date ? new Date(p.date) : new Date() }))
-            .sort((a, b) => b.date - a.date);
-        } else {
-          console.warn('[postLoader] Fallback postsIndex.json fetch failed with status', res.status);
-        }
-      } catch (fallbackErr) {
-        console.warn('[postLoader] Fallback to postsIndex.json failed:', fallbackErr);
-      }
+      // Fallback: try static JSON index generated at build time (also for development if dynamic failed)
+      const fallbackList = await loadStaticIndex();
+      if (fallbackList) return fallbackList.sort((a, b) => b.date - a.date);
     }
 
     return posts.sort((a, b) => b.date - a.date);
   } catch (error) {
     console.error('Failed to load posts:', error);
-    return [];
+    const staticList = await loadStaticIndex();
+    return staticList ? staticList.sort((a, b) => b.date - a.date) : [];
   }
 };
 
 export const loadPostBySlug = async (slug) => {
+  // If already cached return
   if (postCache[slug]) return postCache[slug];
+
+  // Production: try static index first (ensures consistent content on GH Pages)
+  if (process.env.NODE_ENV === 'production') {
+    const staticList = await loadStaticIndex();
+    if (staticList) {
+      return postCache[slug] || null;
+    }
+  }
+
   const key = `./${slug}.md`;
   if (markdownContext.keys().includes(key)) {
     const loaded = await loadPostFromKey(key);
     if (loaded) return loaded;
   }
-  // Fallback: attempt to hydrate from static index
-  try {
-    const res = await fetch('postsIndex.json', { cache: 'no-cache' });
-    if (res.ok) {
-      const json = await res.json();
-      json.forEach(p => { postCache[p.slug] = { ...p, date: p.date ? new Date(p.date) : new Date() }; });
-      return postCache[slug] || null;
-    }
-  } catch (e) {
-    console.warn('[postLoader] loadPostBySlug static index fallback failed:', e);
-  }
+  // Fallback: attempt static index (dev path)
+  const staticList = await loadStaticIndex();
+  if (staticList) return postCache[slug] || null;
   return null;
 };
