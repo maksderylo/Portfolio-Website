@@ -9,9 +9,10 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import { loadPostBySlug } from '../utils/postLoader';
 
-// Image assets in posts directory (non-recursive). This lets us map relative markdown image references like (img.png)
-// to the actual bundled asset URL.
-const imagesContext = require.context('../posts', false, /\.(png|jpe?g|gif|svg)$/);
+// Image assets in posts directory (now recursive to include images inside per-post folders)
+// Previously second arg was false (non-recursive) which prevented images inside folders like
+// 2025-09-27-automatic-code-quality-checks/ from being discovered after moving them.
+const imagesContext = require.context('../posts', true, /\.(png|jpe?g|gif|svg)$/);
 const imageMap = imagesContext.keys().reduce((acc, key) => {
   acc[key.replace('./', '')] = imagesContext(key);
   return acc;
@@ -116,7 +117,7 @@ const BlogPost = () => {
               },
               img({node, ...props}) {
                 const src = props.src || '';
-                if (src && !/^https?:/i.test(src) && !src.startsWith('/') ) {
+                if (src && !/^https?:/i.test(src) && !src.startsWith('/')) {
                   const normalized = src.startsWith('./') ? src.slice(2) : src;
                   const mapped = imageMap[normalized];
                   if (mapped) {
@@ -127,13 +128,10 @@ const BlogPost = () => {
               },
               a({node, ...props}) {
                 const href = props.href || '';
-                // Determine if this is a downloadable asset (python script or other file under downloads/)
                 const isDownloadable = /(^|\/)(downloads\/).+\.(py|zip|tar|gz|txt|yml|yaml)$/i.test(href) || /\.(py|yml|yaml)$/i.test(href);
-                // Build a safe href respecting PUBLIC_URL (for GH Pages subpaths) and avoiding hash-router interception
                 let resolved = href;
                 if (isDownloadable) {
                   const pub = process.env.PUBLIC_URL || '.';
-                  // Normalize leading slashes to support relative hosting
                   if (href.startsWith('/')) {
                     resolved = `${pub}${href}`;
                   } else if (!href.startsWith(pub)) {
