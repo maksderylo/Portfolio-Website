@@ -10,13 +10,11 @@ excerpt: "The set of steps needed to utilize Understand from Scitools and Simian
 In order to avoid either manual checks requiring each student to run the tools on their machines continuously throughout the project, or refactoring to adhere to the standards before submission, following this tutorial this process can be automated to have the checks continuously run on each pull request.
 
 The guidelines we were given for our Software Engineering Project (SEP) are as follows:
-![img_1.png](img_1.png)
+![img_1.png](2025-09-27-automatic-code-quality-checks/img_1.png)
 
 And most of these can be checked and reported on automatically.
 An example in our frontend:
-![img.png](img.png)
-
-
+![img.png](2025-09-27-automatic-code-quality-checks/img.png)
 
 In this tutorial, I will guide through the steps needed to set up automatic code quality checks, on the example of our setup for frontend, but I specify each place where this template can be adjusted to your project.
 
@@ -29,6 +27,7 @@ And thus created checks for each of these folders separately.
 # Prerequisites
 
 - A GitHub repository for your project. 
+- Admin access to that repository to add secrets and modify Github Actions settings.
 (In case you chose to use GitLab or Bitbucket, the steps will be similar, but the tutorial is tailored to GH.)
 - Understand from Scitools license
   (Single student rather than entire developing team needs to acquire it, it's reused on every run)
@@ -92,17 +91,18 @@ Look at the comments (specifically those starting with `TODO`) for places where 
 
 > Make sure it is in `.github/workflows` folder.
 
-## Step 5 - Few repo tweaks
+## Step 5 - Last repo tweaks
 
 1. Go to your repository settings, under "Actions" > "General", and ensure that "Read and write permissions" is selected for the workflow permissions. This is necessary for the workflow to post comments on pull requests.
-2. ...?
 
 # Done!
 
 Once you have completed these steps, every time a pull request is created or updated in your repository, the GitHub Actions workflow will automatically run the code quality checks using Understand and Simian. The results will be posted as a comment on the pull request, allowing you to easily see any issues that need to be addressed before merging.
 
 Additionally, you can inspect the results by downloading the artifact uploaded by the job when it succeeds:
-![img_2.png](img_2.png)
+![img_2.png](2025-09-27-automatic-code-quality-checks/img_2.png)
 
 Unzip and open the `index.html` file in your browser to see the full report:
-![img_3.png](img_3.png)
+![img_3.png](2025-09-27-automatic-code-quality-checks/img_3.png)
+
+> Note: This template is to be extended with similarity analyzer, if you want the update you can reach out to me at - m.derylo@student.tue.nl.
