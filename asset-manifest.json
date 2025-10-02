@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.83f4c2a7.css",
-    "main.js": "./static/js/main.1030678b.js",
+    "main.js": "./static/js/main.601c5bf1.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/img1.png": "./static/media/img1.bf6f8593ff6babd4f46b.png",
@@ -44,7 +44,7 @@
     "static/media/KaTeX_Main-BoldItalic.woff": "./static/media/KaTeX_Main-BoldItalic.428978dc7837d46de091.woff",
     "static/media/KaTeX_Math-Italic.woff": "./static/media/KaTeX_Math-Italic.96759856b4e70f3a8338.woff",
     "static/media/KaTeX_Math-BoldItalic.woff": "./static/media/KaTeX_Math-BoldItalic.3f07ed67f06c720120ce.woff",
-    "static/media/30-09-2025-ml-research-1.md": "./static/media/30-09-2025-ml-research-1.bedcdffe17328591b56a.md",
+    "static/media/30-09-2025-ml-research-1.md": "./static/media/30-09-2025-ml-research-1.ba839af46f11821bee81.md",
     "static/media/KaTeX_Main-Italic.woff2": "./static/media/KaTeX_Main-Italic.fe2176f79edaa716e621.woff2",
     "static/media/KaTeX_Main-BoldItalic.woff2": "./static/media/KaTeX_Main-BoldItalic.20f389c4120be058d80a.woff2",
     "static/media/KaTeX_Script-Regular.ttf": "./static/media/KaTeX_Script-Regular.fc9ba5249878cd8f8d88.ttf",
@@ -85,11 +85,11 @@
     "static/media/KaTeX_Size3-Regular.woff2": "./static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "./index.html",
     "main.83f4c2a7.css.map": "./static/css/main.83f4c2a7.css.map",
-    "main.1030678b.js.map": "./static/js/main.1030678b.js.map",
+    "main.601c5bf1.js.map": "./static/js/main.601c5bf1.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.83f4c2a7.css",
-    "static/js/main.1030678b.js"
+    "static/js/main.601c5bf1.js"
   ]
 }
