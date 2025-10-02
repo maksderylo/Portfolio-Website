@@ -136,7 +136,6 @@ $$
 V \approx WH
 $$
 
-
 $$
 V_{i\mu} \approx \sum_{a=1}^r W_{ia}H_{a\mu}
 $$
@@ -156,7 +155,7 @@ The differences between NMF, VQ and PCA are due to different constrains imposed 
 
 After reading the paper, I performed a few experiments trying to repeat the experiments with my own code:
 
-``` python
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import fetch_olivetti_faces
@@ -185,24 +184,29 @@ ax.set_title(f'Component {i+1}')
 plt.tight_layout()
 plt.show()
 ```
+
 This code loads the Olivetti faces dataset, applies NMF to extract 16 components, and visualizes these components as images. I expected the resulting components should represent parts of faces, such as eyes, noses, and mouths, similar to the results presented in the paper.
 
 ### Initial experiment
+
 The result was:
 ![img.png](assets/img.png)
 
 This doesn't confirm the results from the paper, as the components are clear faces, not parts of faces. The initial possible reasons for this discrepancy could be:
+
 - Different initialization method for NMF.
 - Different number of components.
 - Smaller dataset used.
-Or the combination of these factors.
+  Or the combination of these factors.
 
 ### Addressing the potential issues
+
 To address these issues, I made the following adjustments:
+
 1. Changed the number of components to 36.
 2. Changed the initialization method to 'nndsvda', which is known to yield better results for NMF.
 
-``` python
+```python
 n_components = 36
 nmf = NMF(n_components=n_components, init='nndsvda', random_state=42, max_iter=10000)
 W = nmf.fit_transform(X)
@@ -216,6 +220,7 @@ for i, ax in enumerate(axes.flat):
 plt.tight_layout()
 plt.show()
 ```
+
 The updated result was:
 ![img.png](assets/img1.png)
 Which is closer to the expected parts-based representation, showing distinct facial features in some of the components.
@@ -224,7 +229,7 @@ The last change was the size of the dataset. The Olivetti dataset contains only 
 
 With that, I prepared the experiment comparing the convergence of NMF as the number of training samples increased, to see whether the data size/feature to data size did play a role in extracting more specific features.
 
-``` python
+```python
 # python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -270,18 +275,21 @@ assert np.prod(image_shape) == X_train.shape[1]
 ```
 
 And last thing was to call the function with appropriate parameters:
-``` python
+
+```python
 visualize_components_by_size(
     X_train, image_shape, sample_sizes=[400, len(X_train)],
     n_components=64, max_iter=6000, random_state=0
 )
 ```
+
 Which resulted in:
 ![img.png](assets/img2.png)
 ![img.png](assets/img4.png)
 
 Finally, I tested the MSE and reconstruction error as the sample size grew, for the number of components 64, as well as increased the maximum number of iterations to 60,000 to ensure convergence.
-``` python
+
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import fetch_lfw_people
@@ -343,20 +351,28 @@ plt.grid(True, ls='--', alpha=0.4)
 plt.tight_layout()
 plt.show()
 ```
+
 The output was:
-samples=200 | test MSE=0.006207 | train recon_err=40.446190
-samples=500 | test MSE=0.004738 | train recon_err=71.699516
-samples=1000 | test MSE=0.004332 | train recon_err=107.500862
-samples=2000 | test MSE=0.004177 | train recon_err=153.365433
-samples=4000 | test MSE=0.004107 | train recon_err=216.769272
-samples=7331 | test MSE=0.004082 | train recon_err=295.135712
-samples=7331 | test MSE=0.004080 | train recon_err=295.109009
-![img.png](assets/img3.png)
+
+
+| samples      | test MSE          | test recon_err             |
+| ------------ | ----------------- | -------------------------- |
+| samples=200  | test MSE=0.006207 | train recon_err=40.446190  |
+| samples=500  | test MSE=0.004738 | train recon_err=71.699516  |
+| samples=1000 | test MSE=0.004332 | train recon_err=107.500862 |
+| samples=2000 | test MSE=0.004177 | train recon_err=153.365433 |
+| samples=4000 | test MSE=0.004107 | train recon_err=216.769272 |
+| samples=7331 | test MSE=0.004082 | train recon_err=295.135712 |
+| samples=7331 | test MSE=0.004080 | train recon_err=295.10900  |
+
+[img.png](assets/img3.png)
 
 ### Conclusions
+
 NMF behavior is sensitive to:
+
 - Initialization (NNDSVDA accelerates convergence and yields more localized, additive parts).
 - Number of components (too few => holistic faces; more components => emergent parts like eyes, shadows, mouth regions).
 - Dataset size (larger sample sets reduce test MSE and allow finer specialization; gains plateau as curve flattens).
-Even with more data and components, some bases remain quasi-holistic—indicating limits of plain Frobenius NMF without added sparsity or alignment constraints.
-Empirically, increasing components + structured init + sufficient data shifts representations from global templates toward additive parts, consistent with the parts-based hypothesis motivating NMF and sparse feature learning.
+  Even with more data and components, some bases remain quasi-holistic—indicating limits of plain Frobenius NMF without added sparsity or alignment constraints.
+  Empirically, increasing components + structured init + sufficient data shifts representations from global templates toward additive parts, consistent with the parts-based hypothesis motivating NMF and sparse feature learning.
