@@ -278,6 +278,7 @@ visualize_components_by_size(
 ```
 Which resulted in:
 ![img.png](assets/img2.png)
+![img.png](assets/img4.png)
 
 Finally, I tested the MSE and reconstruction error as the sample size grew, for the number of components 64, as well as increased the maximum number of iterations to 60,000 to ensure convergence.
 ``` python
