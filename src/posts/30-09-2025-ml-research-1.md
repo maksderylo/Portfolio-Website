@@ -357,15 +357,15 @@ The output was:
 
 | samples      | test MSE          | test recon_err             |
 | ------------ | ----------------- | -------------------------- |
-| samples=200  | test MSE=0.006207 | train recon_err=40.446190  |
-| samples=500  | test MSE=0.004738 | train recon_err=71.699516  |
-| samples=1000 | test MSE=0.004332 | train recon_err=107.500862 |
-| samples=2000 | test MSE=0.004177 | train recon_err=153.365433 |
-| samples=4000 | test MSE=0.004107 | train recon_err=216.769272 |
-| samples=7331 | test MSE=0.004082 | train recon_err=295.135712 |
-| samples=7331 | test MSE=0.004080 | train recon_err=295.10900  |
+| 200  | 0.006207 | 40.446190  |
+| 500  | 0.004738 | 71.699516  |
+| 1000 | 0.004332 | 107.500862 |
+| 2000 | 0.004177 | 153.365433 |
+| 4000 | 0.004107 | 216.769272 |
+| 7331 | 0.004082 | 295.135712 |
+| 7331 | 0.004080 | 295.10900  |
 
-[img.png](assets/img3.png)
+![img.png](assets/img3.png)
 
 ### Conclusions
 
