@@ -374,5 +374,7 @@ NMF behavior is sensitive to:
 - Initialization (NNDSVDA accelerates convergence and yields more localized, additive parts).
 - Number of components (too few => holistic faces; more components => emergent parts like eyes, shadows, mouth regions).
 - Dataset size (larger sample sets reduce test MSE and allow finer specialization; gains plateau as curve flattens).
+
+
   Even with more data and components, some bases remain quasi-holistic—indicating limits of plain Frobenius NMF without added sparsity or alignment constraints.
   Empirically, increasing components + structured init + sufficient data shifts representations from global templates toward additive parts, consistent with the parts-based hypothesis motivating NMF and sparse feature learning.
