@@ -1,6 +1,6 @@
 ---
 title: "Machine Learning Research Notes 3 - SAE and NMF comparison"
-date: "2025-14-08"
+date: "2025-10-14"
 tags: ["university", "ML", "research", "SAE", "NMF"]
 excerpt: "Under what conditions do SAE and NMF converge to similar solutions?"
 ---
