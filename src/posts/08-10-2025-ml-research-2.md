@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning Research Notes 2 - Understanding SAE"
 date: "2025-10-08"
-tags: ["university", "ML", "research", "autoencoders", "SAE", "PyTorch""]
+tags: ["university", "ML", "research", "autoencoders", "SAE", "PyTorch"]
 excerpt: "Deeveloping emperical understanding of SAE, what is going on, effects of parameters into learned features."
 ---
 This week's task is to gain "the empirical understanding of what is going on". I will work on coding my own SAE in a way I can easily tweak and visualize the effects of different parameters. In other words, I will be learning PyTorch - a deep learning framework commonly perceived as more appropriate for research compared to Tensorflow.
@@ -31,9 +31,12 @@ def sparse_loss(y_true, y_pred):
 
 For the sparsity they use the kl_divergence Kullback–Leibler divergence $D_{KL} = \sum \left( \rho \log \frac{\rho}{\hat{\rho} + \epsilon} + (1 - \rho) \log \frac{1 - \rho}{1 - \hat{\rho} + \epsilon} \right)$ [wikipedia](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence). When put in the loss function it instead of forcing sparsity (small number of non-zero activations) it rather penalizes the model for not having the average activation close to the desired sparsity level. This is a bit counter-intuitive, but seems to be common approach.
 
-Visualization of the decoder weights after training:
+Visualization of the encoder/decoder weights after training:
+![img.png](06-10-2025-ml-research-2/img20.png)
 ![img.png](06-10-2025-ml-research-2/img.png)
-But importantly, since the implementation forces the mean to be low, there are many active hidden units and the sparsity is pretty high:
+Where the decoder weights do show some interpretable patterns, the encoder weights on the other hand are quite noisy.
+
+But importantly, since the implementation forces the mean to be low, there are many active hidden units and the actual sparsity is pretty low:
 ![img_1.png](06-10-2025-ml-research-2/img_1.png)
 
 # My own implementation

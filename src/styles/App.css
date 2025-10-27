@@ -437,3 +437,41 @@ footer a:hover { color: #c83921; }
     font-size: 1.5rem;
   }
 }
+
+/* === Added: Blog post reading column + responsive media (actions 1 & 2) === */
+.blog-post-container .blog-post { /* reading column constraint */
+  max-width: 860px; /* wider than list but still readable */
+  margin: 0 auto;
+}
+
+/* Ensure markdown images never overflow the text column */
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* avoid baseline gaps */
+  margin: 1.25rem auto; /* space around images */
+  object-fit: contain;
+}
+
+/* Optional: prevent extremely tall images from dominating viewport */
+.post-content img.tall,
+.post-content img[height] {
+  max-height: 90vh;
+}
+
+/* Keep tables and code blocks from forcing horizontal scroll of body */
+.post-content table,
+.post-content pre,
+.post-content code {
+  max-width: 100%;
+}
+
+.post-content pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Soft-wrap long inline code or URLs */
+.post-content code {
+  overflow-wrap: anywhere;
+}
