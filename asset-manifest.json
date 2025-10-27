@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.1a7bf743.css",
-    "main.js": "./static/js/main.fc0a7175.js",
+    "main.js": "./static/js/main.b8ff1646.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/EHXJ5029-original.jpeg": "./static/media/EHXJ5029-original.01d2dccd9c1a81cb6e55.jpeg",
@@ -98,16 +98,16 @@
     "static/media/KaTeX_Size4-Regular.woff2": "./static/media/KaTeX_Size4-Regular.e418bf257af1052628d8.woff2",
     "static/media/KaTeX_Size3-Regular.woff": "./static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "./static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
-    "static/media/14-10-2025-ml-research-3.md": "./static/media/14-10-2025-ml-research-3.18326cafed40a37934aa.md",
+    "static/media/14-10-2025-ml-research-3.md": "./static/media/14-10-2025-ml-research-3.75236771976cef41f199.md",
     "index.html": "./index.html",
-    "static/media/20-10-2025-marathon-2.md": "./static/media/20-10-2025-marathon-2.f69e182e6d2ab39757f8.md",
+    "static/media/20-10-2025-marathon-2.md": "./static/media/20-10-2025-marathon-2.6ee6fdb69e0e6862db8b.md",
     "static/media/06-10-2025-book-recom-mans-search-for-meaning.md": "./static/media/06-10-2025-book-recom-mans-search-for-meaning.b93bda2746fb2ce2d7fe.md",
     "main.1a7bf743.css.map": "./static/css/main.1a7bf743.css.map",
-    "main.fc0a7175.js.map": "./static/js/main.fc0a7175.js.map",
+    "main.b8ff1646.js.map": "./static/js/main.b8ff1646.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1a7bf743.css",
-    "static/js/main.fc0a7175.js"
+    "static/js/main.b8ff1646.js"
   ]
 }
