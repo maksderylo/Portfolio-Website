@@ -1,5 +1,30 @@
 [
   {
+    "slug": "20-10-2025-marathon-2",
+    "title": "I ran a second marathon",
+    "date": "2025-10-20",
+    "tags": [
+      "running",
+      "marathon"
+    ],
+    "excerpt": "Unfortunately, underwhelming time - 3:46:51",
+    "content": "Unfortunately, underwhelming time - 3:46:51. Goal for next time is sub 3:30.\n\n![EHAA3029-original.jpeg](assets/EHAA3029-original.jpeg)\n![EHNK15920-original.jpeg](assets/EHNK15920-original.jpeg)\n![EHXH3407-original.jpeg](assets/EHXH3407-original.jpeg)\n![EHXJ5029-original.jpeg](assets/EHXJ5029-original.jpeg)"
+  },
+  {
+    "slug": "14-10-2025-ml-research-3",
+    "title": "Machine Learning Research Notes 3 - SAE and NMF comparison",
+    "date": "2025-10-14",
+    "tags": [
+      "university",
+      "ML",
+      "research",
+      "SAE",
+      "NMF"
+    ],
+    "excerpt": "Under what conditions do SAE and NMF converge to similar solutions?",
+    "content": "This week I will focus on wrapping up the knowledge gathered about NMF and SAE, while also trying to focus on the parametrization of both in order to get similar parts based representation results.\n\n# Quick Wrap-up\n\n## NMF\n\nNMF decomposes a non-negative data matrix $D$ into two non-negative matrices $W$ (basis) and $H$ (coefficients) such that:\n\n$$\nD \\approx WH\n$$\n\n, the standard formulation of the optimization problem is:\n\n$$\n\\min_{W,H} ||D - WH||^2_F\n$$\n\nsubject to $W \\geq 0, H \\geq 0$.\n\n## SAE\n\n1. Forward pass:\n\n- Encoder: $H_{pre} = DU^T$, where $D$ is the data matrix, $U$ the encoder weights\n- Activation: $H = f(H_{pre})$ (e.g. ReLU, jumpReLU, TopK)\n- Reconstruction: $\\hat{D} = YX^T$, where $Y$ is the decoder weights\n\n2. Backward Pass: The model updates weights via gradient descent on the reconstruction loss:\n\n$$\n\\mathcal{L} = ||D - \\hat{D}||^2 + \\lambda \\cdot \\text{sparsity\\_loss}(H)\n$$\n\nwhere $\\lambda$ is a hyperparameter controlling the influence of the sparsity loss (e.g. KL-Divergence).\n\nThus, for SAE without the sparsity loss, but with TopK hard constraint, the SAE in terms of optimization can be written down as\n\n$$\n\\min_{U,X}||D-\\hat{D}||^2_2\n$$\n\n$$\n\\text{s.t. }\\hat{D} =HX^T,\n$$\n\n$$\nH=JumpReLU(DU^T),\n$$\n\n$$\n||H_{i\\cdot}||_0 = k, \\forall i\n$$\n\nwhere $D$ is the original data, $\\hat{D}$ is the reconstruction, $U$ and $X$ the encoder and decoder weights respectively.\n\n# Comparison of NMF and SAE\n\nhttps://arxiv.org/pdf/1601.02733\n\nhttps://arxiv.org/html/2411.02124v1\n\n### New Definitions and Terms\n\n- **Variational Autoencoder (VAE)**: A type of autoencoder that learns a probabilistic mapping from input data to a latent space, allowing for the generation of new data samples by sampling from the learned distribution. Also used for disentanglement - https://openreview.net/forum?id=Sy2fzU9gl\n- **NNSAE** - Nonnegative Sparse Autoencoder: An autoencoder that incorporates non-negativity constraints on the weights and activations, promoting parts-based representations similar to Non-negative Matrix Factorization (NMF).\n- **NCAE** - Nonnegative Constrained Autoencoder - https://arxiv.org/pdf/1601.02733"
+  },
+  {
     "slug": "08-10-2025-ml-research-2",
     "title": "Machine Learning Research Notes 2 - Understanding SAE",
     "date": "2025-10-08",
@@ -24,31 +49,6 @@
     ],
     "excerpt": "!img.png",
     "content": "![img.png](06-10-2025-book-recom-mans-search-for-meaning/img.png)"
-  },
-  {
-    "slug": "14-10-2025-ml-research-3",
-    "title": "Machine Learning Research Notes 3 - SAE and NMF comparison",
-    "date": "2025-14-08",
-    "tags": [
-      "university",
-      "ML",
-      "research",
-      "SAE",
-      "NMF"
-    ],
-    "excerpt": "Under what conditions do SAE and NMF converge to similar solutions?",
-    "content": "This week I will focus on wrapping up the knowledge gathered about NMF and SAE, while also trying to focus on the parametrization of both in order to get similar parts based representation results.\n\n# Quick Wrap-up\n\n## NMF\n\nNMF decomposes a non-negative data matrix $D$ into two non-negative matrices $W$ (basis) and $H$ (coefficients) such that:\n\n$$\nD \\approx WH\n$$\n\n, the standard formulation of the optimization problem is:\n\n$$\n\\min_{W,H} ||D - WH||^2_F\n$$\n\nsubject to $W \\geq 0, H \\geq 0$.\n\n## SAE\n\n1. Forward pass:\n\n- Encoder: $H_{pre} = DU^T$, where $D$ is the data matrix, $U$ the encoder weights\n- Activation: $H = f(H_{pre})$ (e.g. ReLU, jumpReLU, TopK)\n- Reconstruction: $\\hat{D} = YX^T$, where $Y$ is the decoder weights\n\n2. Backward Pass: The model updates weights via gradient descent on the reconstruction loss:\n\n$$\n\\mathcal{L} = ||D - \\hat{D}||^2 + \\lambda \\cdot \\text{sparsity\\_loss}(H)\n$$\n\nwhere $\\lambda$ is a hyperparameter controlling the influence of the sparsity loss (e.g. KL-Divergence).\n\nThus, for SAE without the sparsity loss, but with TopK hard constraint, the SAE in terms of optimization can be written down as\n\n$$\n\\min_{U,X}||D-\\hat{D}||^2_2\n$$\n\n$$\n\\text{s.t. }\\hat{D} =HX^T,\n$$\n\n$$\nH=JumpReLU(DU^T),\n$$\n\n$$\n||H_{i\\cdot}||_0 = k, \\forall i\n$$\n\nwhere $D$ is the original data, $\\hat{D}$ is the reconstruction, $U$ and $X$ the encoder and decoder weights respectively.\n\n# Comparison of NMF and SAE\n\nhttps://arxiv.org/pdf/1601.02733\n\nhttps://arxiv.org/html/2411.02124v1\n\n### New Definitions and Terms\n\n- **Variational Autoencoder (VAE)**: A type of autoencoder that learns a probabilistic mapping from input data to a latent space, allowing for the generation of new data samples by sampling from the learned distribution. Also used for disentanglement - https://openreview.net/forum?id=Sy2fzU9gl\n- **NNSAE** - Nonnegative Sparse Autoencoder: An autoencoder that incorporates non-negativity constraints on the weights and activations, promoting parts-based representations similar to Non-negative Matrix Factorization (NMF).\n- **NCAE** - Nonnegative Constrained Autoencoder - https://arxiv.org/pdf/1601.02733"
-  },
-  {
-    "slug": "20-10-2025-marathon-2",
-    "title": "I ran a second marathon",
-    "date": "2025-20-10",
-    "tags": [
-      "running",
-      "marathon"
-    ],
-    "excerpt": "Unfortunately, underwhelming time - 3:46:51",
-    "content": "Unfortunately, underwhelming time - 3:46:51. Goal for next time is sub 3:30.\n\n![EHAA3029-original.jpeg](assets/EHAA3029-original.jpeg)\n![EHNK15920-original.jpeg](assets/EHNK15920-original.jpeg)\n![EHXH3407-original.jpeg](assets/EHXH3407-original.jpeg)\n![EHXJ5029-original.jpeg](assets/EHXJ5029-original.jpeg)"
   },
   {
     "slug": "30-09-2025-ml-research-1",
