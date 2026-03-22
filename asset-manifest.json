@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.ee6c64a6.css",
-    "main.js": "./static/js/main.890ae823.js",
+    "main.js": "./static/js/main.cd16bff0.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/EHXJ5029-original.jpeg": "./static/media/EHXJ5029-original.01d2dccd9c1a81cb6e55.jpeg",
@@ -9,6 +9,7 @@
     "static/media/EHNK15920-original.jpeg": "./static/media/EHNK15920-original.7908d621f6b96e758826.jpeg",
     "static/media/EHXH3407-original.jpeg": "./static/media/EHXH3407-original.293b0447bf5726df2830.jpeg",
     "static/media/img1.png": "./static/media/img1.bf6f8593ff6babd4f46b.png",
+    "static/media/img5.png": "./static/media/img5.2b060c21401b22aaab63.png",
     "static/media/img_8.png": "./static/media/img_8.c8e5c68652006a0c6700.png",
     "static/media/img2.png": "./static/media/img2.5bfa0dbce55411c4a059.png",
     "static/media/img_6.png": "./static/media/img_6.88b380285c9786f28915.png",
@@ -98,16 +99,16 @@
     "static/media/KaTeX_Size4-Regular.woff2": "./static/media/KaTeX_Size4-Regular.e418bf257af1052628d8.woff2",
     "static/media/KaTeX_Size3-Regular.woff": "./static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "./static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
+    "static/media/18-03-2026-bep-research-1.md": "./static/media/18-03-2026-bep-research-1.1ab08d2e3475a53ed14e.md",
     "static/media/14-10-2025-ml-research-3.md": "./static/media/14-10-2025-ml-research-3.75236771976cef41f199.md",
-    "static/media/18-03-2026-bep-research-1.md": "./static/media/18-03-2026-bep-research-1.8ef393e9f686f3ab26d5.md",
     "index.html": "./index.html",
     "static/media/01-11-2025-SAE-research-draft.md": "./static/media/01-11-2025-SAE-research-draft.d04c2b07a3aedbaa5aaf.md",
     "main.ee6c64a6.css.map": "./static/css/main.ee6c64a6.css.map",
-    "main.890ae823.js.map": "./static/js/main.890ae823.js.map",
+    "main.cd16bff0.js.map": "./static/js/main.cd16bff0.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee6c64a6.css",
-    "static/js/main.890ae823.js"
+    "static/js/main.cd16bff0.js"
   ]
 }
