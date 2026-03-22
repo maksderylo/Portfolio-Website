@@ -1,5 +1,28 @@
 [
   {
+    "slug": "18-03-2026-bep-research-1",
+    "title": "18-03-2026-bep-research-1",
+    "date": "2026-03-22T11:52:01.022Z",
+    "tags": [],
+    "excerpt": "- Custom PyTorch layer with 100 trainable images (3×224×224 each)\n- Architecture: Input → MobileNet features → weighted sum of trainable images → MobileNet features →\nclassifier\n- Two-pass forward: first pass gets weights, second pass cl...",
+    "content": "- Custom PyTorch layer with 100 trainable images (3×224×224 each)\n- Architecture: Input → MobileNet features → weighted sum of trainable images → MobileNet features →\nclassifier\n- Two-pass forward: first pass gets weights, second pass classifies generated image\n\n    - ✅ Used torch.einsum for memory-efficient weighted sum\n    - ✅ Initialized neurons with class examples from dataset (cyclic: Cone, Cube, Cylinder, etc.)\n    - ✅ Added softmax on activations (proper weighted average)\n    - ✅ Froze backbone (only train: neuron_activations, visual_layer, classifier)\n    - ✅ Added L2 regularization on trainable images\n    - ✅ Model returns generated images during training\n\n\nIssues:\n1. training and validation losses and accuracies are far away from each other\n2. The model doesn't update the actual concept images just seems to work on the linear layer"
+  },
+  {
+    "slug": "01-11-2025-SAE-research-draft",
+    "title": "SAE Research Draft with Lan de Jong",
+    "date": "2025-11-01",
+    "tags": [
+      "university",
+      "ML",
+      "research",
+      "autoencoders",
+      "SAE",
+      "PyTorch"
+    ],
+    "excerpt": "Draft Research Paper about SAE investigation.",
+    "content": "[Download PDF](assets/SAE_Report-1.pdf)"
+  },
+  {
     "slug": "14-10-2025-ml-research-3",
     "title": "Machine Learning Research Notes 3 - SAE and NMF comparison",
     "date": "2025-10-14",
