@@ -2,7 +2,7 @@
   {
     "slug": "18-03-2026-bep-research-1",
     "title": "18-03-2026-bep-research-1",
-    "date": "2026-03-22T11:53:26.943Z",
+    "date": "2026-03-22T11:57:49.747Z",
     "tags": [],
     "excerpt": "- Custom PyTorch layer with 100 trainable images (3×224×224 each)\n- Architecture: Input → MobileNet features → weighted sum of trainable images → MobileNet features →\nclassifier\n- Two-pass forward: first pass gets weights, second pass cl...",
     "content": "- Custom PyTorch layer with 100 trainable images (3×224×224 each)\n- Architecture: Input → MobileNet features → weighted sum of trainable images → MobileNet features →\nclassifier\n- Two-pass forward: first pass gets weights, second pass classifies generated image\n\n    - ✅ Used torch.einsum for memory-efficient weighted sum\n    - ✅ Initialized neurons with class examples from dataset (cyclic: Cone, Cube, Cylinder, etc.)\n    - ✅ Added softmax on activations (proper weighted average)\n    - ✅ Froze backbone (only train: neuron_activations, visual_layer, classifier)\n    - ✅ Added L2 regularization on trainable images\n    - ✅ Model returns generated images during training\n\n\nIssues:\n1. training and validation losses and accuracies are far away from each other\n2. The model doesn't update the actual concept images just seems to work on the linear layer"
