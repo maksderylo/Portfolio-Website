@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Me from './svg/me.jpg';
 
 const Home = () => {
@@ -20,9 +21,17 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Blog Section - Prominent Call to Action */}
+      <section className='blog-cta'>
+        <h2>Research Blog</h2>
+        <p>I write about the progress of research/small interests/recommendations.</p>
+        <Link to="/blog" className='cta-button'>Read the Blog →</Link>
+      </section>
+
       <section className='quick-highlights'>
         <h2>Links</h2>
         <ul>
+          <li><Link to="/blog">Got to Blog</Link></li>
           <li><a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">Download CV</a></li>
           <li><a href="https://github.com/mderylo" target="_blank" rel="noopener noreferrer">GitHub Profile</a></li>
         </ul>

@@ -63,6 +63,54 @@ main {
   background: #a02f1a;
 }
 
+/* Blog CTA Section */
+.simple-home .blog-cta {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 1rem auto;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  border-radius: 12px;
+  border: 2px solid #c83921;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.simple-home .blog-cta h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #c83921;
+}
+
+.simple-home .blog-cta p {
+  margin: 0 0 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.simple-home .cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: #c83921;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.simple-home .cta-button:hover {
+  background: #a02f1a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(200, 57, 33, 0.3);
+}
+
 .simple-home .highlights-section { padding: 2rem; max-width: 1200px; margin: 0 auto; }
 .simple-home .highlights-section h2 { margin-top: 0; text-align: center; margin-bottom: 2rem; }
 .simple-home .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
