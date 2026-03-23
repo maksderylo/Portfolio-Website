@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.ee6c64a6.css",
-    "main.js": "./static/js/main.4ad9c313.js",
+    "main.js": "./static/js/main.c2b315f1.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/EHXJ5029-original.jpeg": "./static/media/EHXJ5029-original.01d2dccd9c1a81cb6e55.jpeg",
@@ -94,8 +94,8 @@
     "static/media/KaTeX_Size1-Regular.woff": "./static/media/KaTeX_Size1-Regular.0108e89c9003e8c14ea3.woff",
     "static/media/2025-09-27-automatic-code-quality-checks.md": "./static/media/2025-09-27-automatic-code-quality-checks.9171636eec7a14971596.md",
     "static/media/KaTeX_Size2-Regular.woff": "./static/media/KaTeX_Size2-Regular.3a99e70aee4076660d38.woff",
+    "static/media/18-03-2026-bep-research-1.md": "./static/media/18-03-2026-bep-research-1.30f6f84c644e1583ea1a.md",
     "static/media/KaTeX_Size4-Regular.woff": "./static/media/KaTeX_Size4-Regular.aeffd8025cba3647f1a6.woff",
-    "static/media/18-03-2026-bep-research-1.md": "./static/media/18-03-2026-bep-research-1.20e5822700a7e29c5b93.md",
     "static/media/KaTeX_Size1-Regular.woff2": "./static/media/KaTeX_Size1-Regular.6eec866c69313624be60.woff2",
     "static/media/KaTeX_Size2-Regular.woff2": "./static/media/KaTeX_Size2-Regular.2960900c4f271311eb36.woff2",
     "static/media/KaTeX_Size4-Regular.woff2": "./static/media/KaTeX_Size4-Regular.e418bf257af1052628d8.woff2",
@@ -105,11 +105,11 @@
     "index.html": "./index.html",
     "static/media/01-11-2025-SAE-research-draft.md": "./static/media/01-11-2025-SAE-research-draft.d04c2b07a3aedbaa5aaf.md",
     "main.ee6c64a6.css.map": "./static/css/main.ee6c64a6.css.map",
-    "main.4ad9c313.js.map": "./static/js/main.4ad9c313.js.map",
+    "main.c2b315f1.js.map": "./static/js/main.c2b315f1.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee6c64a6.css",
-    "static/js/main.4ad9c313.js"
+    "static/js/main.c2b315f1.js"
   ]
 }
