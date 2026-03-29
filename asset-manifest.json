@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.ee6c64a6.css",
-    "main.js": "./static/js/main.fb1e2ebe.js",
+    "main.js": "./static/js/main.f70f8550.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/EHXJ5029-original.jpeg": "./static/media/EHXJ5029-original.01d2dccd9c1a81cb6e55.jpeg",
@@ -23,6 +23,7 @@
     "static/media/img_7.png": "./static/media/img_7.a22d0e7333bd580fbfc1.png",
     "static/media/img_4.png": "./static/media/img_4.1eaaba19c845a7be8c50.png",
     "static/media/AmaticSC-Bold.ttf": "./static/media/AmaticSC-Bold.f12c1d887cda2131ac83.ttf",
+    "static/media/2026-03-29_18-17.png": "./static/media/2026-03-29_18-17.f4aa4efe2092e4a17915.png",
     "static/media/img_3.png": "./static/media/img_3.8ef52198f833ae638e99.png",
     "static/media/Manrope-Medium.ttf": "./static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
     "static/media/Manrope-Light.ttf": "./static/media/Manrope-Light.2bf511c25636c7d7a4ce.ttf",
@@ -48,6 +49,7 @@
     "static/media/KaTeX_Main-Regular.woff": "./static/media/KaTeX_Main-Regular.4f35fbcc9ee8614c2bcc.woff",
     "static/media/KaTeX_Main-Bold.woff": "./static/media/KaTeX_Main-Bold.0c3b8929d377c0e9b2f3.woff",
     "static/media/KaTeX_AMS-Regular.woff2": "./static/media/KaTeX_AMS-Regular.73ea273a72f4aca30ca5.woff2",
+    "static/media/jkhadsfhjkads.png": "./static/media/jkhadsfhjkads.59b69eb7dde0e44d71c2.png",
     "static/media/KaTeX_Typewriter-Regular.ttf": "./static/media/KaTeX_Typewriter-Regular.c5c02d763c89380dcb4e.ttf",
     "static/media/KaTeX_Main-Regular.woff2": "./static/media/KaTeX_Main-Regular.f650f111a3b890d116f1.woff2",
     "static/media/KaTeX_Main-Bold.woff2": "./static/media/KaTeX_Main-Bold.39890742bc957b368704.woff2",
@@ -89,7 +91,7 @@
     "static/media/KaTeX_Caligraphic-Bold.woff": "./static/media/KaTeX_Caligraphic-Bold.d757c535a2e5902f1325.woff",
     "static/media/KaTeX_Caligraphic-Regular.woff": "./static/media/KaTeX_Caligraphic-Regular.db074fa22cf224af93d7.woff",
     "static/media/KaTeX_Size3-Regular.ttf": "./static/media/KaTeX_Size3-Regular.8d6b6822586eea3d3b20.ttf",
-    "static/media/18-03-2026-bep-research-1.md": "./static/media/18-03-2026-bep-research-1.86fce844ab8aeb5fedf8.md",
+    "static/media/18-03-2026-bep-research-1.md": "./static/media/18-03-2026-bep-research-1.3397bfd0f59c6e129d7e.md",
     "static/media/08-10-2025-ml-research-2.md": "./static/media/08-10-2025-ml-research-2.b84f3bd333257a091c33.md",
     "static/media/KaTeX_Caligraphic-Bold.woff2": "./static/media/KaTeX_Caligraphic-Bold.a1abf90dfd72792a577a.woff2",
     "static/media/KaTeX_Caligraphic-Regular.woff2": "./static/media/KaTeX_Caligraphic-Regular.d6484fce1ef428d5bd94.woff2",
@@ -101,16 +103,17 @@
     "static/media/KaTeX_Size2-Regular.woff2": "./static/media/KaTeX_Size2-Regular.2960900c4f271311eb36.woff2",
     "static/media/KaTeX_Size4-Regular.woff2": "./static/media/KaTeX_Size4-Regular.e418bf257af1052628d8.woff2",
     "static/media/KaTeX_Size3-Regular.woff": "./static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
+    "static/media/29-03-2026-bep-research-2.md": "./static/media/29-03-2026-bep-research-2.1b4396a84f7d3f6ef537.md",
     "static/media/KaTeX_Size3-Regular.woff2": "./static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "static/media/14-10-2025-ml-research-3.md": "./static/media/14-10-2025-ml-research-3.75236771976cef41f199.md",
     "index.html": "./index.html",
     "static/media/01-11-2025-SAE-research-draft.md": "./static/media/01-11-2025-SAE-research-draft.d04c2b07a3aedbaa5aaf.md",
     "main.ee6c64a6.css.map": "./static/css/main.ee6c64a6.css.map",
-    "main.fb1e2ebe.js.map": "./static/js/main.fb1e2ebe.js.map",
+    "main.f70f8550.js.map": "./static/js/main.f70f8550.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee6c64a6.css",
-    "static/js/main.fb1e2ebe.js"
+    "static/js/main.f70f8550.js"
   ]
 }
