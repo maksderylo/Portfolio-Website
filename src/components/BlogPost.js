@@ -8,6 +8,8 @@ import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import { loadPostBySlug } from '../utils/postLoader';
+import CsvChart from './CsvChart';
+import ImageSlider from './ImageSlider';
 
 // Image assets in posts directory (now recursive to include images inside per-post folders)
 // Previously second arg was false (non-recursive) which prevented images inside folders like
@@ -100,6 +102,12 @@ const BlogPost = () => {
             components={{
               code({node, inline, className, children, ...props}) {
                 const match = /language-(\w+)/.exec(className || '');
+                if (!inline && match && match[1] === 'csvchart') {
+                  return <CsvChart content={String(children)} />;
+                }
+                if (!inline && match && match[1] === 'imageslider') {
+                  return <ImageSlider content={String(children)} imageMap={imageMap} />;
+                }
                 return !inline && match ? (
                   <SyntaxHighlighter
                     style={tomorrow}

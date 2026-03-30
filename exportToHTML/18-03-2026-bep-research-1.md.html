@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>18-03-2026-bep-research-1.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #080808;}
+.s3 { color: #006dcc;}
+.s4 { color: #871094; font-style: italic;}
+.s5 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+18-03-2026-bep-research-1.md</font>
+</center></td></tr></table>
+<pre><span class="s0">---</span>
+<span class="s1">title: &quot;Convolutional Neural Net Interpretable Visual Layer&quot; 
+date: &quot;2026-03-22&quot; 
+tags: [&quot;university&quot;, &quot;ML&quot;, &quot;research&quot;, &quot;SAE&quot;, &quot;NMF&quot;] 
+excerpt: &quot;Attempt at a custom CNN interpretable layer&quot; 
+</span>
+<span class="s0">---</span>
+<span class="s2">I don't know where to start, but to the point. What if we could train the model to be interpretable by construction? That is, to avoid the neural collapse due to overoptimization of a cross entropy objective, we design a network which learns to decompose its activations into part-based concepts which then instead are classified.</span>
+<span class="s1">![</span><span class="s2">2026-03-22_22-07.png</span><span class="s1">](</span><span class="s2">assets/2026-03-22_22-07.png</span><span class="s1">)</span>
+
+<span class="s0">## </span><span class="s2">The Idea</span>
+
+<span class="s1">![</span><span class="s2">img5.png</span><span class="s1">](</span><span class="s2">assets/img5.png</span><span class="s1">)</span>
+<span class="s1">_</span><span class="s2">Idea and drawing of dr. Sibylle Hess</span><span class="s1">_</span>
+
+<span class="s2">Taking either a pretrained, or already trained CNN, call it a backbone model, I attach a new layer at the end called </span><span class="s1">&quot;</span><span class="s2">Visual Layer</span><span class="s1">&quot;</span><span class="s2">. During training the activations for an input are taken and pass through an additional layer with each neuron having a corresponding input sized image. For the actual classification the idea is to feed the linear combination i.e. the sum of neuron times corresponding image, back through the backbone model. Let's try to define it in terms of optimization</span><span class="s1">:</span>
+
+<span class="s2">Let's say </span><span class="s1">$</span><span class="s2">\omega</span><span class="s1">: </span><span class="s2">l\to m</span><span class="s1">$ </span><span class="s2">is the backbone model </span><span class="s1">($</span><span class="s2">l</span><span class="s1">$ </span><span class="s2">is the input space</span><span class="s1">)</span><span class="s2">, </span><span class="s1">$</span><span class="s2">V \in \mathcal{R}^{m \times n}</span><span class="s1">$ </span><span class="s2">the matrix of activation to neuron transformation, next though not necessary we'd like an activation function, its either</span><span class="s1">:</span>
+
+<span class="s0">- </span><span class="s2">Nothing, though this would permit negative weights.</span>
+<span class="s0">- </span><span class="s2">ReLU</span>
+<span class="s0">- </span><span class="s2">Sigmoid</span>
+<span class="s0">- </span><span class="s2">Softmax - </span><span class="s1">$</span><span class="s2">\sigma</span><span class="s1">(</span><span class="s2">z_i</span><span class="s1">) </span><span class="s2">= \frac{e^{z_i}}{\sum</span><span class="s1">_</span><span class="s2">{j=1}^{n} e^{z_j}}</span><span class="s1">$ ([</span><span class="s2">link</span><span class="s1">](</span><span class="s3">https://www.geeksforgeeks.org/deep-learning/the-role-of-softmax-in-neural-networks-detailed-explanation-and-applications/</span><span class="s1">)</span><span class="s2">, which was my choice for simplicity, as then when we make the neurons add to each other the created image from linear combination will be in the correct scale.</span>
+
+<span class="s2">and lastly, the model own representations </span><span class="s1">$</span><span class="s2">W \in \mathcal{R}^{n\times l}</span><span class="s1">$ </span><span class="s2">and a classification head </span><span class="s1">$</span><span class="s2">g</span><span class="s1">: </span><span class="s2">\mathcal{R}^m \to \mathcal{R}^C</span><span class="s1">$</span><span class="s2">. The optimization becomes</span><span class="s1">:</span>
+
+<span class="s1">$$</span>
+<span class="s2">\min</span><span class="s1">_</span><span class="s2">{V, W, g} \frac{1}{N} \sum</span><span class="s1">_</span><span class="s2">{j=1}^N \mathcal{L}</span><span class="s1">_</span><span class="s2">{CE}</span><span class="s1">(</span><span class="s2">g</span><span class="s1">(</span><span class="s2">\omega </span><span class="s1">(</span><span class="s2">W^T \sigma</span><span class="s1">(</span><span class="s2">V^T \omega</span><span class="s1">(</span><span class="s2">x^{</span><span class="s1">(</span><span class="s2">j</span><span class="s1">)</span><span class="s2">}</span><span class="s1">))))</span><span class="s2">, y^{</span><span class="s1">(</span><span class="s2">j</span><span class="s1">)</span><span class="s2">}</span><span class="s1">)</span>
+<span class="s1">$$</span>
+
+<span class="s2">The hypothesis is, the visual layer architecture will push the model to extract its own concepts, as it will have to learn additive parts-based images to capture the input space. This is </span><span class="s1">_</span><span class="s2">almost</span><span class="s1">_ </span><span class="s2">exactly what I implement.</span>
+
+<span class="s0">## </span><span class="s2">Core Implementation</span>
+
+<span class="s2">The architecture is</span><span class="s1">:</span>
+
+<span class="s0">```</span><span class="s4">python</span>
+<span class="s5">class VisualLayerModel(nn.Module):</span>
+    <span class="s5">def __init__(self, num_neurons, num_classes, pretrain=False, init_dataset=None):</span>
+        <span class="s5">super().__init__()</span>
+
+        <span class="s5"># core architecture of mobilenet</span>
+        <span class="s5">if pretrain:</span>
+            <span class="s5">model_backbone = models.mobilenet_v2(weights='IMAGENET1K_V1')</span>
+        <span class="s5">else:</span>
+            <span class="s5">model_backbone = models.mobilenet_v2(weights=None)</span>
+        <span class="s5">self.features = model_backbone.features</span>
+
+        <span class="s5">for param in self.features.parameters():</span>
+            <span class="s5">param.requires_grad = False</span>
+
+        <span class="s5"># pooling from the backbone features</span>
+        <span class="s5">self.avgpool = nn.AdaptiveAvgPool2d((1,1))</span>
+
+        <span class="s5"># Visual Layer components</span>
+        <span class="s5">self.num_neurons = num_neurons</span>
+        <span class="s5">self.num_classes = num_classes</span>
+
+        <span class="s5">self.neuron_activations = nn.Linear(1280, num_neurons)</span>
+
+        <span class="s5">if init_dataset is not None:</span>
+            <span class="s5">self.visual_layer = self.initialize_from_data(init_dataset, num_neurons, num_classes)</span>
+        <span class="s5">else:</span>
+            <span class="s5">self.visual_layer = nn.Parameter(</span>
+                <span class="s5">torch.randn(num_neurons, 3, 224, 224) * 0.01</span>
+            <span class="s5">)</span>
+        <span class="s5"># first is the amount of neurons, second channels, then pixels</span>
+        <span class="s5">self.images = None</span>
+        <span class="s5">self.model_reconstruction = None</span>
+        <span class="s5">self.classifier = nn.Linear(1280, num_classes)</span>
+
+    <span class="s5">def forward(self, x, use_visual_layer=True):</span>
+        <span class="s5"># visual pass</span>
+        <span class="s5">backbone_activations = self.features(x)</span>
+        <span class="s5">backbone_activations = self.avgpool(backbone_activations)</span>
+        <span class="s5">backbone_activations = backbone_activations.flatten(1)</span>
+
+        <span class="s5">if not use_visual_layer:</span>
+            <span class="s5">output = self.classifier(backbone_activations)</span>
+            <span class="s5">return output</span>
+
+        <span class="s5"># additive params of images</span>
+        <span class="s5">activations = self.neuron_activations(backbone_activations)</span>
+        <span class="s5"># otherwise, sigmoid, softmax or relu</span>
+        <span class="s5">activations = torch.softmax(activations, dim=1)</span>
+        <span class="s5">self.sample_activation = activations</span>
+      
+        <span class="s5"># now the reconstructed image</span>
+        <span class="s5">generated_img = torch.einsum('bn,nchw-&gt;bchw', activations, self.visual_layer)</span>
+
+        <span class="s5"># classification pass</span>
+        <span class="s5">final_activations = self.features(generated_img)</span>
+        <span class="s5">final_activations = self.avgpool(final_activations)</span>
+        <span class="s5">final_activations = final_activations.flatten(1)</span>
+
+        <span class="s5"># output of classification</span>
+        <span class="s5">output = self.classifier(final_activations)</span>
+      
+        <span class="s5"># Return generated images during training for consistency loss</span>
+        <span class="s5">if self.training:</span>
+            <span class="s5">return output, generated_img</span>
+        <span class="s5">else:</span>
+            <span class="s5">return output</span>
+<span class="s0">```</span>
+
+<span class="s0">- </span><span class="s2">Custom PyTorch layer with 100 trainable images </span><span class="s1">(</span><span class="s2">3×224×224 each</span><span class="s1">)</span>
+<span class="s0">- </span><span class="s2">Architecture</span><span class="s1">: </span><span class="s2">Input → MobileNet features → weighted sum of trainable images → MobileNet features →</span>
+  <span class="s2">classifier</span>
+<span class="s0">- </span><span class="s2">Two-pass forward</span><span class="s1">: </span><span class="s2">first pass gets weights, second pass classifies generated image</span>
+
+<span class="s0">## </span><span class="s2">Results</span>
+
+<span class="s2">This architecture, </span><span class="s1">_</span><span class="s2">so far</span><span class="s1">_</span><span class="s2">, is not successful. I have attempted many tweaks, and ideas, such as</span><span class="s1">:</span>
+
+<span class="s0">- </span><span class="s2">Initializing the images to random noise or data samples.</span>
+<span class="s0">- </span><span class="s2">Adding secondary loss terms, e.g. initial image reconstruction</span><span class="s1">(</span><span class="s2">of activations</span><span class="s1">)</span><span class="s2">, sort of sparsity.</span>
+<span class="s0">- </span><span class="s2">Instead of linear combination, directly smaller the visual layer learnable space by optimizing patches instead.</span>
+
+<span class="s2">With the bottom line currently being</span><span class="s1">:</span>
+
+<span class="s0">1. </span><span class="s2">training and validation losses and accuracies are far away from each other. Either the dataset is too small and is learning the data, or something else is happening, regardless of the tweaks the accuracy on the validation dataset was either random or oscillating.</span>
+<span class="s0">2. </span><span class="s2">The model doesn't update the actual concept images just seems to work on the linear layer. This seems to show that the sheer amount of pixels being optimized makes them invariant to the optimization and a double backbone pass causing gradient to vanish.</span>
+
+<span class="s0">## </span><span class="s2">Related work</span>
+
+<span class="s0">1. </span><span class="s2">ProtoPNet </span><span class="s1">[</span><span class="s2">link</span><span class="s1">](</span><span class="s3">https://arxiv.org/pdf/1806.10574</span><span class="s1">) </span><span class="s2">is a most similar architecture I could find that also does the interpretability by design and not post-hoc in a k-nearest neighbours sort of way.</span>
+
+<span class="s2">Instead of a visual layer, they implement a </span><span class="s1">&quot;</span><span class="s2">prototype</span><span class="s1">&quot; </span><span class="s2">one. At an output of a convolutional layer, the network learns prototypical activations of a patch of the output. With that, each of the extracted activations are later matched with patches from the original input space to represent that patch in a visualizable way.</span>
+<span class="s1">![</span><span class="s2">2026-03-24_13-21.png</span><span class="s1">](</span><span class="s2">assets/2026-03-24_13-21.png</span><span class="s1">)</span>
+<span class="s2">This idea is further expanded with Deformable ProtoPNet </span><span class="s1">[</span><span class="s2">link</span><span class="s1">](</span><span class="s3">https://arxiv.org/pdf/2111.15000</span><span class="s1">) </span><span class="s2">giving the prototypes more freedom to adapt, and PIP-Net </span><span class="s1">[</span><span class="s2">link</span><span class="s1">](</span><span class="s3">https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10204807</span><span class="s1">) [</span><span class="s2">code</span><span class="s1">](</span><span class="s3">https://github.com/M-Nauta/PIPNet</span><span class="s1">)</span>
+
+<span class="s0">2. </span><span class="s2">Concept bottleneck models </span><span class="s1">[</span><span class="s2">link</span><span class="s1">](</span><span class="s3">https://dl.acm.org/doi/10.5555/3524938.3525433</span><span class="s1">)</span>
+<span class="s0">3. </span><span class="s2">Self Explaining Neural Networks </span><span class="s1">(</span><span class="s2">SENN</span><span class="s1">) [</span><span class="s2">link</span><span class="s1">](</span><span class="s3">https://www.geeksforgeeks.org/deep-learning/self-explaining-neural-networks/</span><span class="s1">)</span>
+</pre>
+</body>
+</html>
