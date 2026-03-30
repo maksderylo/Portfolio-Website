@@ -1,10 +1,21 @@
 {
   "files": {
     "main.css": "./static/css/main.ee6c64a6.css",
-    "main.js": "./static/js/main.ab914ee5.js",
+    "main.js": "./static/js/main.534f448f.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/EHXJ5029-original.jpeg": "./static/media/EHXJ5029-original.01d2dccd9c1a81cb6e55.jpeg",
+    "static/media/step_999.png": "./static/media/step_999.79134e2c8128a8a7db22.png",
+    "static/media/step_10999.png": "./static/media/step_10999.f03c087907b9bba6db94.png",
+    "static/media/step_2999.png": "./static/media/step_2999.cabdecdf353489677864.png",
+    "static/media/step_7999.png": "./static/media/step_7999.11e87cacf4295a9fc7df.png",
+    "static/media/step_4999.png": "./static/media/step_4999.2303b933b6fb3ee5cbd9.png",
+    "static/media/step_6999.png": "./static/media/step_6999.d5009a649f3532915f48.png",
+    "static/media/step_8999.png": "./static/media/step_8999.6097986691c1555ce955.png",
+    "static/media/step_9999.png": "./static/media/step_9999.617c0eb61f0273402325.png",
+    "static/media/step_1999.png": "./static/media/step_1999.432075e1249f51ff193f.png",
+    "static/media/step_5999.png": "./static/media/step_5999.e60e8fc8bab3cf6fed0c.png",
+    "static/media/step_3999.png": "./static/media/step_3999.1937ca0b7519943cb9ee.png",
     "static/media/EHAA3029-original.jpeg": "./static/media/EHAA3029-original.692b18cd359b7b2c2ae1.jpeg",
     "static/media/EHNK15920-original.jpeg": "./static/media/EHNK15920-original.7908d621f6b96e758826.jpeg",
     "static/media/EHXH3407-original.jpeg": "./static/media/EHXH3407-original.293b0447bf5726df2830.jpeg",
@@ -31,6 +42,7 @@
     "static/media/img_11.png": "./static/media/img_11.f8a016a8e75b59e5d7ce.png",
     "static/media/image.png": "./static/media/image.cfdf84d55da10b77ae94.png",
     "static/media/img_10.png": "./static/media/img_10.aad8c8147850ad8adb51.png",
+    "static/media/underwhelming.png": "./static/media/underwhelming.4f3205cafa4bd5c1694a.png",
     "static/media/img_9.png": "./static/media/img_9.ae0256ab8616bf11be0f.png",
     "static/media/img_5.png": "./static/media/img_5.4759c91a1623c3c9e624.png",
     "static/media/img_12.png": "./static/media/img_12.d43f7c7b2d27438086c9.png",
@@ -41,6 +53,7 @@
     "static/media/img_2.png": "./static/media/img_2.cc1a9be21ed0956c062f.png",
     "static/media/KaTeX_Main-Bold.ttf": "./static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
     "static/media/img_13.png": "./static/media/img_13.10c4a6cee9870ea88a05.png",
+    "static/media/valaccuracy.png": "./static/media/valaccuracy.d0959700391aa512c130.png",
     "static/media/img_1.png": "./static/media/img_1.13b479348fa583db4b69.png",
     "static/media/KaTeX_Main-Italic.ttf": "./static/media/KaTeX_Main-Italic.fa675e5e4bec9eb250b6.ttf",
     "static/media/KaTeX_AMS-Regular.woff": "./static/media/KaTeX_AMS-Regular.d562e886c52f12660a41.woff",
@@ -52,6 +65,7 @@
     "static/media/KaTeX_AMS-Regular.woff2": "./static/media/KaTeX_AMS-Regular.73ea273a72f4aca30ca5.woff2",
     "static/media/jkhadsfhjkads.png": "./static/media/jkhadsfhjkads.59b69eb7dde0e44d71c2.png",
     "static/media/KaTeX_Typewriter-Regular.ttf": "./static/media/KaTeX_Typewriter-Regular.c5c02d763c89380dcb4e.ttf",
+    "static/media/validationtrend.png": "./static/media/validationtrend.2298776a1328865b91ee.png",
     "static/media/KaTeX_Main-Regular.woff2": "./static/media/KaTeX_Main-Regular.f650f111a3b890d116f1.woff2",
     "static/media/KaTeX_Main-Bold.woff2": "./static/media/KaTeX_Main-Bold.39890742bc957b368704.woff2",
     "static/media/img3.png": "./static/media/img3.944ec435bc6e512e482c.png",
@@ -81,6 +95,7 @@
     "static/media/KaTeX_SansSerif-Regular.woff": "./static/media/KaTeX_SansSerif-Regular.02271ec5cb9f5b4588ac.woff",
     "static/media/KaTeX_Size1-Regular.ttf": "./static/media/KaTeX_Size1-Regular.6de7d4b539221a49e9e2.ttf",
     "static/media/KaTeX_SansSerif-Bold.woff2": "./static/media/KaTeX_SansSerif-Bold.95591a929f0d32aa282a.woff2",
+    "static/media/29-03-2026-bep-research-2.md": "./static/media/29-03-2026-bep-research-2.3138319a66c85f91a519.md",
     "static/media/KaTeX_SansSerif-Italic.woff2": "./static/media/KaTeX_SansSerif-Italic.7d393d382f3e7fb1c637.woff2",
     "static/media/KaTeX_Size2-Regular.ttf": "./static/media/KaTeX_Size2-Regular.57f5c1837853986ea1db.ttf",
     "static/media/KaTeX_Fraktur-Bold.woff2": "./static/media/KaTeX_Fraktur-Bold.931d67ea207ab37ee693.woff2",
@@ -97,7 +112,6 @@
     "static/media/KaTeX_Caligraphic-Bold.woff2": "./static/media/KaTeX_Caligraphic-Bold.a1abf90dfd72792a577a.woff2",
     "static/media/KaTeX_Caligraphic-Regular.woff2": "./static/media/KaTeX_Caligraphic-Regular.d6484fce1ef428d5bd94.woff2",
     "static/media/KaTeX_Size1-Regular.woff": "./static/media/KaTeX_Size1-Regular.0108e89c9003e8c14ea3.woff",
-    "static/media/29-03-2026-bep-research-2.md": "./static/media/29-03-2026-bep-research-2.01b4790eda1209b52a1e.md",
     "static/media/2025-09-27-automatic-code-quality-checks.md": "./static/media/2025-09-27-automatic-code-quality-checks.9171636eec7a14971596.md",
     "static/media/KaTeX_Size2-Regular.woff": "./static/media/KaTeX_Size2-Regular.3a99e70aee4076660d38.woff",
     "static/media/KaTeX_Size4-Regular.woff": "./static/media/KaTeX_Size4-Regular.aeffd8025cba3647f1a6.woff",
@@ -110,11 +124,11 @@
     "index.html": "./index.html",
     "static/media/01-11-2025-SAE-research-draft.md": "./static/media/01-11-2025-SAE-research-draft.d04c2b07a3aedbaa5aaf.md",
     "main.ee6c64a6.css.map": "./static/css/main.ee6c64a6.css.map",
-    "main.ab914ee5.js.map": "./static/js/main.ab914ee5.js.map",
+    "main.534f448f.js.map": "./static/js/main.534f448f.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee6c64a6.css",
-    "static/js/main.ab914ee5.js"
+    "static/js/main.534f448f.js"
   ]
 }
