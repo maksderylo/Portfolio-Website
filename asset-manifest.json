@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.ee6c64a6.css",
-    "main.js": "./static/js/main.534f448f.js",
+    "main.js": "./static/js/main.e1bfb41c.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/EHXJ5029-original.jpeg": "./static/media/EHXJ5029-original.01d2dccd9c1a81cb6e55.jpeg",
@@ -124,11 +124,11 @@
     "index.html": "./index.html",
     "static/media/01-11-2025-SAE-research-draft.md": "./static/media/01-11-2025-SAE-research-draft.d04c2b07a3aedbaa5aaf.md",
     "main.ee6c64a6.css.map": "./static/css/main.ee6c64a6.css.map",
-    "main.534f448f.js.map": "./static/js/main.534f448f.js.map",
+    "main.e1bfb41c.js.map": "./static/js/main.e1bfb41c.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee6c64a6.css",
-    "static/js/main.534f448f.js"
+    "static/js/main.e1bfb41c.js"
   ]
 }
