@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.ee6c64a6.css",
-    "main.js": "./static/js/main.b6d919cb.js",
+    "main.js": "./static/js/main.227fe311.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/EHXJ5029-original.jpeg": "./static/media/EHXJ5029-original.01d2dccd9c1a81cb6e55.jpeg",
@@ -90,7 +90,7 @@
     "static/media/KaTeX_Typewriter-Regular.woff2": "./static/media/KaTeX_Typewriter-Regular.c295e7f71970f03c0549.woff2",
     "static/media/KaTeX_Fraktur-Bold.woff": "./static/media/KaTeX_Fraktur-Bold.354501bac435c3264834.woff",
     "static/media/KaTeX_Fraktur-Regular.woff": "./static/media/KaTeX_Fraktur-Regular.6fdf0ac577be0ba82a4c.woff",
-    "static/media/29-03-2026-bep-research-2.md": "./static/media/29-03-2026-bep-research-2.e3c561a3d491a33df0ef.md",
+    "static/media/29-03-2026-bep-research-2.md": "./static/media/29-03-2026-bep-research-2.d05d1ef6fbfb462f590c.md",
     "static/media/KaTeX_Caligraphic-Bold.ttf": "./static/media/KaTeX_Caligraphic-Bold.7489a2fbfb9bfe704420.ttf",
     "static/media/KaTeX_Caligraphic-Regular.ttf": "./static/media/KaTeX_Caligraphic-Regular.7e873d3833eb108a0758.ttf",
     "static/media/KaTeX_SansSerif-Regular.woff": "./static/media/KaTeX_SansSerif-Regular.02271ec5cb9f5b4588ac.woff",
@@ -124,11 +124,11 @@
     "index.html": "./index.html",
     "static/media/01-11-2025-SAE-research-draft.md": "./static/media/01-11-2025-SAE-research-draft.d04c2b07a3aedbaa5aaf.md",
     "main.ee6c64a6.css.map": "./static/css/main.ee6c64a6.css.map",
-    "main.b6d919cb.js.map": "./static/js/main.b6d919cb.js.map",
+    "main.227fe311.js.map": "./static/js/main.227fe311.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee6c64a6.css",
-    "static/js/main.b6d919cb.js"
+    "static/js/main.227fe311.js"
   ]
 }
