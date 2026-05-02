@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.57f35a4a.css",
-    "main.js": "./static/js/main.5dbcfb4c.js",
+    "main.js": "./static/js/main.67360370.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/EHXJ5029-original.jpeg": "./static/media/EHXJ5029-original.01d2dccd9c1a81cb6e55.jpeg",
@@ -21,6 +21,7 @@
     "static/media/EHXH3407-original.jpeg": "./static/media/EHXH3407-original.293b0447bf5726df2830.jpeg",
     "static/media/2026-03-22_22-07.png": "./static/media/2026-03-22_22-07.ccb7aa7177ee44d8e85c.png",
     "static/media/img1.png": "./static/media/img1.bf6f8593ff6babd4f46b.png",
+    "static/media/2026-04-30_12-47.png": "./static/media/2026-04-30_12-47.d346bd73856bece31638.png",
     "static/media/img5.png": "./static/media/img5.2b060c21401b22aaab63.png",
     "static/media/2026-03-24_13-21.png": "./static/media/2026-03-24_13-21.80bbb0760bb4dce73cd4.png",
     "static/media/img_8.png": "./static/media/img_8.c8e5c68652006a0c6700.png",
@@ -30,6 +31,7 @@
     "static/media/img.png": "./static/media/img.257e2206ae7e75807eb1.png",
     "static/media/RobotoSlab.ttf": "./static/media/RobotoSlab.677d14da87bce007211b.ttf",
     "static/media/img4.png": "./static/media/img4.92eb45b410c06dc71b34.png",
+    "static/media/2026-04-30_16-34.png": "./static/media/2026-04-30_16-34.9396ef94c6e625f29270.png",
     "static/media/Handjet-ExtraLight.ttf": "./static/media/Handjet-ExtraLight.5d4b174acbe7ec46febb.ttf",
     "static/media/img_7.png": "./static/media/img_7.a22d0e7333bd580fbfc1.png",
     "static/media/img_4.png": "./static/media/img_4.1eaaba19c845a7be8c50.png",
@@ -40,6 +42,7 @@
     "static/media/Manrope-Light.ttf": "./static/media/Manrope-Light.2bf511c25636c7d7a4ce.ttf",
     "static/media/image5.png": "./static/media/image5.1989aa3d23fa5e8a5488.png",
     "static/media/img_11.png": "./static/media/img_11.f8a016a8e75b59e5d7ce.png",
+    "static/media/2026-04-30_15-20.png": "./static/media/2026-04-30_15-20.34df4212c2bb5a5100d4.png",
     "static/media/image.png": "./static/media/image.cfdf84d55da10b77ae94.png",
     "static/media/img_10.png": "./static/media/img_10.aad8c8147850ad8adb51.png",
     "static/media/underwhelming.png": "./static/media/underwhelming.4f3205cafa4bd5c1694a.png",
@@ -47,6 +50,7 @@
     "static/media/img_5.png": "./static/media/img_5.4759c91a1623c3c9e624.png",
     "static/media/img_12.png": "./static/media/img_12.d43f7c7b2d27438086c9.png",
     "static/media/KaTeX_AMS-Regular.ttf": "./static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
+    "static/media/2026-04-30_15-28.png": "./static/media/2026-04-30_15-28.b32072a84e1bdc935f9d.png",
     "static/media/onecolor.png": "./static/media/onecolor.3a332f2bf9cc4963ff57.png",
     "static/media/Objectivity-Black.ttf": "./static/media/Objectivity-Black.d1581aeef2a59214c454.ttf",
     "static/media/KaTeX_Main-Regular.ttf": "./static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
@@ -115,6 +119,7 @@
     "static/media/2025-09-27-automatic-code-quality-checks.md": "./static/media/2025-09-27-automatic-code-quality-checks.9171636eec7a14971596.md",
     "static/media/KaTeX_Size2-Regular.woff": "./static/media/KaTeX_Size2-Regular.3a99e70aee4076660d38.woff",
     "static/media/KaTeX_Size4-Regular.woff": "./static/media/KaTeX_Size4-Regular.aeffd8025cba3647f1a6.woff",
+    "static/media/30-04-2026-bep-research-3.md": "./static/media/30-04-2026-bep-research-3.3ae8090fcc9f2eec0df4.md",
     "static/media/KaTeX_Size1-Regular.woff2": "./static/media/KaTeX_Size1-Regular.6eec866c69313624be60.woff2",
     "static/media/KaTeX_Size2-Regular.woff2": "./static/media/KaTeX_Size2-Regular.2960900c4f271311eb36.woff2",
     "static/media/KaTeX_Size4-Regular.woff2": "./static/media/KaTeX_Size4-Regular.e418bf257af1052628d8.woff2",
@@ -125,11 +130,11 @@
     "static/media/01-04-2026-paper-mobilenet-notes.md": "./static/media/01-04-2026-paper-mobilenet-notes.c15d4b71e9ddf761c5e2.md",
     "static/media/01-11-2025-SAE-research-draft.md": "./static/media/01-11-2025-SAE-research-draft.d04c2b07a3aedbaa5aaf.md",
     "main.57f35a4a.css.map": "./static/css/main.57f35a4a.css.map",
-    "main.5dbcfb4c.js.map": "./static/js/main.5dbcfb4c.js.map",
+    "main.67360370.js.map": "./static/js/main.67360370.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.57f35a4a.css",
-    "static/js/main.5dbcfb4c.js"
+    "static/js/main.67360370.js"
   ]
 }
