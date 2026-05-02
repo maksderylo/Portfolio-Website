@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.57f35a4a.css",
-    "main.js": "./static/js/main.f25aee10.js",
+    "main.js": "./static/js/main.6e90277c.js",
     "static/js/453.abaf2d35.chunk.js": "./static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "./static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/EHXJ5029-original.jpeg": "./static/media/EHXJ5029-original.01d2dccd9c1a81cb6e55.jpeg",
@@ -116,10 +116,10 @@
     "static/media/KaTeX_Caligraphic-Bold.woff2": "./static/media/KaTeX_Caligraphic-Bold.a1abf90dfd72792a577a.woff2",
     "static/media/KaTeX_Caligraphic-Regular.woff2": "./static/media/KaTeX_Caligraphic-Regular.d6484fce1ef428d5bd94.woff2",
     "static/media/KaTeX_Size1-Regular.woff": "./static/media/KaTeX_Size1-Regular.0108e89c9003e8c14ea3.woff",
+    "static/media/30-04-2026-bep-research-3.md": "./static/media/30-04-2026-bep-research-3.c698c80eeee27edb3f28.md",
     "static/media/2025-09-27-automatic-code-quality-checks.md": "./static/media/2025-09-27-automatic-code-quality-checks.9171636eec7a14971596.md",
     "static/media/KaTeX_Size2-Regular.woff": "./static/media/KaTeX_Size2-Regular.3a99e70aee4076660d38.woff",
     "static/media/KaTeX_Size4-Regular.woff": "./static/media/KaTeX_Size4-Regular.aeffd8025cba3647f1a6.woff",
-    "static/media/30-04-2026-bep-research-3.md": "./static/media/30-04-2026-bep-research-3.fb2c2c52f5586ad6ab82.md",
     "static/media/KaTeX_Size1-Regular.woff2": "./static/media/KaTeX_Size1-Regular.6eec866c69313624be60.woff2",
     "static/media/KaTeX_Size2-Regular.woff2": "./static/media/KaTeX_Size2-Regular.2960900c4f271311eb36.woff2",
     "static/media/KaTeX_Size4-Regular.woff2": "./static/media/KaTeX_Size4-Regular.e418bf257af1052628d8.woff2",
@@ -130,11 +130,11 @@
     "static/media/01-04-2026-paper-mobilenet-notes.md": "./static/media/01-04-2026-paper-mobilenet-notes.c15d4b71e9ddf761c5e2.md",
     "static/media/01-11-2025-SAE-research-draft.md": "./static/media/01-11-2025-SAE-research-draft.d04c2b07a3aedbaa5aaf.md",
     "main.57f35a4a.css.map": "./static/css/main.57f35a4a.css.map",
-    "main.f25aee10.js.map": "./static/js/main.f25aee10.js.map",
+    "main.6e90277c.js.map": "./static/js/main.6e90277c.js.map",
     "453.abaf2d35.chunk.js.map": "./static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.57f35a4a.css",
-    "static/js/main.f25aee10.js"
+    "static/js/main.6e90277c.js"
   ]
 }
