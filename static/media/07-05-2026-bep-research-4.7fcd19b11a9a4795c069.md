@@ -33,7 +33,15 @@ self.visual_decoder = nn.Sequential(
 
 The simplification follows from the previous work failing to stabilize on more complex Imagenet, and hopefully the preliminary results will generalize to more complex data.
 
-Crucially, the backbone CNN and classifier with a quick pretraining achieve $>99\%$ accuracy, and the training with visual decoder no longer overfits.
+Crucially, the backbone CNN and classifier with a quick pretraining achieve $>98\%$ accuracy, and the training with visual decoder no longer overfits.
+
+## Cross entropy without regularization
+
+With cross entropy alone, the training without much hypertuning easily achieves $96\%$ accuracy, but more importantly we are able to now look into the decoding structure that allows the model to classify the same as with the original input.
+
+![img.png](assets/prototypical_classes.png) (examples from each class how digits are reconstructed by the visual decoder)
+
+
 
 
 

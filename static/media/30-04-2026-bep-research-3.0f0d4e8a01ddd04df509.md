@@ -1,5 +1,5 @@
 ---
-title: "What do we mean for a neuron to "encode a concept"?"
+title: "What do we mean for a CNN neuron to "encode a concept"?"
 date: "2026-04-30"
 tags: ["university", "ML", "research", "CNN", "Interpretability"]
 excerpt: ""

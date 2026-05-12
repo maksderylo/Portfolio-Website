@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.31def497.css",
-    "main.js": "/static/js/main.0daa31b2.js",
+    "main.js": "/static/js/main.3eea5bb2.js",
     "static/js/453.abaf2d35.chunk.js": "/static/js/453.abaf2d35.chunk.js",
     "static/media/me.jpg": "/static/media/me.5b5be2198fcca689bf55.jpg",
     "static/media/EHXJ5029-original.jpeg": "/static/media/EHXJ5029-original.01d2dccd9c1a81cb6e55.jpeg",
@@ -116,7 +116,7 @@
     "static/media/KaTeX_Caligraphic-Bold.woff2": "/static/media/KaTeX_Caligraphic-Bold.a1abf90dfd72792a577a.woff2",
     "static/media/KaTeX_Caligraphic-Regular.woff2": "/static/media/KaTeX_Caligraphic-Regular.d6484fce1ef428d5bd94.woff2",
     "static/media/KaTeX_Size1-Regular.woff": "/static/media/KaTeX_Size1-Regular.0108e89c9003e8c14ea3.woff",
-    "static/media/30-04-2026-bep-research-3.md": "/static/media/30-04-2026-bep-research-3.71ee2a499b9fa88d5e34.md",
+    "static/media/30-04-2026-bep-research-3.md": "/static/media/30-04-2026-bep-research-3.0f0d4e8a01ddd04df509.md",
     "static/media/2025-09-27-automatic-code-quality-checks.md": "/static/media/2025-09-27-automatic-code-quality-checks.1c29a833bc4b888ca761.md",
     "static/media/KaTeX_Size2-Regular.woff": "/static/media/KaTeX_Size2-Regular.3a99e70aee4076660d38.woff",
     "static/media/KaTeX_Size4-Regular.woff": "/static/media/KaTeX_Size4-Regular.aeffd8025cba3647f1a6.woff",
@@ -126,16 +126,16 @@
     "static/media/KaTeX_Size3-Regular.woff": "/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "static/media/14-10-2025-ml-research-3.md": "/static/media/14-10-2025-ml-research-3.75236771976cef41f199.md",
-    "static/media/07-05-2026-bep-research-4.md": "/static/media/07-05-2026-bep-research-4.4b40708c2d03b6d1beca.md",
+    "static/media/07-05-2026-bep-research-4.md": "/static/media/07-05-2026-bep-research-4.7fcd19b11a9a4795c069.md",
     "index.html": "/index.html",
     "static/media/01-04-2026-paper-mobilenet-notes.md": "/static/media/01-04-2026-paper-mobilenet-notes.c15d4b71e9ddf761c5e2.md",
     "static/media/01-11-2025-SAE-research-draft.md": "/static/media/01-11-2025-SAE-research-draft.d04c2b07a3aedbaa5aaf.md",
     "main.31def497.css.map": "/static/css/main.31def497.css.map",
-    "main.0daa31b2.js.map": "/static/js/main.0daa31b2.js.map",
+    "main.3eea5bb2.js.map": "/static/js/main.3eea5bb2.js.map",
     "453.abaf2d35.chunk.js.map": "/static/js/453.abaf2d35.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31def497.css",
-    "static/js/main.0daa31b2.js"
+    "static/js/main.3eea5bb2.js"
   ]
 }
